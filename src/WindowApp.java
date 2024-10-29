@@ -4,16 +4,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class WindowApp extends JFrame {
+public class WindowApp extends JFrame{
     JButton uploadFile = new JButton("Импортировать файл");
     JButton sendToProssesing = new JButton("Подать на обработку");
     JButton getFile = new JButton("Скачать готовый файл");
+
+    UploadThread uploadEvent = new UploadThread();
+    ProcessThread prosessingEvent = new ProcessThread();
 
     JFileChooser fileChooser = new JFileChooser();
 
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
             "Excel", "xlsx");
-
 
 
     public WindowApp() {
@@ -23,6 +25,7 @@ public class WindowApp extends JFrame {
         uploadFile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                uploadEvent.start();
                 fileChooser.setDialogTitle("Выбор файла");
                 // Определение режима - только каталог
                 fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -37,6 +40,7 @@ public class WindowApp extends JFrame {
         //Добавляем функцию сохранения файла (кнопка getFile)
         getFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                prosessingEvent.start();
                 fileChooser.setDialogTitle("Сохранение файла");
                 // Определение режима - только файл
                 fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
