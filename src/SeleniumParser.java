@@ -12,7 +12,12 @@ public class SeleniumParser {
     public void setSrcAndDst(String srcPath, String dstPath){
         this.srcDstFiles = new ParsingSrcDstFiles(srcPath,dstPath);
     }
-    private void startParse(){
-
+    public void startParse() throws InterruptedException {
+        final String url = "https://egrpru.com/";
+        driver.get(url);
+        Thread.sleep(100);
+        driver.close();
     }
+
+
 }
