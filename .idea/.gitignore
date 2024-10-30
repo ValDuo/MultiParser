@@ -2,3 +2,5 @@
 /shelf/
 /workspace.xml
 ../srcFiles/
+../dstFiles/
+*.csv

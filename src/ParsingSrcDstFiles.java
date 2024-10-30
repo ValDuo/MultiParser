@@ -25,7 +25,7 @@ public class ParsingSrcDstFiles {
         int hour = createdTime.getHours();
         int minute = createdTime.getMinutes();
         int second = createdTime.getSeconds();
-        String path = createdTime.toString().replace(":","_")+".csv";
+        String path = "dstFiles/"+createdTime.toString().replace(":","_")+".csv";
         this.distination = new File(path);
         if (!this.distination.isFile() && !this.distination.isDirectory()){
             try{
