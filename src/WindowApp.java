@@ -2,15 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.*;
+import javax.swing.filechooser.*;
 
 public class WindowApp extends JFrame{
     JButton uploadFile = new JButton("Импортировать файл");
     JButton sendToProssesing = new JButton("Подать на обработку");
     JButton getFile = new JButton("Скачать готовый файл");
+    JLabel l = new JLabel("Файлы не выбраны");
 
     UploadThread uploadEvent = new UploadThread();
-    ProcessThread prosessingEvent = new ProcessThread();
+    ProcessThread processingEvent = new ProcessThread();
 
     JFileChooser fileChooser = new JFileChooser();
 
@@ -27,20 +29,34 @@ public class WindowApp extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 uploadEvent.start();
                 fileChooser.setDialogTitle("Выбор файла");
+                fileChooser.setMultiSelectionEnabled(true);
                 // Определение режима - только каталог
                 fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+
                 int result = fileChooser.showOpenDialog(WindowApp.this);
                 // Если директория выбрана, покажем ее в сообщении
-                if (result == JFileChooser.APPROVE_OPTION )
+                if (result == JFileChooser.APPROVE_OPTION ) {
+                    //массив выбранных файлов
+                    File files[] = fileChooser.getSelectedFiles();
+
                     JOptionPane.showMessageDialog(WindowApp.this,
-                            "Файл '" + fileChooser.getSelectedFile() + "' импортирован.");
+                            "Файл(ы) импортированы.");
+                    int t = 0;
+                    while (t++ < files.length)
+                        l.setText(l.getText() + " " + files[t - 1].getName());
+
+                }
+                else {
+                    l.setText("Вы отменили операцию.");
+                    uploadEvent.disable();
+                }
             }
         });
 
         //Добавляем функцию сохранения файла (кнопка getFile)
         getFile.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                prosessingEvent.start();
+                processingEvent.start();
                 fileChooser.setDialogTitle("Сохранение файла");
                 // Определение режима - только файл
                 fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -50,6 +66,10 @@ public class WindowApp extends JFrame{
                     JOptionPane.showMessageDialog(WindowApp.this,
                             "Файл '" + fileChooser.getSelectedFile() +
                                     " ) сохранен");
+                else {
+                    l.setText("Вы отменили операцию сохранения.");
+                    processingEvent.disable();
+                }
             }
         });
 
@@ -60,6 +80,7 @@ public class WindowApp extends JFrame{
         JPanel panel = new JPanel(new FlowLayout());
         panel.setLayout(new FlowLayout());
 
+        panel.add(l);
         panel.add(uploadFile);
         panel.add(sendToProssesing);
         panel.add(getFile);
