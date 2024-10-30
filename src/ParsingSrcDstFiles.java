@@ -25,13 +25,15 @@ public class ParsingSrcDstFiles {
         int hour = createdTime.getHours();
         int minute = createdTime.getMinutes();
         int second = createdTime.getSeconds();
-        this.distination = new File(String.format("%d-%d-%d %d:%d:%d_parsed.csv", year,month,day,hour,minute,second));
+        String path = createdTime.toString().replace(":","_")+".csv";
+        this.distination = new File(path);
         if (!this.distination.isFile() && !this.distination.isDirectory()){
             try{
-                this.distination.createNewFile();
+                boolean created = this.distination.createNewFile();
+                System.out.println(created);
             }
             catch (Exception e){
-
+                System.out.println(e.toString());
             }
         }
     }
