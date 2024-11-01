@@ -4,16 +4,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-public class CSVReader{
-    String path;
+public class CSVReader extends File{
+    String pathname;
     File csvFile;
-    CSVReader(String path) throws IOException{
-        this.path = path;
-        csvFile = new File(path);
-        if (!csvFile.isFile())
-            throw new IOException(String.format("не найден файл %s",path));
+    ArrayList<ArrayList<String>> lines = null;
+    public CSVReader(String pathname) {
+        super(pathname);
     }
+
     public ArrayList<ArrayList<String>> readLines(){
+        if(this.lines != null)
+            return this.lines;
         Scanner sc;
 
         try {
@@ -30,9 +31,11 @@ public class CSVReader{
             ArrayList<String> wordsList = new ArrayList<>(List.of(words));
             strings.add(wordsList);
         }
+        this.lines = strings;
         return strings;
     }
     public void printLines(){
+
         ArrayList<ArrayList<String>> lines = readLines();
         for(ArrayList<String> line:lines){
             for(String word:line){
@@ -40,5 +43,8 @@ public class CSVReader{
             }
             System.out.println();
         }
+    }
+    public int fileLen(){
+        return this.lines.size();
     }
 }
