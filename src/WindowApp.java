@@ -11,6 +11,7 @@ public class WindowApp extends JFrame{
     JButton getFile = new JButton("Скачать готовый файл");
     JLabel l = new JLabel("Файлы не выбраны");
 
+
     UploadThread uploadEvent = new UploadThread();
     ProcessThread processingEvent = new ProcessThread();
 
@@ -41,10 +42,11 @@ public class WindowApp extends JFrame{
 
                     JOptionPane.showMessageDialog(WindowApp.this,
                             "Файл(ы) импортированы.");
-                    int t = 0;
-                    while (t++ < files.length)
-                        l.setText(l.getText() + " " + files[t - 1].getName());
+                    l.setText("");
 
+                    for (File file : files) {
+                        l.setText(l.getText() + "\n" + file.getName());
+                    }
                 }
                 else {
                     l.setText("Вы отменили операцию.");
