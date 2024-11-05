@@ -61,15 +61,16 @@ public class SeleniumParser {
                 int kadastr_index = address.getText().indexOf("Адрес объекта:") - "Кадастровый номер:".length();
                 return address.getText().subSequence("Кадастровый номер:".length(),address.getText().indexOf("Адрес объекта:")).toString().strip();
             }
-
-
         }
         return null;
     }
     private ArrayList<String> addHome(ArrayList<String> addresses){
-        //TODO:
-        return null;
+        //TODO: optional: parse address to get addresses's parts
+        //TODO: like street, house, flat, etc
+
+        return addresses;
     }
+
 
 
 
