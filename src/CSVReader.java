@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class CSVReader extends File{
-    String pathname;
-    File csvFile;
-    ArrayList<ArrayList<String>> lines = null;
+    protected String pathname;
+    protected File csvFile;
+    protected ArrayList<ArrayList<String>> lines = null;
     public CSVReader(String pathname) {
         super(pathname);
     }
@@ -32,6 +32,7 @@ public class CSVReader extends File{
             strings.add(wordsList);
         }
         this.lines = strings;
+        sc.close();
         return strings;
     }
     public void printLines(){
@@ -43,6 +44,19 @@ public class CSVReader extends File{
             }
             System.out.println();
         }
+    }
+    public ArrayList<String> readLikeCSV(){
+        ArrayList<String> lines = new ArrayList<>();
+        Scanner sc;
+        try {
+           sc =  new Scanner(this.csvFile);
+        }
+        catch (IOException exception){
+            return null;
+        }
+        while (sc.hasNext())
+            lines.add(sc.nextLine());
+        return lines;
     }
     public int fileLen(){
         return this.lines.size();
