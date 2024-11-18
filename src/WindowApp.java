@@ -44,14 +44,12 @@ public class WindowApp extends JFrame{
     }
 
 
-    public File[] process(ProcessThread processingEvent, File[] mass, int n) {
+    public File[] process(File[] files, int n) {
         processingEvent.start();
-        File[] files = new File[n];
-
         int result = fileChooser.showSaveDialog(null);
         // Если файл выбран, то представим его в сообщении
         if (result == JFileChooser.APPROVE_OPTION ) {
-            for(File file : mass){
+            for(File file : files){
 
             }
         }
