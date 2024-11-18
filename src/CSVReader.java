@@ -28,7 +28,7 @@ public class CSVReader extends File{
             return null;
         }
         ArrayList<ArrayList<String>> strings = new ArrayList<>();
-        while(sc.hasNext()){
+        while(sc.hasNextLine()){
             String line = sc.nextLine();
             line = line.strip();
             String [] words = line.split(";");
@@ -58,7 +58,7 @@ public class CSVReader extends File{
         catch (IOException exception){
             return null;
         }
-        while (sc.hasNext())
+        while (sc.hasNextLine())
             lines.add(sc.nextLine());
         return lines;
     }
