@@ -29,8 +29,7 @@ public class WindowApp extends JFrame{
         // Если директория выбрана, покажем ее в сообщении
         if (result == JFileChooser.APPROVE_OPTION) {
             //массив выбранных файлов
-            File files[] = fileChooser.getSelectedFiles();
-
+            File[] files = fileChooser.getSelectedFiles();
             JOptionPane.showMessageDialog(null,
                     "Файл(ы) импортированы.");
             l.setText("");
@@ -44,7 +43,7 @@ public class WindowApp extends JFrame{
     }
 
 
-    public File[] process(File[] files, int n) {
+    public File[] process(File[] files) {
         processingEvent.start();
         int result = fileChooser.showSaveDialog(null);
         // Если файл выбран, то представим его в сообщении
@@ -54,7 +53,7 @@ public class WindowApp extends JFrame{
             }
         }
         else {
-            l.setText("Вы отменили операцию сохранения.");
+            l.setText("Вы отменили операцию обработки.");
             processingEvent.disable();
         }
         return files;
