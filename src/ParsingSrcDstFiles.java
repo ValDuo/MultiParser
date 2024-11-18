@@ -4,19 +4,26 @@ import java.util.Date;
 public class ParsingSrcDstFiles {
     CSVReader source;
     CSVReader distination;
-    Date createdTime;
+    Date createdTime = new Date();
     ParsingSrcDstFiles(String srcPath){
-        this.createdTime = new Date();
+        //this.createdTime = new Date();
         setSource(srcPath);
         setDistination();
     }
+    ParsingSrcDstFiles(CSVReader srcFile){
+        setSource(srcFile);
+        setDistination();
+    }
     ParsingSrcDstFiles(String srcPath, String dstPath){
-        this.createdTime = new Date();
+        //this.createdTime = new Date();
         setSource(srcPath);
         setDistination(dstPath);
     }
     private void setSource(String srcPath){
         this.source = new CSVReader(srcPath);
+    }
+    private void setSource(CSVReader srcFile){
+        this.source = srcFile;
     }
     private void setDistination() {
         int day = createdTime.getDay();

@@ -15,6 +15,9 @@ public class SeleniumParser {
     public void setSrcAndDst(String srcPath, String dstPath){
         this.srcDstFiles = new ParsingSrcDstFiles(srcPath,dstPath);
     }
+    public void setSrcAndDst(CSVReader srcFile){
+        this.srcDstFiles = new ParsingSrcDstFiles(srcFile);
+    }
     public void startParse() {
         final String url = "https://egrpru.com/";
         driver.get(url);

@@ -10,6 +10,10 @@ public class CSVReader extends File{
     protected ArrayList<ArrayList<String>> lines = null;
     public CSVReader(String pathname) {
         super(pathname);
+        csvFile = new File(pathname);
+    }
+    public CSVReader(File file){
+        this(file.getName());
     }
 
     public ArrayList<ArrayList<String>> readLines(){
@@ -59,6 +63,8 @@ public class CSVReader extends File{
         return lines;
     }
     public int fileLen(){
-        return this.lines.size();
+        if (this.lines != null)
+            return this.lines.size();
+        return 0;
     }
 }
