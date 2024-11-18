@@ -8,9 +8,8 @@ import javax.swing.filechooser.*;
 public class WindowApp extends JFrame{
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
-    UploadThread uploadEvent = new UploadThread();
     ProcessThread processingEvent = new ProcessThread();
-
+    JPanel panel = new JPanel(new FlowLayout());
 
     JButton uploadFile = new JButton("Выбрать файлы");
     JButton sendToProssesing = new JButton("Подать на обработку");
@@ -20,8 +19,7 @@ public class WindowApp extends JFrame{
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
             "csv", "csv");
 
-    public static void upload(UploadThread uploadEvent, JLabel l, JFileChooser fileChooser){
-        uploadEvent.start();
+    public void upload(JLabel l, JFileChooser fileChooser){
         fileChooser.setDialogTitle("Выбор файла");
         fileChooser.setMultiSelectionEnabled(true);
         // Определение режима - только каталог
@@ -38,34 +36,46 @@ public class WindowApp extends JFrame{
             l.setText("");
 
             for (File file : files) {
-                l.setText(l.getText() + "\n" + file.getName());
+                l.setText(l.getText() +"   "+ file.getName());
             }
         } else {
             l.setText("Вы отменили операцию.");
-            uploadEvent.disable();
         }
     }
 
-    public static void process(ProcessThread processingEvent, JLabel l, JFileChooser fileChooser) {
+
+    public File[] process(ProcessThread processingEvent, File[] mass, int n) {
         processingEvent.start();
+        File[] files = new File[n];
+
+        int result = fileChooser.showSaveDialog(null);
+        // Если файл выбран, то представим его в сообщении
+        if (result == JFileChooser.APPROVE_OPTION ) {
+            for(File file : mass){
+
+            }
+        }
+        else {
+            l.setText("Вы отменили операцию сохранения.");
+            processingEvent.disable();
+        }
+        return files;
+    }
+
+    public void save(File file) {
         fileChooser.setDialogTitle("Сохранение файла");
         // Определение режима - только файл
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         int result = fileChooser.showSaveDialog(null);
         // Если файл выбран, то представим его в сообщении
         if (result == JFileChooser.APPROVE_OPTION ) {
-            File files[] = fileChooser.getSelectedFiles();
+            System.out.println("Сохранить как: " + file.getAbsolutePath());
             JOptionPane.showMessageDialog(null,
                     "Файл(ы) сохранены.");
             l.setText("");
-
-            for (File file : files) {
-                l.setText(l.getText() + "\n" + file.getName());
-            }
         }
         else {
             l.setText("Вы отменили операцию сохранения.");
-            processingEvent.disable();
         }
     }
 
@@ -78,20 +88,27 @@ public class WindowApp extends JFrame{
         uploadFile.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                upload(uploadEvent, l, fileChooser);
+                upload(l, fileChooser);
              }
         });
 
         //Добавляем поток сохранения файла (если активна кнопка getFile)
 
 
-        sendToProssesing.addActionListener(new ActionListener() {
+//        sendToProssesing.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                process(processingEvent, mass, size);
+//            }
+//        });
+
+        getFile.addActionListener(new ActionListener() {
+            File f = new File("////Nasnet//общий обмен//ИТ//Калмыков АН//Дебеторка//08.11.24 2//csv50_24-10-30-10-22-00_179.csv");
             @Override
             public void actionPerformed(ActionEvent e) {
-                process(processingEvent, l, fileChooser);
+                save(f);
             }
         });
-        //save(processingEvent, l, fileChooser, uploadFile);
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(filter);
@@ -99,7 +116,7 @@ public class WindowApp extends JFrame{
 
 
         //Размещение кнопок в интерфейсе
-        JPanel panel = new JPanel(new FlowLayout());
+
         panel.setLayout(new FlowLayout());
 
         panel.add(l);
