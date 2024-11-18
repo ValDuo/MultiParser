@@ -17,7 +17,8 @@ public class BigCSVCutter extends CSVReader {
         for(String line:lines){
             //TODO: make this shit fine
             //TODO: i'm so tired
-            //TODO: maybe we will finish to next weekend, but i don't think so
+            //TODO: maybe we will finish it TODAY
+
         }
 
     }
