@@ -1,65 +1,71 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 public class CSVReader extends File{
     protected String pathname;
     protected File csvFile;
-    protected ArrayList<ArrayList<String>> lines = null;
+    protected ArrayList<ArrayList<String>> words = null;
+    protected ArrayList<String> lines;
     public CSVReader(String pathname) {
         super(pathname);
+        this.pathname = pathname;
         csvFile = new File(pathname);
     }
     public CSVReader(File file){
         this(file.getName());
     }
 
-    public ArrayList<ArrayList<String>> readLines(){
+    public ArrayList<String> readLines(){
         if(this.lines != null)
             return this.lines;
-        Scanner sc;
+        BufferedReader reader = null;
 
         try {
-            sc = new Scanner(csvFile);
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(this.csvFile), "cp1251"));
         }
-        catch (FileNotFoundException exception){
-            return null;
+        catch (Exception exception){
+            System.out.println(exception);
         }
-        ArrayList<ArrayList<String>> strings = new ArrayList<>();
-        while(sc.hasNextLine()){
-            String line = sc.nextLine();
-            line = line.strip();
-            String [] words = line.split(";");
-            ArrayList<String> wordsList = new ArrayList<>(List.of(words));
-            strings.add(wordsList);
+        //ArrayList<ArrayList<String>> strings =
+//        while(reader.){
+//            String line = reader.nextLine();
+//            line = line.strip();
+//            String [] words = line.split(";");
+//            ArrayList<String> wordsList = new ArrayList<>(List.of(words));
+//            strings.add(wordsList);
+//        }
+        //this.lines = strings;
+        //reader.close();
+        ArrayList<String> lines = new ArrayList<>();
+        if (reader != null) {
+            reader.lines().forEach(lines::add);
         }
-        this.lines = strings;
-        sc.close();
-        return strings;
+        this.lines = lines;
+        return this.lines;
     }
     public void printLines(){
 
-        ArrayList<ArrayList<String>> lines = readLines();
-        for(ArrayList<String> line:lines){
-            for(String word:line){
-                System.out.print(word);
-            }
-            System.out.println();
+        ArrayList<String> lines= readLines();
+        for(String line:lines){
+            System.out.println(line);
         }
     }
     public ArrayList<String> readLikeCSV(){
         ArrayList<String> lines = new ArrayList<>();
-        Scanner sc;
+        BufferedReader reader;
         try {
-           sc =  new Scanner(this.csvFile);
+           reader =  new BufferedReader(new FileReader(pathname));
         }
+
         catch (IOException exception){
             return null;
         }
-        while (sc.hasNextLine())
-            lines.add(sc.nextLine());
+        reader.lines().forEach(lines::add);
+
+//        while (reader.hasNextLine())
+//            lines.add(reader.nextLine());
         return lines;
     }
     public int fileLen(){
