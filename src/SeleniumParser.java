@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 
+
 public class SeleniumParser {
     WebDriver driver;
     ParsingSrcDstFiles srcDstFiles;
@@ -22,8 +23,6 @@ public class SeleniumParser {
         final String url = "https://egrpru.com/";
         driver.get(url);
         sendKadastrs();
-
-
 //        Thread.sleep(100);
         driver.close();
     }
@@ -75,10 +74,5 @@ public class SeleniumParser {
 
         return addresses;
     }
-
-
-
-
-
 
 }
