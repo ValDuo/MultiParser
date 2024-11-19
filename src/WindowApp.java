@@ -8,7 +8,7 @@ import javax.swing.filechooser.*;
 public class WindowApp extends JFrame{
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
-    ProcessThread processingEvent = new ProcessThread();
+    ProcessThread processingEvent;
     JPanel panel = new JPanel(new FlowLayout());
 
     JButton uploadFile = new JButton("Выбрать файлы");
@@ -30,6 +30,7 @@ public class WindowApp extends JFrame{
         if (result == JFileChooser.APPROVE_OPTION) {
             //массив выбранных файлов
             File[] files = fileChooser.getSelectedFiles();
+            process(files);
             JOptionPane.showMessageDialog(null,
                     "Файл(ы) импортированы.");
             l.setText("");
@@ -44,7 +45,10 @@ public class WindowApp extends JFrame{
 
 
     public File[] process(File[] files) {
-        processingEvent.start();
+        for(File file:files) {
+            ProcessThread processingEvent = new ProcessThread(new CSVReader(file.getAbsolutePath()));
+            processingEvent.start();
+        }
         int result = fileChooser.showSaveDialog(null);
         // Если файл выбран, то представим его в сообщении
         if (result == JFileChooser.APPROVE_OPTION ) {
