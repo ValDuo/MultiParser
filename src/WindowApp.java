@@ -46,7 +46,7 @@ public class WindowApp extends JFrame{
 
     public File[] process(File[] files) {
         for(File file:files) {
-            ProcessThread processingEvent = new ProcessThread(new CSVReader(file.getAbsolutePath()));
+            ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
             processingEvent.start();
         }
         int result = fileChooser.showSaveDialog(null);

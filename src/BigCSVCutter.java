@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class BigCSVCutter extends CSVReader {
+public class BigCSVCutter extends CSV_IO {
 
     public BigCSVCutter(String pathname) {
         super(pathname);

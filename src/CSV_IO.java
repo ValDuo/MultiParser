@@ -1,31 +1,43 @@
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-public class CSVReader extends File{
+
+public class CSV_IO extends File {
     protected String pathname;
     protected File csvFile;
     protected ArrayList<ArrayList<String>> words = null;
     protected ArrayList<String> lines;
-    public CSVReader(String pathname) {
+    protected String mode = "r";
+
+    public CSV_IO(String pathname, String mode) {
         super(pathname);
         this.pathname = pathname;
-        csvFile = new File(pathname);
+        this.csvFile = new File(pathname);
+        this.mode = mode;
     }
-    public CSVReader(File file){
+
+    public CSV_IO(File file, String mode) {
+        this(file.getName(), mode);
+    }
+
+    public CSV_IO(String pathname) {
+        super(pathname);
+        this.pathname = pathname;
+        this.csvFile = new File(pathname);
+    }
+
+    public CSV_IO(File file) {
         this(file.getName());
     }
 
-    public ArrayList<String> readLines(){
-        if(this.lines != null)
+
+    public ArrayList<String> readLines() {
+        if (this.lines != null)
             return this.lines;
         BufferedReader reader = null;
 
         try {
             reader = new BufferedReader(new InputStreamReader(new FileInputStream(this.csvFile), "cp1251"));
-        }
-        catch (Exception exception){
+        } catch (Exception exception) {
             System.out.println(exception);
         }
         //ArrayList<ArrayList<String>> strings =
@@ -45,21 +57,21 @@ public class CSVReader extends File{
         this.lines = lines;
         return this.lines;
     }
-    public void printLines(){
 
-        ArrayList<String> lines= readLines();
-        for(String line:lines){
+    public void printLines() {
+
+        ArrayList<String> lines = readLines();
+        for (String line : lines) {
             System.out.println(line);
         }
     }
-    public ArrayList<String> readLikeCSV(){
+
+    public ArrayList<String> readLikeCSV() {
         ArrayList<String> lines = new ArrayList<>();
         BufferedReader reader;
         try {
-           reader =  new BufferedReader(new FileReader(pathname));
-        }
-
-        catch (IOException exception){
+            reader = new BufferedReader(new FileReader(pathname));
+        } catch (IOException exception) {
             return null;
         }
         reader.lines().forEach(lines::add);
@@ -68,9 +80,41 @@ public class CSVReader extends File{
 //            lines.add(reader.nextLine());
         return lines;
     }
-    public int fileLen(){
+
+    public int fileLen() {
         if (this.lines != null)
             return this.lines.size();
         return 0;
     }
+
+    public boolean write(String string) {
+        FileWriter writer;
+        try {
+            writer = new FileWriter(this.csvFile);
+            writer.write(string);
+        } catch (IOException e) {
+            System.out.println(e);
+            return false;
+        }
+        return true;
+    }
+
+    public boolean writeCSVWord(String string) {
+        return write(string + ";");
+    }
+
+    public boolean writeCSVLine(ArrayList<String> words) {
+        boolean result;
+        for (String word : words) {
+            result = write(word + ";");
+            if (!result) {
+                return result;
+
+            }
+
+        }
+        result = write("\n");
+        return result;
+    }
 }
+
