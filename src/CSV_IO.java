@@ -88,10 +88,11 @@ public class CSV_IO extends File {
     }
 
     public boolean write(String string) {
-        FileWriter writer;
+        BufferedWriter writer;
         try {
-            writer = new FileWriter(this.csvFile);
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.csvFile), "cp1251"));
             writer.write(string);
+            writer.close();
         } catch (IOException e) {
             System.out.println(e);
             return false;

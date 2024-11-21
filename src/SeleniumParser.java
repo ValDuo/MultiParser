@@ -40,7 +40,7 @@ public class SeleniumParser {
             }
             ArrayList<WebElement> addressesRecieved = (ArrayList<WebElement>) driver.findElements(By.className("search-result__row"));
             String result_text = checkReciviedAddress(addressesRecieved);
-
+            srcDstFiles.getDistination().writeCSVWord(result_text);
         }
     }
 
