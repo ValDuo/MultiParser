@@ -16,7 +16,7 @@ public class SeleniumParser {
     public void setSrcAndDst(String srcPath, String dstPath){
         this.srcDstFiles = new ParsingSrcDstFiles(srcPath,dstPath);
     }
-    public void setSrcAndDst(CSVReader srcFile){
+    public void setSrcAndDst(CSV_IO srcFile){
         this.srcDstFiles = new ParsingSrcDstFiles(srcFile);
     }
     public void startParse() {
@@ -41,8 +41,7 @@ public class SeleniumParser {
             }
             ArrayList<WebElement> addressesRecieved = (ArrayList<WebElement>) driver.findElements(By.className("search-result__row"));
             String result_text = checkReciviedAddress(addressesRecieved);
-            this.srcDstFiles.getDistination().writeCSVWord(result_text);
-
+            srcDstFiles.getDistination().writeCSVWord(result_text);
         }
     }
 
@@ -56,7 +55,7 @@ public class SeleniumParser {
         ArrayList<String> lines = srcDstFiles.source.readLines();
         for(int i = 0; i < lines.size(); i++){
             String[] line_splitted = lines.get(i).split(";");
-            addresses.add(line_splitted[0]);
+            addresses.add(line_splitted[column]);
         }
         return addresses;
     }

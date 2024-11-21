@@ -1,16 +1,15 @@
-import java.io.File;
 import java.util.Date;
 
 public class ParsingSrcDstFiles {
-    CSVReader source;
-    CSVReader distination;
+    CSV_IO source;
+    CSV_IO distination;
     Date createdTime = new Date();
     ParsingSrcDstFiles(String srcPath){
         //this.createdTime = new Date();
         setSource(srcPath);
         setDistination();
     }
-    ParsingSrcDstFiles(CSVReader srcFile){
+    ParsingSrcDstFiles(CSV_IO srcFile){
         setSource(srcFile);
         setDistination();
     }
@@ -20,9 +19,9 @@ public class ParsingSrcDstFiles {
         setDistination(dstPath);
     }
     private void setSource(String srcPath){
-        this.source = new CSVReader(srcPath);
+        this.source = new CSV_IO(srcPath);
     }
-    private void setSource(CSVReader srcFile){
+    private void setSource(CSV_IO srcFile){
         this.source = srcFile;
     }
     private void setDistination() {
@@ -33,7 +32,7 @@ public class ParsingSrcDstFiles {
         int minute = createdTime.getMinutes();
         int second = createdTime.getSeconds();
         String path = "dstFiles/"+createdTime.toString().replace(":","_")+".csv";
-        this.distination = new CSVReader(path);
+        this.distination = new CSV_IO(path);
         if (!this.distination.isFile() && !this.distination.isDirectory()){
             try{
                 boolean created = this.distination.createNewFile();
@@ -45,7 +44,7 @@ public class ParsingSrcDstFiles {
         }
     }
     private void setDistination(String path){
-        CSVReader newFile = new CSVReader(path);
+        CSV_IO newFile = new CSV_IO(path);
         if (newFile.isFile()){
             this.distination = newFile;
         }
@@ -55,10 +54,10 @@ public class ParsingSrcDstFiles {
 
     }
 
-    public CSVReader getDistination() {
+    public CSV_IO getDistination() {
         return distination;
     }
-    public CSVReader getSource() {
+    public CSV_IO getSource() {
         return source;
     }
 }
