@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -5,13 +6,15 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import javax.swing.filechooser.*;
 
+
 public class WindowApp extends JFrame{
+    public static final Color dark_green = new Color(48, 133, 66);
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
-    ProcessThread processingEvent = new ProcessThread();
+    ProcessThread processingEvent;
     JPanel panel = new JPanel(new FlowLayout());
 
-    JButton uploadFile = new JButton("Выбрать файлы");
+    RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     JButton sendToProssesing = new JButton("Подать на обработку");
     JButton getFile = new JButton("Скачать готовый файл");
 
@@ -19,7 +22,7 @@ public class WindowApp extends JFrame{
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
             "csv", "csv");
 
-    public void upload(JLabel l, JFileChooser fileChooser){
+    public void upload(){
         fileChooser.setDialogTitle("Выбор файла");
         fileChooser.setMultiSelectionEnabled(true);
         // Определение режима - только каталог
@@ -30,6 +33,7 @@ public class WindowApp extends JFrame{
         if (result == JFileChooser.APPROVE_OPTION) {
             //массив выбранных файлов
             File[] files = fileChooser.getSelectedFiles();
+            process(files);
             JOptionPane.showMessageDialog(null,
                     "Файл(ы) импортированы.");
             l.setText("");
@@ -44,7 +48,10 @@ public class WindowApp extends JFrame{
 
 
     public File[] process(File[] files) {
-        processingEvent.start();
+        for(File file:files) {
+            ProcessThread processingEvent = new ProcessThread(new CSVReader(file.getAbsolutePath()));
+            processingEvent.start();
+        }
         int result = fileChooser.showSaveDialog(null);
         // Если файл выбран, то представим его в сообщении
         if (result == JFileChooser.APPROVE_OPTION ) {
@@ -85,7 +92,7 @@ public class WindowApp extends JFrame{
         uploadFile.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
-                upload(l, fileChooser);
+                upload();
              }
         });
 
@@ -110,10 +117,22 @@ public class WindowApp extends JFrame{
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(filter);
 
+        //Добавляем стилизацию на кнопки
+        uploadFile.setPreferredSize(new Dimension(200, 40));
+        uploadFile.setBgColor(dark_green); // Set button background color
+        uploadFile.setBorder();
+        uploadFile.setTextColor(Color.WHITE); // Set button text color
+        uploadFile.setArcWidth(20); // Set button arc width
+        uploadFile.setArcHeight(20); // Set button arc height 60
+        uploadFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+
+        //uploadFile.setBounds(100, 100, 200, 200);
+        //uploadFile.setBackground(Color.WHITE);
+        //uploadFile.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
 
 
         //Размещение кнопок в интерфейсе
-
         panel.setLayout(new FlowLayout());
 
         panel.add(l);

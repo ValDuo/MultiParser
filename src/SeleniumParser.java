@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import java.util.ArrayList;
 
+
 public class SeleniumParser {
     WebDriver driver;
     ParsingSrcDstFiles srcDstFiles;
@@ -15,12 +16,13 @@ public class SeleniumParser {
     public void setSrcAndDst(String srcPath, String dstPath){
         this.srcDstFiles = new ParsingSrcDstFiles(srcPath,dstPath);
     }
+    public void setSrcAndDst(CSVReader srcFile){
+        this.srcDstFiles = new ParsingSrcDstFiles(srcFile);
+    }
     public void startParse() {
         final String url = "https://egrpru.com/";
         driver.get(url);
         sendKadastrs();
-
-
 //        Thread.sleep(100);
         driver.close();
     }
@@ -43,6 +45,7 @@ public class SeleniumParser {
 
         }
     }
+
     private ArrayList<String> getAddresses(int column){
         // думаю, будет уместо 2 варианта поиска адреса
         // потому что регулярка для проверки адреса займет больше времени
@@ -50,9 +53,10 @@ public class SeleniumParser {
         // 1) передавать в списке только адреса
         // 2) передавать в отдельном поле ввода номер столбца, в котором лежит адрес
         ArrayList<String> addresses = new ArrayList<>();
-        ArrayList<ArrayList<String>> lines = srcDstFiles.source.readLines();
+        ArrayList<String> lines = srcDstFiles.source.readLines();
         for(int i = 0; i < lines.size(); i++){
-            addresses.add(lines.get(i).get(column));
+            String[] line_splitted = lines.get(i).split(";");
+            addresses.add(line_splitted[0]);
         }
         return addresses;
     }
@@ -71,10 +75,5 @@ public class SeleniumParser {
 
         return addresses;
     }
-
-
-
-
-
 
 }
