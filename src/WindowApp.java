@@ -8,15 +8,16 @@ import javax.swing.filechooser.*;
 
 
 public class WindowApp extends JFrame{
-    public static final Color dark_green = new Color(48, 133, 66);
+    Color dark_green = new Color(48, 133, 66);
+    Color dark_dark_green = new Color(23, 83, 36);
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
     ProcessThread processingEvent;
     JPanel panel = new JPanel(new FlowLayout());
 
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
-    JButton sendToProssesing = new JButton("Подать на обработку");
-    JButton getFile = new JButton("Скачать готовый файл");
+    RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
+    RoundedButton getFile = new RoundedButton("Скачать готовый файл");
 
 
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -117,19 +118,24 @@ public class WindowApp extends JFrame{
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(filter);
 
-        //Добавляем стилизацию на кнопки
+        //Добавляем стилизацию на кнопку добавления файлов
         uploadFile.setPreferredSize(new Dimension(200, 40));
-        uploadFile.setBgColor(dark_green); // Set button background color
-        uploadFile.setBorder();
-        uploadFile.setTextColor(Color.WHITE); // Set button text color
-        uploadFile.setArcWidth(20); // Set button arc width
-        uploadFile.setArcHeight(20); // Set button arc height 60
+        uploadFile.setBgColor(dark_green);
+        uploadFile.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
+        uploadFile.setTextColor(Color.WHITE);
+        uploadFile.setArcWidth(20);
+        uploadFile.setArcHeight(20);
         uploadFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
+        //Добавляем стилизацию на кнопку обработки файлов
+        sendToProssesing.setPreferredSize(new Dimension(200, 40));
+        sendToProssesing.setBgColor(dark_dark_green);
+        sendToProssesing.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
+        sendToProssesing.setTextColor(Color.WHITE);
+        sendToProssesing.setArcWidth(20);
+        sendToProssesing.setArcHeight(20);
+        sendToProssesing.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        //uploadFile.setBounds(100, 100, 200, 200);
-        //uploadFile.setBackground(Color.WHITE);
-        //uploadFile.setBorder(BorderFactory.createLineBorder(Color.BLUE, 5));
 
 
         //Размещение кнопок в интерфейсе
