@@ -2,11 +2,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ProcessThread extends Thread{
     private boolean isActive;
-    private CSVReader csv;
+    private CSV_IO csv;
     void disable(){
         isActive= false;
     }
-    ProcessThread(CSVReader srcFile){
+    ProcessThread(CSV_IO srcFile){
         super();
         isActive = true;
         this.csv = srcFile;
