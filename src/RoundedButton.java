@@ -31,6 +31,7 @@ public class RoundedButton extends JButton {
         g2.setColor(bgColor);
         g2.fill(roundedRectangle);
         g2.setColor(textColor);
+        g2.
         FontMetrics metrics = g2.getFontMetrics(getFont());
         int x = (width - metrics.stringWidth(getText())) / 2;
         int y = ((height - metrics.getHeight()) / 2) + metrics.getAscent();
