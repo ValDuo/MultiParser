@@ -9,19 +9,22 @@ public class BigCSVCutter extends CSV_IO {
         super(pathname);
     }
     protected void extractInFolder(File folder){
-        ArrayList<String> lines = readLikeCSV();
+        ArrayList<String> lines = this.readLikeCSV();
         int countLine = 0;
-        int countFile = 0;
+        int countFile = 1;
         Date date = new Date();
-        String dateStr = String.format("%d-%d-%d", date.getDay(), date.getMonth(), date.getYear()-100);
-        for(String line:lines){
-            //TODO: make this shit fine
-            //TODO: i'm so tired
-            //TODO: maybe we will finish it TODAY
-
+        String dateStr = String.format("%d-%d-%d_", date.getDay(), date.getMonth(), date.getYear()-100);
+        for(int i = 0; i < this.fileLen(); i+=50){
+            CSV_IO curFile = new CSV_IO(dateStr+countFile);
+            for(int j = i; j < i + 50; j++){
+                if (j > lines.size())
+                    return;
+                curFile.write(lines.get(j));
+            }
+            countFile+=1;
         }
-
     }
+
     protected void createFolder(String path) throws IOException{
         File folder = new File(path);
         boolean created = folder.mkdir();

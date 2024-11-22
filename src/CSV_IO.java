@@ -75,9 +75,6 @@ public class CSV_IO extends File {
             return null;
         }
         reader.lines().forEach(lines::add);
-
-//        while (reader.hasNextLine())
-//            lines.add(reader.nextLine());
         return lines;
     }
 
