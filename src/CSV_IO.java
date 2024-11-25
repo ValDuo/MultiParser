@@ -87,7 +87,7 @@ public class CSV_IO extends File {
     public boolean write(String string) {
         BufferedWriter writer;
         try {
-            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.csvFile), "cp1251"));
+            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(this.csvFile, true), "cp1251"));
             writer.write(string);
             writer.close();
         } catch (IOException e) {
@@ -107,12 +107,16 @@ public class CSV_IO extends File {
             result = write(word + ";");
             if (!result) {
                 return result;
-
             }
 
         }
         result = write("\n");
         return result;
+    }
+    public boolean writeCSVLine(String line){
+        writeCSVWord(line);
+        write("\n");
+        return true;
     }
 }
 
