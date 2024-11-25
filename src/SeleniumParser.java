@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.Keys;
 import java.util.ArrayList;
 
 
@@ -41,10 +42,16 @@ public class SeleniumParser {
             }
             ArrayList<WebElement> addressesRecieved = (ArrayList<WebElement>) driver.findElements(By.className("search-result__row"));
             String result_text = checkReciviedAddress(addressesRecieved);
-            srcDstFiles.getDistination().writeCSVWord(result_text);
+            srcDstFiles.getDistination().writeCSVLine(result_text);
+            // чистим поле ввода, clear не работает :(((((((
+            form_input = driver.findElement(By.id("form_search"));
+            this.clear_input(form_input, addresses.get(i));
         }
     }
-
+    private void clear_input(WebElement input, String address){
+        for(int i = 0; i < address.length(); i++)
+            input.sendKeys(Keys.BACK_SPACE);
+    }
     private ArrayList<String> getAddresses(int column){
         // думаю, будет уместо 2 варианта поиска адреса
         // потому что регулярка для проверки адреса займет больше времени
