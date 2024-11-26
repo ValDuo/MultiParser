@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.zip.*;
@@ -30,7 +31,26 @@ public class ComparatorSentRecieved {
 
     }
     private void extractZip(){
-
+        File[] zipFiles = responseDirectory.listFiles();
+        ZipInputStream zipInputStream;
+        ZipOutputStream zipOutputStream;
+        if (zipFiles!= null){
+            for(File zipFile: zipFiles){
+                try {
+                    zipInputStream= new ZipInputStream(new FileInputStream(zipFile));
+                    zipInputStream.read();
+                }
+                catch(IOException e){
+                    System.out.println(e);
+                    }
+            }
+        }
+    }
+    private File createExctractDirectory(){
+        String newDirectoryPath = this.responseDirectory.getAbsolutePath() + "new";
+        File newDirectory = new File(newDirectoryPath);
+        newDirectory.mkdir();
+        return newDirectory;
     }
     private void delete_non_xml(){
 
