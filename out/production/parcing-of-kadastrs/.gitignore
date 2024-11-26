@@ -1,0 +1,9 @@
+/emaple.java
+../srcFiles/
+../dstFiles/
+*.csv
+*.zip
+*.xmls
+*.xls
+*.pdf
+*.sig
