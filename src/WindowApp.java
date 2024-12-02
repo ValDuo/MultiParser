@@ -9,7 +9,9 @@ public class WindowApp extends JFrame{
     Color dark_green = new Color(48, 133, 66);
     Color dark_dark_green = new Color(23, 83, 36);
     Color dark_blue = new Color(38, 99, 191);
+    Color dark_dark_blue = new Color(5, 48, 113);
     Color purple = new Color(141,68,173);
+    Color dark_purple = new Color(88, 17, 120);
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
 
@@ -97,7 +99,7 @@ public class WindowApp extends JFrame{
         //Добавляем стилизацию на кнопку добавления файлов
         uploadFile.setPreferredSize(new Dimension(200, 40));
         uploadFile.setBgColor(dark_green);
-        uploadFile.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
+        uploadFile.setBorderColor(dark_dark_green);
         uploadFile.setTextColor(Color.WHITE);
         uploadFile.setArcWidth(20);
         uploadFile.setArcHeight(20);
@@ -106,20 +108,22 @@ public class WindowApp extends JFrame{
         //Добавляем стилизацию на кнопку обработки файлов
         sendToProssesing.setPreferredSize(new Dimension(270, 40));
         sendToProssesing.setBgColor(dark_blue);
-        sendToProssesing.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
+        sendToProssesing.setBorderColor(dark_dark_blue);
         sendToProssesing.setTextColor(Color.WHITE);
         sendToProssesing.setArcWidth(20);
         sendToProssesing.setArcHeight(20);
         sendToProssesing.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
+
         //Добавила стилизацию на кнопку
         filterFile.setPreferredSize(new Dimension(450, 50));
         filterFile.setBgColor(purple);
-        filterFile.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
+        filterFile.setBorderColor(dark_purple);
         filterFile.setTextColor(Color.WHITE);
         filterFile.setArcWidth(30);
         filterFile.setArcHeight(30);
         filterFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
 
 
 
