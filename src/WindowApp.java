@@ -1,8 +1,6 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import javax.swing.filechooser.*;
 
@@ -11,13 +9,15 @@ public class WindowApp extends JFrame{
     Color dark_green = new Color(48, 133, 66);
     Color dark_dark_green = new Color(23, 83, 36);
     Color dark_blue = new Color(38, 99, 191);
+    Color purple = new Color(141,68,173);
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
-    ProcessThread processingEvent;
+
     JPanel panel = new JPanel(new FlowLayout());
 
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
+    RoundedButton filterFile = new RoundedButton("Просеять файл");
 
     File[] files;
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -50,11 +50,30 @@ public class WindowApp extends JFrame{
 
 
     public void process(File[] files) {
-            for(File file:files) {
+        if (files == null){
+            JOptionPane.showMessageDialog(null,
+                    "Список не загружен! Нажмите кнопку 'Выбрать файлы'.");
+        }
+        else {
+            for (File file : files) {
                 ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
                 processingEvent.start();
             }
+        }
     }
+    public void filter(File[] files) {
+        if (files == null){
+            JOptionPane.showMessageDialog(null,
+                    "Ошибка фильтрации! Повторите этап обработки.");
+        }
+        else {
+            for (File file : files) {
+                ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
+                processingEvent.start();
+            }
+        }
+    }
+
 
 
     public WindowApp() {
@@ -62,22 +81,14 @@ public class WindowApp extends JFrame{
 
         //Добавляем поток загрузки файла (если активна кнопка uploadFile)
 
-        uploadFile.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 files = upload();
-             }
-        });
+        uploadFile.addActionListener(e -> files = upload());
 
  //       Добавляем поток сохранения файла (если активна кнопка getFile)
 
 
-        sendToProssesing.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                process(files);
-            }
-        });
+        sendToProssesing.addActionListener(e -> process(files));
+
+        filterFile.addActionListener(e -> filter(files));
 
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
@@ -93,22 +104,33 @@ public class WindowApp extends JFrame{
         uploadFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         //Добавляем стилизацию на кнопку обработки файлов
-        sendToProssesing.setPreferredSize(new Dimension(300, 60));
+        sendToProssesing.setPreferredSize(new Dimension(270, 40));
         sendToProssesing.setBgColor(dark_blue);
         sendToProssesing.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
         sendToProssesing.setTextColor(Color.WHITE);
-        sendToProssesing.setArcWidth(30);
-        sendToProssesing.setArcHeight(30);
+        sendToProssesing.setArcWidth(20);
+        sendToProssesing.setArcHeight(20);
         sendToProssesing.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        //Добавила стилизацию на кнопку
+        filterFile.setPreferredSize(new Dimension(450, 50));
+        filterFile.setBgColor(purple);
+        filterFile.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
+        filterFile.setTextColor(Color.WHITE);
+        filterFile.setArcWidth(30);
+        filterFile.setArcHeight(30);
+        filterFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
 
 
         //Размещение кнопок в интерфейсе
         panel.setLayout(new FlowLayout());
 
+
         panel.add(l);
         panel.add(uploadFile);
         panel.add(sendToProssesing);
+        panel.add(filterFile);
 
         //Вывод окна на экран
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
