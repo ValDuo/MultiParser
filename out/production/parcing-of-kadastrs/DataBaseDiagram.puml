@@ -1,8 +1,8 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-WindowApp <|-- SeleniumParser
-WindowApp <|-- CSVReader
+
+
 WindowApp <|-- DebtorList
 WindowApp <|-- IncomingEmails
 CSVReader <|-- BigCSVCutter
@@ -10,22 +10,24 @@ SeleniumParser <|-- Status
 IncomingEmails <|-- WithKadastrList
 
 class BigCSVCutter {
-   # Integer countLine
-   # Integer countFile
-   # Date date
-   # String dateStr
-   # File folder
-   # Boolean created
+    + BigCSVCutter(String pathname);
+    # void createFolder(String path);
+    # void extractInFolder(File folder);
 }
 class SeleniumParser {
-    - Integer driver
-    - String srcDstFiles
+    - WebDriver driver;
+    - ParsingSrcDstFiles srcDstFiles;
+    + void setSrcAndDst(String srcPath);
+    + void setSrcAndDst(String srcPath, String dstPath);
+    + void setSrcAndDst(CSVReader srcFile);
+    + void startParse();
+    + void sendKadastrs();
 }
 class CSVReader{
-    # String pathname
-    # File csvFile
-    # Array words
-    # Array  lines
+    # String pathname;
+    # File csvFile;
+    # ArrayList<ArrayList<String>> words = null;
+    # ArrayList<String> lines;
 }
 
 class DebtorList {
@@ -55,9 +57,9 @@ class IncomingEmails{
      - String emailReceiver
 }
 class WithKadastrList{
-    - String source
-    - String destination
-    - Date createdTime
+    - CSVReader source;
+    - CSVReader distination;
+    - Date createdTime;
 }
 
 enum Status {

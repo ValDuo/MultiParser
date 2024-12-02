@@ -1,8 +1,6 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import javax.swing.filechooser.*;
 
@@ -10,20 +8,22 @@ import javax.swing.filechooser.*;
 public class WindowApp extends JFrame{
     Color dark_green = new Color(48, 133, 66);
     Color dark_dark_green = new Color(23, 83, 36);
+    Color dark_blue = new Color(38, 99, 191);
+    Color purple = new Color(141,68,173);
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
-    ProcessThread processingEvent;
+
     JPanel panel = new JPanel(new FlowLayout());
 
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
-    RoundedButton getFile = new RoundedButton("Скачать готовый файл");
+    RoundedButton filterFile = new RoundedButton("Просеять файл");
 
-
+    File[] files;
     FileNameExtensionFilter filter = new FileNameExtensionFilter(
             "csv", "csv");
 
-    public void upload(){
+    public File[] upload(){
         fileChooser.setDialogTitle("Выбор файла");
         fileChooser.setMultiSelectionEnabled(true);
         // Определение режима - только каталог
@@ -34,7 +34,6 @@ public class WindowApp extends JFrame{
         if (result == JFileChooser.APPROVE_OPTION) {
             //массив выбранных файлов
             File[] files = fileChooser.getSelectedFiles();
-            process(files);
             JOptionPane.showMessageDialog(null,
                     "Файл(ы) импортированы.");
             l.setText("");
@@ -42,47 +41,39 @@ public class WindowApp extends JFrame{
             for (File file : files) {
                 l.setText(l.getText() +"   "+ file.getName());
             }
+            return files;
         } else {
             l.setText("Вы отменили операцию.");
         }
+        return null;
     }
 
 
-    public File[] process(File[] files) {
-        for(File file:files) {
-            ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
-            processingEvent.start();
+    public void process(File[] files) {
+        if (files == null){
+            JOptionPane.showMessageDialog(null,
+                    "Список не загружен! Нажмите кнопку 'Выбрать файлы'.");
         }
-        int result = fileChooser.showSaveDialog(null);
-        // Если файл выбран, то представим его в сообщении
-        if (result == JFileChooser.APPROVE_OPTION ) {
-            for(File file : files){
-
+        else {
+            for (File file : files) {
+                ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
+                processingEvent.start();
             }
         }
-        else {
-            l.setText("Вы отменили операцию обработки.");
-            processingEvent.disable();
+    }
+    public void filter(File[] files) {
+        if (files == null){
+            JOptionPane.showMessageDialog(null,
+                    "Ошибка фильтрации! Повторите этап обработки.");
         }
-        return files;
+        else {
+            for (File file : files) {
+                ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
+                processingEvent.start();
+            }
+        }
     }
 
-    public void save(File file) {
-        fileChooser.setDialogTitle("Сохранение файла");
-        // Определение режима - только файл
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        int result = fileChooser.showSaveDialog(null);
-        // Если файл выбран, то представим его в сообщении
-        if (result == JFileChooser.APPROVE_OPTION ) {
-            System.out.println("Сохранить как: " + file.getAbsolutePath());
-            JOptionPane.showMessageDialog(null,
-                    "Файл(ы) сохранены.");
-            l.setText("");
-        }
-        else {
-            l.setText("Вы отменили операцию сохранения.");
-        }
-    }
 
 
     public WindowApp() {
@@ -90,30 +81,15 @@ public class WindowApp extends JFrame{
 
         //Добавляем поток загрузки файла (если активна кнопка uploadFile)
 
-        uploadFile.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                upload();
-             }
-        });
+        uploadFile.addActionListener(e -> files = upload());
 
-        //Добавляем поток сохранения файла (если активна кнопка getFile)
+ //       Добавляем поток сохранения файла (если активна кнопка getFile)
 
 
-//        sendToProssesing.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                process(processingEvent, mass, size);
-//            }
-//        });
+        sendToProssesing.addActionListener(e -> process(files));
 
-        getFile.addActionListener(new ActionListener() {
-            File f = new File("////Nasnet//общий обмен//ИТ//Калмыков АН//Дебеторка//08.11.24 2//csv50_24-10-30-10-22-00_179.csv");
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                save(f);
-            }
-        });
+        filterFile.addActionListener(e -> filter(files));
+
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(filter);
@@ -128,23 +104,33 @@ public class WindowApp extends JFrame{
         uploadFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         //Добавляем стилизацию на кнопку обработки файлов
-        sendToProssesing.setPreferredSize(new Dimension(200, 40));
-        sendToProssesing.setBgColor(dark_dark_green);
+        sendToProssesing.setPreferredSize(new Dimension(270, 40));
+        sendToProssesing.setBgColor(dark_blue);
         sendToProssesing.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
         sendToProssesing.setTextColor(Color.WHITE);
         sendToProssesing.setArcWidth(20);
         sendToProssesing.setArcHeight(20);
         sendToProssesing.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
+        //Добавила стилизацию на кнопку
+        filterFile.setPreferredSize(new Dimension(450, 50));
+        filterFile.setBgColor(purple);
+        filterFile.setBorder(BorderFactory.createLineBorder(dark_dark_green, 2));
+        filterFile.setTextColor(Color.WHITE);
+        filterFile.setArcWidth(30);
+        filterFile.setArcHeight(30);
+        filterFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
 
 
         //Размещение кнопок в интерфейсе
         panel.setLayout(new FlowLayout());
 
+
         panel.add(l);
         panel.add(uploadFile);
         panel.add(sendToProssesing);
-        panel.add(getFile);
+        panel.add(filterFile);
 
         //Вывод окна на экран
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
