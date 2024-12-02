@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="ultra beautiful buttons + folder uml" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="UML Sequence" />
+        <option value="UML Component" />
+        <option value="UML State" />
+        <option value="UML Object" />
+        <option value="UML Deployment" />
+        <option value="UML Gantt" />
+        <option value="UML MindMap" />
+        <option value="Salt Wireframe" />
+        <option value="Work Breakdown Structure" />
+        <option value="UML YAML Data" />
+        <option value="EBNF" />
+        <option value="UML Use Case" />
+        <option value="UML Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="graphics" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="graphics" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;dubina-valeriia&quot;,
+      &quot;fullname&quot;: &quot;Valeriia&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.com/builders702344/parcing-of-kadastrs.git&quot;,
+    &quot;second&quot;: &quot;6b544823-bd13-4d23-9c93-aa10e9161d19&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/openjdk-23/lib/src.zip!/java.desktop/java/awt/Color.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2p1Y33m1BXV9AMp8GyA0YopH4jm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.WindowApp.executor": "Run",
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/v.dubina/Desktop",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\v.dubina\IdeaProjects\parcing-of-kadastrs\uml" />
+      <recent name="C:\Users\v.dubina\IdeaProjects\parcing-of-kadastrs" />
+      <recent name="C:\Users\v.dubina\IdeaProjects\parcing-of-kadastrs\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="WindowApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WindowApp" />
+      <module name="parcing-of-kadastrs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.WindowApp" />
+        <item itemvalue="Application.WindowApp" />
+        <item itemvalue="Application.WindowApp" />
+        <item itemvalue="Application.WindowApp" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="" />
+      <created>1731934845651</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731934845651</updated>
+    </task>
+    <task id="LOCAL-00001" summary="123">
+      <option name="closed" value="true" />
+      <created>1731935012876</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731935012876</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lera actual">
+      <option name="closed" value="true" />
+      <created>1731935461525</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731935461525</updated>
+    </task>
+    <task id="LOCAL-00003" summary="добавила умл к проекту">
+      <option name="closed" value="true" />
+      <created>1732010731315</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732010731315</updated>
+    </task>
+    <task id="LOCAL-00004" summary="добавила roundedbutton">
+      <option name="closed" value="true" />
+      <created>1732196344701</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732196344701</updated>
+    </task>
+    <task id="LOCAL-00005" summary="graphics">
+      <option name="closed" value="true" />
+      <created>1732196913027</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732196913027</updated>
+    </task>
+    <task id="LOCAL-00006" summary="последний коммит графики">
+      <option name="closed" value="true" />
+      <created>1732200648425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732200648425</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added uml diagrams">
+      <option name="closed" value="true" />
+      <created>1732615640292</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732615640292</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added uml diagrams">
+      <option name="closed" value="true" />
+      <created>1732615655565</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732615655565</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added uml diagrams">
+      <option name="closed" value="true" />
+      <created>1732618108563</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732618108563</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added uml diagrams">
+      <option name="closed" value="true" />
+      <created>1732696259932</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1732696259932</updated>
+    </task>
+    <task id="LOCAL-00011" summary="окончательная версия">
+      <option name="closed" value="true" />
+      <created>1732696329624</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1732696329624</updated>
+    </task>
+    <task id="LOCAL-00012" summary="окончательная версия">
+      <option name="closed" value="true" />
+      <created>1732696336948</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1732696336948</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added 3 button 'filter files'">
+      <option name="closed" value="true" />
+      <created>1732894007738</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732894007738</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added 3 button 'filter files'">
+      <option name="closed" value="true" />
+      <created>1732894254506</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732894254506</updated>
+    </task>
+    <task id="LOCAL-00015" summary="refactoring + 3 button final">
+      <option name="closed" value="true" />
+      <created>1733136928566</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733136928566</updated>
+    </task>
+    <task id="LOCAL-00016" summary="- gitignore">
+      <option name="closed" value="true" />
+      <created>1733138041345</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733138041345</updated>
+    </task>
+    <task id="LOCAL-00017" summary="- out">
+      <option name="closed" value="true" />
+      <created>1733138447325</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733138447325</updated>
+    </task>
+    <task id="LOCAL-00018" summary="ultra beautiful buttons">
+      <option name="closed" value="true" />
+      <created>1733140307836</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1733140307836</updated>
+    </task>
+    <task id="LOCAL-00019" summary="ultra beautiful buttons">
+      <option name="closed" value="true" />
+      <created>1733140347740</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733140347740</updated>
+    </task>
+    <task id="LOCAL-00020" summary="ultra beautiful buttons + folder uml">
+      <option name="closed" value="true" />
+      <created>1733141366129</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1733141366129</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="123" />
+    <MESSAGE value="lera actual" />
+    <MESSAGE value="добавила умл к проекту" />
+    <MESSAGE value="добавила roundedbutton" />
+    <MESSAGE value="graphics" />
+    <MESSAGE value="последний коммит графики" />
+    <MESSAGE value="added uml diagrams" />
+    <MESSAGE value="окончательная версия" />
+    <MESSAGE value="added 3 button 'filter files'" />
+    <MESSAGE value="refactoring + 3 button final" />
+    <MESSAGE value="- gitignore" />
+    <MESSAGE value="- out" />
+    <MESSAGE value="ultra beautiful buttons" />
+    <MESSAGE value="ultra beautiful buttons + folder uml" />
+    <option name="LAST_COMMIT_MESSAGE" value="ultra beautiful buttons + folder uml" />
+  </component>
+</project>
