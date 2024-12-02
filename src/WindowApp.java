@@ -1,8 +1,6 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import javax.swing.filechooser.*;
 
@@ -14,7 +12,7 @@ public class WindowApp extends JFrame{
     Color purple = new Color(141,68,173);
     JLabel l = new JLabel("Файлы не выбраны");
     JFileChooser fileChooser = new JFileChooser();
-    ProcessThread processingEvent;
+
     JPanel panel = new JPanel(new FlowLayout());
 
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
@@ -83,30 +81,14 @@ public class WindowApp extends JFrame{
 
         //Добавляем поток загрузки файла (если активна кнопка uploadFile)
 
-        uploadFile.addActionListener(new ActionListener() {
-             @Override
-             public void actionPerformed(ActionEvent e) {
-                 files = upload();
-             }
-        });
+        uploadFile.addActionListener(e -> files = upload());
 
  //       Добавляем поток сохранения файла (если активна кнопка getFile)
 
 
-        sendToProssesing.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                process(files);
-            }
-        });
+        sendToProssesing.addActionListener(e -> process(files));
 
-        filterFile.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filter(files);
-            }
-        });
-
+        filterFile.addActionListener(e -> filter(files));
 
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
