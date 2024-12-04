@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.zip.*;
 import java.util.ArrayList;
+import javax.xml.*;
+
 public class ComparatorSentRecieved {
     private HashSet requestSet;
     private HashSet responseSet;
