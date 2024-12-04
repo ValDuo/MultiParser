@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Tests/Tests.iml" filepath="$PROJECT_DIR$/Tests/Tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/parcing-of-kadastrs.iml" filepath="$PROJECT_DIR$/.idea/parcing-of-kadastrs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/Tests/Tests.iml" filepath="$PROJECT_DIR$/src/Tests/Tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/parcing-of-kadastrs.iml" filepath="$PROJECT_DIR$/src/parcing-of-kadastrs.iml" />
     </modules>
   </component>
 </project>
