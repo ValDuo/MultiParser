@@ -74,6 +74,7 @@ public class WindowApp extends JFrame{
         fileChooser.setMultiSelectionEnabled(true);
         // Определение режима - только папки
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        //
 
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION){

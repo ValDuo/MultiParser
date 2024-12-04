@@ -25,7 +25,7 @@ public class RoundedButton extends JButton {
         setFocusPainted(false);
 
         try {
-            customFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/Montserrat-Bold.ttf")).deriveFont(16f);
+            customFont = Font.createFont(Font.TRUETYPE_FONT, new File("other/Montserrat-Bold.ttf")).deriveFont(16f);
         } catch (FontFormatException | IOException e) {
             e.printStackTrace();
             customFont = new Font("Arial", Font.BOLD, 14); // В случае ошибки используем стандартный шрифт

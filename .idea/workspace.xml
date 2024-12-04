@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="without any waste">
-      <change afterPath="$PROJECT_DIR$/src/FilterThread.java" afterDir="false" />
+    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +305,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733141954202</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации">
+      <option name="closed" value="true" />
+      <created>1733294934822</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1733294934822</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -327,6 +332,7 @@
     <MESSAGE value="ultra beautiful buttons" />
     <MESSAGE value="ultra beautiful buttons + folder uml" />
     <MESSAGE value="without any waste" />
-    <option name="LAST_COMMIT_MESSAGE" value="without any waste" />
+    <MESSAGE value="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации" />
   </component>
 </project>
