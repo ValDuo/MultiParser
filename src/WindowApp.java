@@ -1,6 +1,8 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import javax.swing.filechooser.*;
 
@@ -22,7 +24,7 @@ public class WindowApp extends JFrame{
     RoundedButton filterFile = new RoundedButton("Просеять файл");
 
     File[] files;
-    FileNameExtensionFilter filter = new FileNameExtensionFilter(
+    FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
             "csv", "csv");
 
     public File[] upload(){
@@ -61,18 +63,32 @@ public class WindowApp extends JFrame{
                 ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
                 processingEvent.start();
             }
+
         }
     }
-    public void filter(File[] files) {
-        if (files == null){
-            JOptionPane.showMessageDialog(null,
-                    "Ошибка фильтрации! Повторите этап обработки.");
+
+    //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
+    public void filter() {
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Выбор файла");
+        fileChooser.setMultiSelectionEnabled(true);
+        // Определение режима - только папки
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+        int result = fileChooser.showOpenDialog(null);
+        if (result == JFileChooser.APPROVE_OPTION){
+            File[] files = fileChooser.getSelectedFiles();
+            for (File file : files) {
+                FilterThread filteringEvent = new FilterThread();// в параметре тут было new CSV_IO(file.getAbsolutePath())
+                filteringEvent.start();
+
+                //надо доработать поток и добавить в него функционал
+
+            }
         }
         else {
-            for (File file : files) {
-                ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
-                processingEvent.start();
-            }
+            JOptionPane.showMessageDialog(null,
+                    "Ошибка фильтрации! Выберите папку с файлами.");
         }
     }
 
@@ -81,20 +97,22 @@ public class WindowApp extends JFrame{
     public WindowApp() {
         super("Работа с выписками");
 
-        //Добавляем поток загрузки файла (если активна кнопка uploadFile)
+        //Добавляем поток загрузки файла (если активна кнопка uploadile)
+
 
         uploadFile.addActionListener(e -> files = upload());
 
  //       Добавляем поток сохранения файла (если активна кнопка getFile)
 
-
         sendToProssesing.addActionListener(e -> process(files));
 
-        filterFile.addActionListener(e -> filter(files));
 
+        //обработанные файлы достаем из папки dstFiles подаем в следующую функцию
+
+        filterFile.addActionListener(e -> filter());
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
-        fileChooser.setFileFilter(filter);
+        fileChooser.setFileFilter(formatFilter);
 
         //Добавляем стилизацию на кнопку добавления файлов
         uploadFile.setPreferredSize(new Dimension(200, 40));
