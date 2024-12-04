@@ -1,6 +1,10 @@
 # Default ignored files
-/shelf/
-/workspace.xml
-../srcFiles/
-../dstFiles/
+/srcFiles/
+/emaple.java/
+/dstFiles/
 *.csv
+*.zip
+*.xmls
+*.xls
+*.pdf
+*.sig
