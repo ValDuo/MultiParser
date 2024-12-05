@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2013c051-8813-47e2-a055-b0a6c9219881" name="Changes" comment="Modified ComparatorSentRecieved">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TestParsing.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ComparatorTest.executor": "Run",
+    "Application.WindowApp.executor": "Run",
+    "git-widget-placeholder": "comparator",
+    "last_opened_file_path": "C:/Users/d.kostukov/IdeaProjects/parcing-of-kadastrs/srcFiles",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\d.kostukov\IdeaProjects\parcing-of-kadastrs\srcFiles" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\d.kostukov\IdeaProjects\parcing-of-kadastrs\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ComparatorTest">
+    <configuration name="ComparatorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ComparatorTest" />
+      <module name="parcing-of-kadastrs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestParsing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestParsing" />
+      <module name="parcing-of-kadastrs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WindowApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="WindowApp" />
+      <module name="parcing-of-kadastrs" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ComparatorTest" />
+        <item itemvalue="Application.WindowApp" />
+        <item itemvalue="Application.TestParsing" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Modified ComparatorSentRecieved">
+      <option name="closed" value="true" />
+      <created>1733301367202</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733301367202</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modified ComparatorSentRecieved">
+      <option name="closed" value="true" />
+      <created>1733301700889</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733301700889</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Modified ComparatorSentRecieved">
+      <option name="closed" value="true" />
+      <created>1733304412299</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1733304412299</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Modified ComparatorSentRecieved">
+      <option name="closed" value="true" />
+      <created>1733377155202</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733377155202</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modified ComparatorSentRecieved">
+      <option name="closed" value="true" />
+      <created>1733377358966</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733377358966</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="without any waste" />
+    <MESSAGE value="Modified ComparatorSentRecieved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified ComparatorSentRecieved" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Tests/src/Main.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/ComparatorSentRecieved.java</url>
+          <line>30</line>
+          <properties class="ComparatorSentRecieved" method="checkFiles">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
