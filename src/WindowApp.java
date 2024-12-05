@@ -69,15 +69,15 @@ public class WindowApp extends JFrame{
 
     //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
     public void filter() {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Выбор файла");
-        fileChooser.setMultiSelectionEnabled(true);
-        // Определение режима - только папки
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        //
+
 
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION){
+            JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setDialogTitle("Выбор файла");
+            fileChooser.setMultiSelectionEnabled(true);
+
+            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             File[] files = fileChooser.getSelectedFiles();
             for (File file : files) {
                 FilterThread filteringEvent = new FilterThread();// в параметре тут было new CSV_IO(file.getAbsolutePath())

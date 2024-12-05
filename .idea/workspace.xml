@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="шрифты в другой папке" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -313,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733294934822</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="шрифты в другой папке">
+      <option name="closed" value="true" />
+      <created>1733296720574</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1733296720574</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -333,6 +338,7 @@
     <MESSAGE value="ultra beautiful buttons + folder uml" />
     <MESSAGE value="without any waste" />
     <MESSAGE value="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации" />
+    <MESSAGE value="шрифты в другой папке" />
+    <option name="LAST_COMMIT_MESSAGE" value="шрифты в другой папке" />
   </component>
 </project>
