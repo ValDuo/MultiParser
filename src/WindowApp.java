@@ -1,8 +1,14 @@
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import javax.swing.filechooser.*;
 
@@ -26,6 +32,10 @@ public class WindowApp extends JFrame{
     File[] files;
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
             "csv", "csv");
+
+    // Модальное окно для выбора браузера
+    private String selectedBrowser = "Chrome";
+    WebDriver driver;
 
     public File[] upload(){
         fileChooser.setDialogTitle("Выбор файла");
@@ -59,12 +69,36 @@ public class WindowApp extends JFrame{
                     "Список не загружен! Нажмите кнопку 'Выбрать файлы'.");
         }
         else {
+            WebDriver driver = chooseBrowser();
             for (File file : files) {
-                ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()));
+                ProcessThread processingEvent = new ProcessThread(new CSV_IO(file.getAbsolutePath()), driver);
                 processingEvent.start();
             }
 
         }
+    }
+    // Метод для выбора браузера
+    private WebDriver chooseBrowser() {
+        String[] browsers = {"Chrome", "Firefox", "Edge"};
+        selectedBrowser = (String) JOptionPane.showInputDialog(
+                this,
+                "Выберите браузер для обработки:",
+                "Выбор браузера",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                browsers,
+                browsers[0]
+        );
+        if (selectedBrowser.equalsIgnoreCase("edge")){
+            return this.driver = new EdgeDriver(new EdgeOptions());
+        }
+        else if (selectedBrowser.equalsIgnoreCase("firefox")){
+            return this.driver = new FirefoxDriver(new FirefoxOptions());
+        }
+        if (selectedBrowser == null) {
+            return this.driver = new ChromeDriver(new ChromeOptions());
+        }
+        return this.driver = new ChromeDriver(new ChromeOptions());
     }
 
     //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
