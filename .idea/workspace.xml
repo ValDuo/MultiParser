@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="шрифты в другой папке" />
+    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="Modified ComparatorSentRecieved" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,6 +74,7 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2p1Y33m1BXV9AMp8GyA0YopH4jm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -339,6 +340,7 @@
     <MESSAGE value="without any waste" />
     <MESSAGE value="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации" />
     <MESSAGE value="шрифты в другой папке" />
-    <option name="LAST_COMMIT_MESSAGE" value="шрифты в другой папке" />
+    <MESSAGE value="Modified ComparatorSentRecieved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified ComparatorSentRecieved" />
   </component>
 </project>
