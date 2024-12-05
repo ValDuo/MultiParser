@@ -1,6 +1,7 @@
-/emaple.java
-../srcFiles/
-../dstFiles/
+# Default ignored files
+/srcFiles/
+/emaple.java/
+/dstFiles/
 *.csv
 *.zip
 *.xmls
