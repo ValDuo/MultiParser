@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="лера финал">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProcessThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProcessThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="Modified ComparatorSentRecieved" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +74,7 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2p1Y33m1BXV9AMp8GyA0YopH4jm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -323,15 +319,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733296720574</updated>
     </task>
-    <task id="LOCAL-00025" summary="лера финал">
-      <option name="closed" value="true" />
-      <created>1733376511211</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1733376511211</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -352,7 +340,7 @@
     <MESSAGE value="without any waste" />
     <MESSAGE value="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации" />
     <MESSAGE value="шрифты в другой папке" />
-    <MESSAGE value="лера финал" />
-    <option name="LAST_COMMIT_MESSAGE" value="лера финал" />
+    <MESSAGE value="Modified ComparatorSentRecieved" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified ComparatorSentRecieved" />
   </component>
 </project>
