@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2013c051-8813-47e2-a055-b0a6c9219881" name="Changes" comment="Modified ComparatorSentRecieved">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestParsing.java" afterDir="false" />
+    <list default="true" id="2013c051-8813-47e2-a055-b0a6c9219881" name="Changes" comment="шрифты в другой папке">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComparatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +22,42 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;project_63025756_bot_4e0d9bfa996137f9867998ca215d3c3d&quot;,
+      &quot;fullname&quot;: &quot;a&quot;
+    }
+  }
+}</component>
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "first": "https://gitlab.com/builders702344/parcing-of-kadastrs.git",
+    "second": "588bfaea-623c-4f15-8ac4-cf923c525d62"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ppe8JnRq0rsniYgLCrcVoR03p8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ComparatorTest.executor": "Run",
     "Application.WindowApp.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "comparator",
-    "last_opened_file_path": "C:/Users/d.kostukov/IdeaProjects/parcing-of-kadastrs/srcFiles",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/d.kostukov/OneDrive - Южный Федеральный Университет/архитектура/Accounting",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -68,9 +98,12 @@
         <item itemvalue="Application.ComparatorTest" />
         <item itemvalue="Application.WindowApp" />
         <item itemvalue="Application.TestParsing" />
+        <item itemvalue="Application.ComparatorTest" />
+        <item itemvalue="Application.WindowApp" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Modified ComparatorSentRecieved">
       <option name="closed" value="true" />
@@ -112,13 +145,21 @@
       <option name="project" value="LOCAL" />
       <updated>1733377358966</updated>
     </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2013c051-8813-47e2-a055-b0a6c9219881" name="Changes" comment="шрифты в другой папке" />
+      <created>1733467285084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733467285084</updated>
+    </task>
     <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="without any waste" />
     <MESSAGE value="Modified ComparatorSentRecieved" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified ComparatorSentRecieved" />
+    <MESSAGE value="шрифты в другой папке" />
+    <option name="LAST_COMMIT_MESSAGE" value="шрифты в другой папке" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -128,14 +169,10 @@
           <line>11</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ComparatorSentRecieved.java</url>
-          <line>30</line>
-          <properties class="ComparatorSentRecieved" method="checkFiles">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
+          <line>105</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

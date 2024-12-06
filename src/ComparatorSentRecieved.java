@@ -3,10 +3,12 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashSet;
-import java.util.List;
 import java.util.zip.*;
 import java.util.ArrayList;
-import javax.xml.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.*;
 
 public class ComparatorSentRecieved {
     private HashSet requestSet;
@@ -14,6 +16,7 @@ public class ComparatorSentRecieved {
     private File requestFile;
     private File responseDirectory;
     private File extractingDir;
+    private String extractingDirPath;
     ComparatorSentRecieved(String requestFilePath, String responseDirectoryPath) throws IOException{
         File request = new File(requestFilePath);
         File response = new File(responseDirectoryPath);
@@ -64,8 +67,8 @@ public class ComparatorSentRecieved {
         }
     }
     private File createExctractDirectory(){
-        String newDirectoryPath = this.responseDirectory.getAbsolutePath() + "new";
-        File newDirectory = new File(newDirectoryPath);
+        extractingDirPath = this.responseDirectory.getAbsolutePath() + "new";
+        File newDirectory = new File(extractingDirPath);
         newDirectory.mkdir();
         return newDirectory;
     }
@@ -87,13 +90,41 @@ public class ComparatorSentRecieved {
         }
         return xmls;
     }
-    private String parseXml(){
-        return null;
+    public String parseXml(File xml){
+        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder;
+        try{
+            builder = builderFactory.newDocumentBuilder();
+        }
+        catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
+        Document document = null;
+        try {
+            String absolute_path = xml.getCanonicalPath();
+            document = builder.parse(new File(extractingDirPath +"/"+xml.getName()));
+        } catch (Exception e) {
+            System.out.println(e);
+            return null;
+        }
+        NodeList kadastrs = document.getElementsByTagName("cad_number");
+        return kadastrs.item(0).getTextContent();
+
+
+
     }
-    private HashSet getResponseSet(){
-        return null;
+    public HashSet<String> getResponseSet(){
+        HashSet<String> responseSet = new HashSet<>();
+        ArrayList<File> xmls = getXmls();
+        for(File file:xmls){
+            //System.out.println(parseXml(file));
+            responseSet.add(parseXml(file));
+        }
+        this.responseSet = responseSet;
+        return responseSet;
     }
-    private HashSet getRequestSet(){
+    private HashSet<String> getRequestSet(){
         return null;
     }
     public void compare(){
