@@ -20,14 +20,15 @@ public class WindowApp extends JFrame{
     Color dark_dark_blue = new Color(5, 48, 113);
     Color purple = new Color(141,68,173);
     Color dark_purple = new Color(88, 17, 120);
-    JLabel l = new JLabel("Файлы не выбраны");
+    JLabel l = new JLabel("<html><h2>Файлы не выбраны</h2></html>");
+    JLabel userGuide = new JLabel("<html><div style='width:700px; margin: 0 auto; font-weight: normal;'><i><h1 style='text-align: center; margin-top: 60px;'>Руководство пользователя</h1></i><ol style='font-size: 16px;'><li style='margin-top: 10px;'>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». <div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic;'>Внимание! Вы можете выбрать только файлы формата .csv</div></li><li style='margin-top: 10px;'>Для подачи файла на поиск кадастровых номеров достаточно нажать на синюю кнопку «Подать на обработку».</li><li style='margin-top: 10px;'>При успешном завершении операции обработанные файлы будут храниться на вашем компьютере в выбранной вами папке.</li><li style='margin-top: 10px;'>Для того, чтобы просеять папку с файлами на наличие факта получения загруженных файлов из Росеестра, нужно нажать на кнопку «Отбор файлов без кадастрового номера».</li></ol></div></html>");
     JFileChooser fileChooser = new JFileChooser();
 
     JPanel panel = new JPanel(new FlowLayout());
 
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
-    RoundedButton filterFile = new RoundedButton("Просеять файл");
+    RoundedButton filterFile = new RoundedButton("Отбор файлов без кадастрового номера");
 
     File[] files;
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
@@ -36,6 +37,8 @@ public class WindowApp extends JFrame{
     // Модальное окно для выбора браузера
     private String selectedBrowser = "Chrome";
     WebDriver driver;
+
+
 
     public File[] upload(){
         fileChooser.setDialogTitle("Выбор файла");
@@ -57,7 +60,7 @@ public class WindowApp extends JFrame{
             }
             return files;
         } else {
-            l.setText("Вы отменили операцию.");
+            l.setText("<html><h2>Вы отменили операцию.</html></h2>");
         }
         return null;
     }
@@ -150,7 +153,7 @@ public class WindowApp extends JFrame{
         fileChooser.setFileFilter(formatFilter);
 
         //Добавляем стилизацию на кнопку добавления файлов
-        uploadFile.setPreferredSize(new Dimension(200, 40));
+        uploadFile.setPreferredSize(new Dimension(350, 50));
         uploadFile.setBgColor(dark_green);
         uploadFile.setBorderColor(dark_dark_green);
         uploadFile.setTextColor(Color.WHITE);
@@ -159,7 +162,7 @@ public class WindowApp extends JFrame{
         uploadFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         //Добавляем стилизацию на кнопку обработки файлов
-        sendToProssesing.setPreferredSize(new Dimension(270, 40));
+        sendToProssesing.setPreferredSize(new Dimension(380, 50));
         sendToProssesing.setBgColor(dark_blue);
         sendToProssesing.setBorderColor(dark_dark_blue);
         sendToProssesing.setTextColor(Color.WHITE);
@@ -169,12 +172,12 @@ public class WindowApp extends JFrame{
 
 
         //Добавила стилизацию на кнопку
-        filterFile.setPreferredSize(new Dimension(450, 50));
+        filterFile.setPreferredSize(new Dimension(650, 60));
         filterFile.setBgColor(purple);
         filterFile.setBorderColor(dark_purple);
         filterFile.setTextColor(Color.WHITE);
-        filterFile.setArcWidth(30);
-        filterFile.setArcHeight(30);
+        filterFile.setArcWidth(20);
+        filterFile.setArcHeight(20);
         filterFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
 
@@ -189,9 +192,11 @@ public class WindowApp extends JFrame{
         panel.add(sendToProssesing);
         panel.add(filterFile);
 
+        panel.add(userGuide);
+
         //Вывод окна на экран
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setBounds(750, 350, 700, 400);
+        setBounds(750, 350, 1000, 700);
         add(panel);
         setVisible(true);
     }

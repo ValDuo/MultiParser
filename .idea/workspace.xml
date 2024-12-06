@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="Modified ComparatorSentRecieved" />
+    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="Modified ComparatorSentRecieved">
+      <change afterPath="$PROJECT_DIR$/other/Montserrat-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/RoundedButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/RoundedButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RoundedButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RoundedButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,6 +104,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\v.dubina\IdeaProjects\parcing-of-kadastrs\other" />
       <recent name="C:\Users\v.dubina\IdeaProjects\parcing-of-kadastrs\uml" />
       <recent name="C:\Users\v.dubina\IdeaProjects\parcing-of-kadastrs" />
       <recent name="C:\Users\v.dubina\IdeaProjects\parcing-of-kadastrs\src" />
