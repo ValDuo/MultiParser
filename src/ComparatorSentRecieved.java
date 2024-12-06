@@ -125,6 +125,7 @@ public class ComparatorSentRecieved {
         return responseSet;
     }
     private HashSet<String> getRequestSet(){
+        HashSet<String> requestSet = new HashSet<>();
         return null;
     }
     public void compare(){
