@@ -1,0 +1,947 @@
+12.05:16.12.11DEBUG	ru.sfedu.dubina.Client:9 - Client[0]: starting application.........
+12.05:16.12.11 INFO	ru.sfedu.dubina.Client:12 - Launching the application...
+12.05:16.12.11 INFO	ru.sfedu.dubina.Client:13 - Operating System: Windows 11 10.0
+12.05:16.12.11 INFO	ru.sfedu.dubina.Client:14 - JRE: 21.0.2
+12.05:16.12.11 INFO	ru.sfedu.dubina.Client:15 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.05:16.12.11 INFO	ru.sfedu.dubina.Client:16 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12.05:16.12.11 INFO	ru.sfedu.dubina.Client:17 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.05:16.12.12 INFO	ru.sfedu.dubina.Client:18 - User Home Directory: C:\Users\dvdle
+12.05:16.12.12 INFO	ru.sfedu.dubina.Client:19 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.05:16.12.12 INFO	ru.sfedu.dubina.Client:20 - Test INFO logging.
+12.05:20.55.41DEBUG	ru.sfedu.dubina.Client:9 - Client[0]: starting application.........
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:12 - Launching the application...
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:13 - Operating System: Windows 11 10.0
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:14 - JRE: 21.0.2
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:15 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:16 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:17 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:18 - User Home Directory: C:\Users\dvdle
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:19 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.05:20.55.41 INFO	ru.sfedu.dubina.Client:20 - Test INFO logging.
+12.05:20.55.44DEBUG	ru.sfedu.dubina.Client:9 - Client[0]: starting application.........
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:12 - Launching the application...
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:13 - Operating System: Windows 11 10.0
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:14 - JRE: 21.0.2
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:15 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:16 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:17 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:18 - User Home Directory: C:\Users\dvdle
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:19 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.05:20.55.44 INFO	ru.sfedu.dubina.Client:20 - Test INFO logging.
+12.05:20.59.40DEBUG	ru.sfedu.dubina.Client:7 - Client[0]: starting application.........
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:16 - Launching the application...
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:17 - Operating System: Windows 11 10.0
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:18 - JRE: 21.0.2
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:19 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:20 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:21 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:22 - User Home Directory: C:\Users\dvdle
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:23 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.05:20.59.40 INFO	ru.sfedu.dubina.Client:24 - Test INFO logging.
+12.06:18.25.24DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:18.25.24 INFO	ClientTest:15 - Launching the application...
+12.06:18.25.24 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:18.25.24 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:18.25.24 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:18.25.24 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:18.25.24 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:18.25.24 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:18.25.24 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:18.25.24 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.06.02DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.06.02 INFO	ClientTest:15 - Launching the application...
+12.06:20.06.02 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:20.06.02 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:20.06.02 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.06.02 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.06.02 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.06.02 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:20.06.02 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.06.02 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.06.02DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.06.02DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.06.02 INFO	ClientTest:15 - Launching the application...
+12.06:20.06.02 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:20.06.02 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:20.06.02 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.06.02 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.06.02 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.06.02 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:20.06.02 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.06.02 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.06.25DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.06.25 INFO	ClientTest:15 - Launching the application...
+12.06:20.06.25 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:20.06.25 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:20.06.25 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.06.25 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.06.25 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.06.25 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:20.06.25 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.06.25 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.07.56DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.07.56 INFO	ClientTest:15 - Launching the application...
+12.06:20.07.56 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:20.07.56 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:20.07.56 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.07.56 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.07.56 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.07.56 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:20.07.56 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.07.56 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.08.06DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.08.06 INFO	ClientTest:15 - Launching the application...
+12.06:20.08.06 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:20.08.06 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:20.08.06 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.08.06 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.08.06 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.08.06 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:20.08.06 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.08.06 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.10.01DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.10.01 INFO	ClientTest:15 - Launching the application...
+12.06:20.10.01 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:20.10.01 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:20.10.01 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.10.01 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.10.01 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.10.01 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:20.10.01 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.10.01 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.10.01DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.10.01DEBUG	ClientTest:6 - Client[0]: starting application.........
+12.06:20.10.01 INFO	ClientTest:15 - Launching the application...
+12.06:20.10.01 INFO	ClientTest:16 - Operating System: Windows 11 10.0
+12.06:20.10.01 INFO	ClientTest:17 - JRE: 21.0.2
+12.06:20.10.01 INFO	ClientTest:18 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.10.01 INFO	ClientTest:19 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.10.01 INFO	ClientTest:20 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.10.01 INFO	ClientTest:21 - User Home Directory: C:\Users\dvdle
+12.06:20.10.01 INFO	ClientTest:22 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.10.01 INFO	ClientTest:23 - Test INFO logging.
+12.06:20.24.34DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:20.24.34 INFO	ClientTest:29 - Launching the application...
+12.06:20.24.34 INFO	ClientTest:30 - Operating System: Windows 11 10.0
+12.06:20.24.34 INFO	ClientTest:31 - JRE: 21.0.2
+12.06:20.24.34 INFO	ClientTest:32 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.24.34 INFO	ClientTest:33 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.24.34 INFO	ClientTest:34 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.24.34 INFO	ClientTest:35 - User Home Directory: C:\Users\dvdle
+12.06:20.24.34 INFO	ClientTest:36 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.24.34 INFO	ClientTest:37 - Test INFO logging.
+12.06:20.24.34DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:20.24.34DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:20.24.34 INFO	ClientTest:29 - Launching the application...
+12.06:20.24.34 INFO	ClientTest:30 - Operating System: Windows 11 10.0
+12.06:20.24.34 INFO	ClientTest:31 - JRE: 21.0.2
+12.06:20.24.34 INFO	ClientTest:32 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:20.24.34 INFO	ClientTest:33 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:20.24.34 INFO	ClientTest:34 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:20.24.34 INFO	ClientTest:35 - User Home Directory: C:\Users\dvdle
+12.06:20.24.34 INFO	ClientTest:36 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:20.24.34 INFO	ClientTest:37 - Test INFO logging.
+12.06:21.08.00DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:21.08.00 INFO	ClientTest:29 - Launching the application...
+12.06:21.08.00 INFO	ClientTest:30 - Operating System: Windows 11 10.0
+12.06:21.08.00 INFO	ClientTest:31 - JRE: 21.0.2
+12.06:21.08.00 INFO	ClientTest:32 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:21.08.00 INFO	ClientTest:33 - Class Path: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:21.08.00 INFO	ClientTest:34 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:21.08.00 INFO	ClientTest:35 - User Home Directory: C:\Users\dvdle
+12.06:21.08.00 INFO	ClientTest:36 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:21.08.00 INFO	ClientTest:37 - Test INFO logging.
+12.06:21.08.37DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:21.08.37 INFO	ClientTest:29 - Launching the application...
+12.06:21.08.37 INFO	ClientTest:30 - Operating System: Windows 11 10.0
+12.06:21.08.37 INFO	ClientTest:31 - JRE: 21.0.2
+12.06:21.08.37 INFO	ClientTest:32 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:21.08.37 INFO	ClientTest:33 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:21.08.37 INFO	ClientTest:34 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:21.08.37 INFO	ClientTest:35 - User Home Directory: C:\Users\dvdle
+12.06:21.08.37 INFO	ClientTest:36 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:21.08.37 INFO	ClientTest:37 - Test INFO logging.
+12.06:21.08.51DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:21.08.51DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:21.08.51 INFO	ClientTest:29 - Launching the application...
+12.06:21.08.51 INFO	ClientTest:30 - Operating System: Windows 11 10.0
+12.06:21.08.51 INFO	ClientTest:31 - JRE: 21.0.2
+12.06:21.08.51 INFO	ClientTest:32 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:21.08.51 INFO	ClientTest:33 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:21.08.51 INFO	ClientTest:34 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:21.08.51 INFO	ClientTest:35 - User Home Directory: C:\Users\dvdle
+12.06:21.08.51 INFO	ClientTest:36 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:21.08.51 INFO	ClientTest:37 - Test INFO logging.
+12.06:21.10.10DEBUG	ClientTest:20 - Client[0]: starting application.........
+12.06:21.10.10 INFO	ClientTest:29 - Launching the application...
+12.06:21.10.10 INFO	ClientTest:30 - Operating System: Windows 11 10.0
+12.06:21.10.10 INFO	ClientTest:31 - JRE: 21.0.2
+12.06:21.10.10 INFO	ClientTest:32 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:21.10.10 INFO	ClientTest:33 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:21.10.10 INFO	ClientTest:34 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:21.10.10 INFO	ClientTest:35 - User Home Directory: C:\Users\dvdle
+12.06:21.10.10 INFO	ClientTest:36 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:21.10.10 INFO	ClientTest:37 - Test INFO logging.
+12.06:21.49.27DEBUG	ClientTest:21 - Client[0]: starting application.........
+12.06:21.49.27 INFO	ClientTest:32 - Launching the application...
+12.06:21.49.27 INFO	ClientTest:33 - Operating System: Windows 11 10.0
+12.06:21.49.27 INFO	ClientTest:34 - JRE: 21.0.2
+12.06:21.49.27 INFO	ClientTest:35 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.06:21.49.27 INFO	ClientTest:36 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.06:21.49.27 INFO	ClientTest:37 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.06:21.49.27 INFO	ClientTest:38 - User Home Directory: C:\Users\dvdle
+12.06:21.49.27 INFO	ClientTest:39 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.06:21.49.27 INFO	ClientTest:40 - Test INFO logging.
+12.06:21.49.41 INFO	ClientTest:108 - Программа запущена.
+12.06:21.49.41ERROR	ClientTest:121 - Ошибка на этапе вывода планет!
+java.io.FileNotFoundException: config.properties (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:45)
+	at ClientTest.getPlanets(ClientTest.java:81)
+	at ClientTest.main(ClientTest.java:111)
+12.06:21.49.41 INFO	ClientTest:124 - Выполнение завершено.
+12.06:21.51.42 INFO	ClientTest:108 - Программа запущена.
+12.06:21.51.42ERROR	ClientTest:121 - Ошибка на этапе вывода планет!
+java.io.FileNotFoundException: config.properties (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:45)
+	at ClientTest.getPlanets(ClientTest.java:81)
+	at ClientTest.main(ClientTest.java:111)
+12.06:21.51.42 INFO	ClientTest:124 - Выполнение завершено.
+12.06:21.51.50 INFO	ClientTest:108 - Программа запущена.
+12.06:21.51.50ERROR	ClientTest:121 - Ошибка на этапе вывода планет!
+java.io.FileNotFoundException: config.properties (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:45)
+	at ClientTest.getPlanets(ClientTest.java:81)
+	at ClientTest.main(ClientTest.java:111)
+12.06:21.51.50 INFO	ClientTest:124 - Выполнение завершено.
+12.06:21.51.57 INFO	ClientTest:108 - Программа запущена.
+12.06:21.51.57ERROR	ClientTest:121 - Ошибка на этапе вывода планет!
+java.io.FileNotFoundException: config.properties (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:45)
+	at ClientTest.getPlanets(ClientTest.java:81)
+	at ClientTest.main(ClientTest.java:111)
+12.06:21.51.57 INFO	ClientTest:124 - Выполнение завершено.
+12.06:21.52.03 INFO	ClientTest:108 - Программа запущена.
+12.06:21.52.03ERROR	ClientTest:121 - Ошибка на этапе вывода планет!
+java.io.FileNotFoundException: config.properties (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:45)
+	at ClientTest.getPlanets(ClientTest.java:81)
+	at ClientTest.main(ClientTest.java:111)
+12.06:21.52.03 INFO	ClientTest:124 - Выполнение завершено.
+12.06:21.52.10 INFO	ClientTest:108 - Программа запущена.
+12.06:21.52.15ERROR	ClientTest:121 - Ошибка на этапе вывода планет!
+java.io.FileNotFoundException: config.properties (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:45)
+	at ClientTest.getPlanets(ClientTest.java:81)
+	at ClientTest.main(ClientTest.java:111)
+12.06:21.52.15 INFO	ClientTest:124 - Выполнение завершено.
+12.06:21.54.06 INFO	ClientTest:108 - Программа запущена.
+12.06:21.54.06ERROR	ClientTest:121 - Ошибка на этапе вывода планет!
+java.io.FileNotFoundException: config.properties (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:45)
+	at ClientTest.getPlanets(ClientTest.java:81)
+	at ClientTest.main(ClientTest.java:111)
+12.06:21.54.06 INFO	ClientTest:124 - Выполнение завершено.
+12.06:21.58.14ERROR	ClientTest:87 - Ошибка загрузки XML файла: config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\config.xml (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTestTest.testGetPlanetsFromXml(ClientTestTest.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:21.58.14 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.06:21.58.44ERROR	ClientTest:87 - Ошибка загрузки XML файла: config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\config.xml (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTestTest.testGetPlanetsFromXml(ClientTestTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:21.58.44 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.06:22.00.03ERROR	ClientTest:87 - Ошибка загрузки XML файла: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTestTest.testGetPlanetsFromXml(ClientTestTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.00.03 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.06:22.00.30ERROR	ClientTest:49 - Файл не найден: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:46)
+	at ClientTest.getPlanets(ClientTest.java:96)
+	at ClientTestTest.testGetPlanetsFromProperties(ClientTestTest.java:9)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.00.30 WARN	ClientTest:101 - Планеты не найдены в properties файле.
+12.06:22.00.30ERROR	ClientTest:87 - Ошибка загрузки XML файла: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTestTest.testGetPlanetsFromXml(ClientTestTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.00.30 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.06:22.00.30ERROR	ClientTest:61 - YML файл не найден: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.yaml
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.yaml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadYml(ClientTest.java:58)
+	at ClientTest.getPlanets(ClientTest.java:106)
+	at ClientTestTest.testGetPlanetsFromYml(ClientTestTest.java:16)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.00.30ERROR	ClientTest:73 - Ключ не найден: planets
+12.06:22.00.30 WARN	ClientTest:109 - Планеты не найдены в YML файле.
+12.06:22.00.35ERROR	ClientTest:87 - Ошибка загрузки XML файла: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTestTest.testGetPlanetsFromXml(ClientTestTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.00.35 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.06:22.00.59ERROR	ClientTest:87 - Ошибка загрузки XML файла: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTestTest.testGetPlanetsFromXml(ClientTestTest.java:23)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.00.59 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.06:22.01.20ERROR	ClientTest:49 - Файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.properties
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:46)
+	at ClientTest.getPlanets(ClientTest.java:96)
+	at ClientTestTest.testGetPlanetsFromProperties(ClientTestTest.java:9)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.01.20 WARN	ClientTest:101 - Планеты не найдены в properties файле.
+12.06:22.03.08ERROR	ClientTest:61 - YML файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.yaml
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.yaml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadYml(ClientTest.java:58)
+	at ClientTest.getPlanets(ClientTest.java:106)
+	at ClientTestTest.testGetPlanetsFromYml(ClientTestTest.java:18)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.06:22.03.08ERROR	ClientTest:73 - Ключ не найден: planets
+12.06:22.03.08 WARN	ClientTest:109 - Планеты не найдены в YML файле.
+12.09:19.05.25ERROR	ClientTest:49 - Файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.properties
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:46)
+	at ClientTest.getPlanets(ClientTest.java:96)
+	at ClientTestTest.testGetPlanetsFromProperties(ClientTestTest.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.09:19.05.25 WARN	ClientTest:101 - Планеты не найдены в properties файле.
+12.09:19.17.12ERROR	ClientTest:49 - Файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.properties
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:46)
+	at ClientTest.getPlanets(ClientTest.java:96)
+	at ClientTestTest.testGetPlanetsFromProperties(ClientTestTest.java:11)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+12.09:19.17.12 WARN	ClientTest:101 - Планеты не найдены в properties файле.
+12.09:21.16.42 INFO	ClientTest:132 - Программа запущена.
+12.09:21.16.42ERROR	ClientTest:49 - Файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.properties
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:46)
+	at ClientTest.getPlanets(ClientTest.java:96)
+	at ClientTest.main(ClientTest.java:135)
+12.09:21.16.42 WARN	ClientTest:101 - Планеты не найдены в properties файле.
+12.09:21.16.42 INFO	ClientTest:136 - Планеты из properties: []
+12.09:21.16.42ERROR	ClientTest:61 - YML файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.yaml
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.yaml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadYml(ClientTest.java:58)
+	at ClientTest.getPlanets(ClientTest.java:106)
+	at ClientTest.main(ClientTest.java:138)
+12.09:21.16.42ERROR	ClientTest:73 - Ключ не найден: planets
+12.09:21.16.42 WARN	ClientTest:109 - Планеты не найдены в YML файле.
+12.09:21.16.42 INFO	ClientTest:139 - Планеты из yaml: null
+12.09:21.16.42ERROR	ClientTest:87 - Ошибка загрузки XML файла: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTest.main(ClientTest.java:141)
+12.09:21.16.42 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.09:21.16.42 INFO	ClientTest:142 - Планеты из xml: []
+12.09:21.16.42 INFO	ClientTest:148 - Выполнение завершено.
+12.09:21.17.00 INFO	ClientTest:132 - Программа запущена.
+12.09:21.17.00ERROR	ClientTest:49 - Файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.properties
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:46)
+	at ClientTest.getPlanets(ClientTest.java:96)
+	at ClientTest.main(ClientTest.java:135)
+12.09:21.17.00 WARN	ClientTest:101 - Планеты не найдены в properties файле.
+12.09:21.17.00 INFO	ClientTest:136 - Планеты из properties: []
+12.09:21.17.00ERROR	ClientTest:61 - YML файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.yaml
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.yaml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadYml(ClientTest.java:58)
+	at ClientTest.getPlanets(ClientTest.java:106)
+	at ClientTest.main(ClientTest.java:138)
+12.09:21.17.00ERROR	ClientTest:73 - Ключ не найден: planets
+12.09:21.17.00 WARN	ClientTest:109 - Планеты не найдены в YML файле.
+12.09:21.17.00 INFO	ClientTest:139 - Планеты из yaml: null
+12.09:21.17.00ERROR	ClientTest:87 - Ошибка загрузки XML файла: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTest.main(ClientTest.java:141)
+12.09:21.17.00 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.09:21.17.00 INFO	ClientTest:142 - Планеты из xml: []
+12.09:21.17.00 INFO	ClientTest:148 - Выполнение завершено.
+12.09:21.17.15DEBUG	ClientTest:22 - Client[0]: starting application.........
+12.09:21.17.15 INFO	ClientTest:33 - Launching the application...
+12.09:21.17.15 INFO	ClientTest:34 - Operating System: Windows 11 10.0
+12.09:21.17.15 INFO	ClientTest:35 - JRE: 21.0.2
+12.09:21.17.15 INFO	ClientTest:36 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.09:21.17.15 INFO	ClientTest:37 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-sync\3.9.1\mongodb-driver-sync-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\bson\3.9.1\bson-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-core\3.9.1\mongodb-driver-core-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\dvdle\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dvdle\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\dvdle\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.09:21.17.15 INFO	ClientTest:38 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.09:21.17.15 INFO	ClientTest:39 - User Home Directory: C:\Users\dvdle
+12.09:21.17.15 INFO	ClientTest:40 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.09:21.17.15 INFO	ClientTest:41 - Test INFO logging.
+12.09:21.17.29DEBUG	ClientTest:22 - Client[0]: starting application.........
+12.09:21.17.29 INFO	ClientTest:33 - Launching the application...
+12.09:21.17.29 INFO	ClientTest:34 - Operating System: Windows 11 10.0
+12.09:21.17.29 INFO	ClientTest:35 - JRE: 21.0.2
+12.09:21.17.29 INFO	ClientTest:36 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.09:21.17.29 INFO	ClientTest:37 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-sync\3.9.1\mongodb-driver-sync-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\bson\3.9.1\bson-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-core\3.9.1\mongodb-driver-core-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\dvdle\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dvdle\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\dvdle\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.09:21.17.29 INFO	ClientTest:38 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.09:21.17.29 INFO	ClientTest:39 - User Home Directory: C:\Users\dvdle
+12.09:21.17.29 INFO	ClientTest:40 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.09:21.17.29 INFO	ClientTest:41 - Test INFO logging.
+12.09:21.17.38DEBUG	ClientTest:22 - Client[0]: starting application.........
+12.09:21.17.38DEBUG	ClientTest:22 - Client[0]: starting application.........
+12.09:21.17.38 INFO	ClientTest:33 - Launching the application...
+12.09:21.17.38 INFO	ClientTest:34 - Operating System: Windows 11 10.0
+12.09:21.17.38 INFO	ClientTest:35 - JRE: 21.0.2
+12.09:21.17.38 INFO	ClientTest:36 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.09:21.17.38 INFO	ClientTest:37 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-sync\3.9.1\mongodb-driver-sync-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\bson\3.9.1\bson-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-core\3.9.1\mongodb-driver-core-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\dvdle\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dvdle\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\dvdle\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.09:21.17.38 INFO	ClientTest:38 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.09:21.17.38 INFO	ClientTest:39 - User Home Directory: C:\Users\dvdle
+12.09:21.17.38 INFO	ClientTest:40 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.09:21.17.38 INFO	ClientTest:41 - Test INFO logging.
+12.09:21.23.36DEBUG	ClientTest:22 - Client[0]: starting application.........
+12.09:21.23.36 INFO	ClientTest:33 - Launching the application...
+12.09:21.23.36 INFO	ClientTest:34 - Operating System: Windows 11 10.0
+12.09:21.23.36 INFO	ClientTest:35 - JRE: 21.0.2
+12.09:21.23.36 INFO	ClientTest:36 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.09:21.23.36 INFO	ClientTest:37 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-sync\3.9.1\mongodb-driver-sync-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\bson\3.9.1\bson-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-core\3.9.1\mongodb-driver-core-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\dvdle\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dvdle\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\dvdle\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.09:21.23.36 INFO	ClientTest:38 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.09:21.23.36 INFO	ClientTest:39 - User Home Directory: C:\Users\dvdle
+12.09:21.23.36 INFO	ClientTest:40 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.09:21.23.36 INFO	ClientTest:41 - Test INFO logging.
+12.09:21.24.02DEBUG	ClientTest:22 - Client[0]: starting application.........
+12.09:21.24.02DEBUG	ClientTest:22 - Client[0]: starting application.........
+12.09:21.24.02 INFO	ClientTest:33 - Launching the application...
+12.09:21.24.02 INFO	ClientTest:34 - Operating System: Windows 11 10.0
+12.09:21.24.02 INFO	ClientTest:35 - JRE: 21.0.2
+12.09:21.24.02 INFO	ClientTest:36 - Java Launched From: C:\Users\dvdle\.jdks\openjdk-21.0.2
+12.09:21.24.02 INFO	ClientTest:37 - Class Path: C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\lib\idea_rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit5-rt.jar;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\plugins\junit\lib\junit-rt.jar;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\test-classes;C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\target\classes;C:\Users\dvdle\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\dvdle\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-sync\3.9.1\mongodb-driver-sync-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\bson\3.9.1\bson-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\mongodb\mongodb-driver-core\3.9.1\mongodb-driver-core-3.9.1.jar;C:\Users\dvdle\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\dvdle\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\dvdle\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\dvdle\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\dvdle\.m2\repository\log4j\log4j\1.2.12\log4j-1.2.12.jar;C:\Users\dvdle\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar
+12.09:21.24.02 INFO	ClientTest:38 - Library Path: C:\Users\dvdle\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\dvdle\AppData\Local\Programs\Python\Python311\;C:\Users\dvdle\AppData\Local\Microsoft\WindowsApps;;C:\Users\dvdle\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;C:\Users\dvdle\AppData\Roaming\npm;.
+12.09:21.24.02 INFO	ClientTest:39 - User Home Directory: C:\Users\dvdle
+12.09:21.24.02 INFO	ClientTest:40 - User Working Directory: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2
+12.09:21.24.02 INFO	ClientTest:41 - Test INFO logging.
+12.09:21.24.44 INFO	ClientTest:132 - Программа запущена.
+12.09:21.24.44ERROR	ClientTest:49 - Файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.properties
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.properties (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadProperties(ClientTest.java:46)
+	at ClientTest.getPlanets(ClientTest.java:96)
+	at ClientTest.main(ClientTest.java:135)
+12.09:21.24.44 WARN	ClientTest:101 - Планеты не найдены в properties файле.
+12.09:21.24.44 INFO	ClientTest:136 - Планеты из properties: []
+12.09:21.24.44ERROR	ClientTest:61 - YML файл не найден: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.yaml
+java.io.FileNotFoundException: mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.yaml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at ClientTest.loadYml(ClientTest.java:58)
+	at ClientTest.getPlanets(ClientTest.java:106)
+	at ClientTest.main(ClientTest.java:138)
+12.09:21.24.44ERROR	ClientTest:73 - Ключ не найден: planets
+12.09:21.24.44 WARN	ClientTest:109 - Планеты не найдены в YML файле.
+12.09:21.24.44 INFO	ClientTest:139 - Планеты из yaml: null
+12.09:21.24.44ERROR	ClientTest:87 - Ошибка загрузки XML файла: mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.xml
+java.io.FileNotFoundException: C:\Users\dvdle\OneDrive\Рабочий стол\mavenDubinaLab2\mavenDubinaLab2\src\main\java\ru.sfedu.dubina\config.xml (Системе не удается найти указанный путь)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:152)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:106)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:84)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:180)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:654)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:861)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:342)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:206)
+	at ClientTest.loadXml(ClientTest.java:85)
+	at ClientTest.getPlanets(ClientTest.java:114)
+	at ClientTest.main(ClientTest.java:141)
+12.09:21.24.44 WARN	ClientTest:121 - Планеты не найдены в XML файле.
+12.09:21.24.44 INFO	ClientTest:142 - Планеты из xml: []
+12.09:21.24.44 INFO	ClientTest:148 - Выполнение завершено.
+12.09:21.45.16ERROR	org.example.Main:59 - Error occurred during MongoDB operations
+java.lang.NullPointerException: Cannot invoke "org.example.models.HistoryContent$Status.toString()" because the return value of "org.example.models.HistoryContent.getStatus()" is null
+	at org.example.api.DataProviderMongo.saveHistoryContent(DataProviderMongo.java:28)
+	at org.example.Main.main(Main.java:32)
