@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="добавлена инструкция">
-      <change afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="добавлена техподдержка(надо исправить клик по ссылке)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
@@ -51,7 +50,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="graphics" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -90,7 +89,7 @@
     &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;helpPost&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/v.dubina/IdeaProjects/parcingCopy&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -334,7 +333,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733465734449</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="добавлена техподдержка(надо исправить клик по ссылке)">
+      <option name="closed" value="true" />
+      <created>1733477247185</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1733477247185</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -357,6 +364,7 @@
     <MESSAGE value="шрифты в другой папке" />
     <MESSAGE value="Modified ComparatorSentRecieved" />
     <MESSAGE value="добавлена инструкция" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлена инструкция" />
+    <MESSAGE value="добавлена техподдержка(надо исправить клик по ссылке)" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена техподдержка(надо исправить клик по ссылке)" />
   </component>
 </project>
