@@ -9,9 +9,29 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javax.swing.filechooser.*;
+import javax.swing.text.BadLocationException;
+/*
 
+<html>" +
+            "<div style='width:700px; margin: 0 auto; font-weight: normal;'>" +
+            "<i><h1 style='text-align: center; margin-top: 45px;'>Руководство пользователя</h1></i>" +
+            "<ol style='font-size: 16px;'>" +
+            "<li style='margin-top: 10px;'>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». <div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic;'>Внимание! Вы можете выбрать только файлы формата .csv</div></li>" +
+            "<li style='margin-top: 10px;'>Для подачи файла на поиск кадастровых номеров достаточно нажать на синюю кнопку «Подать на обработку».</li>" +
+            "<li style='margin-top: 10px;'>При успешном завершении операции обработанные файлы будут храниться на вашем компьютере в выбранной вами папке.</li>" +
+            "<li style='margin-top: 10px;'>Для того, чтобы просеять папку с файлами на наличие факта получения загруженных файлов из Росеестра, нужно нажать на кнопку «Отбор файлов без кадастрового номера».</li>" +
+            "</ol></div>" +
+            "<div><h1 style='text-align: center; margin-top: 20px;'>Контакты техподдержки</h1>" +
+            "<div style = 'font-size: 16px; text-align: center; font-weight: normal;'>Что-то не работает? Пишите нам на почту, мы Вам ответим, как только сможем!<br><a style ='font-size: 16px; font-weight: bold;' href='mailto:dvdlera@gmail.com'>dvdlera@gmail.com</a></div>" +
+            "</div></html>
+
+            */
 
 public class WindowApp extends JFrame{
     Color dark_green = new Color(48, 133, 66);
@@ -21,11 +41,22 @@ public class WindowApp extends JFrame{
     Color purple = new Color(141,68,173);
     Color dark_purple = new Color(88, 17, 120);
     JLabel l = new JLabel("<html><h2>Файлы не выбраны</h2></html>");
-    JLabel userGuide = new JLabel("<html><div style='width:700px; margin: 0 auto; font-weight: normal;'><i><h1 style='text-align: center; margin-top: 60px;'>Руководство пользователя</h1></i><ol style='font-size: 16px;'><li style='margin-top: 10px;'>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». <div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic;'>Внимание! Вы можете выбрать только файлы формата .csv</div></li><li style='margin-top: 10px;'>Для подачи файла на поиск кадастровых номеров достаточно нажать на синюю кнопку «Подать на обработку».</li><li style='margin-top: 10px;'>При успешном завершении операции обработанные файлы будут храниться на вашем компьютере в выбранной вами папке.</li><li style='margin-top: 10px;'>Для того, чтобы просеять папку с файлами на наличие факта получения загруженных файлов из Росеестра, нужно нажать на кнопку «Отбор файлов без кадастрового номера».</li></ol></div></html>");
     JFileChooser fileChooser = new JFileChooser();
 
     JPanel panel = new JPanel(new FlowLayout());
-
+    JLabel userGuide = new JLabel("<html>" +
+            "<div style='width:700px; margin: 0 auto; font-weight: normal;'>" +
+            "<i><h1 style='text-align: center; margin-top: 45px;'>Руководство пользователя</h1></i>" +
+            "<ol style='font-size: 16px;'>" +
+            "<li style='margin-top: 10px;'>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». <div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic;'>Внимание! Вы можете выбрать только файлы формата .csv</div></li>" +
+            "<li style='margin-top: 10px;'>Для подачи файла на поиск кадастровых номеров достаточно нажать на синюю кнопку «Подать на обработку».</li>" +
+            "<li style='margin-top: 10px;'>При успешном завершении операции обработанные файлы будут храниться на вашем компьютере в выбранной вами папке.</li>" +
+            "<li style='margin-top: 10px;'>Для того, чтобы просеять папку с файлами на наличие факта получения загруженных файлов из Росеестра, нужно нажать на кнопку «Отбор файлов без кадастрового номера».</li>" +
+            "</ol></div>" +
+            "<div><h1 style='text-align: center; margin-top: 20px;'>Контакты техподдержки</h1>" +
+            "<div style = 'font-size: 16px; text-align: center; font-weight: normal;'>Что-то не работает? Пишите нам на почту, мы Вам ответим, как только сможем!</div>" +
+            "</div></html>");
+    JLabel userGuideLink = new JLabel("<html><div style='margin-left: 260px;'><a style ='font-size: 16px; font-weight: bold; text-align: center;' href='mailto:dvdlera@gmail.com'>dvdlera@gmail.com</a></div></html>");
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
     RoundedButton filterFile = new RoundedButton("Отбор файлов без кадастрового номера");
@@ -37,6 +68,7 @@ public class WindowApp extends JFrame{
     // Модальное окно для выбора браузера
     private String selectedBrowser = "Chrome";
     WebDriver driver;
+
 
 
 
@@ -135,6 +167,34 @@ public class WindowApp extends JFrame{
     public WindowApp() {
         super("Работа с выписками");
 
+        //функционал написания письма в техподдержку
+        userGuideLink.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                String labelText = userGuideLink.getText();
+                if (labelText.contains("dvdlera@gmail.com")) {
+                    try {
+                        Desktop.getDesktop().mail(new URI("mailto:dvdlera@gmail.com"));
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+            //курсор рука на ссылке
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                userGuideLink.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            }
+            //возвращаем дефолтный курсор
+            @Override
+            public void mouseExited(MouseEvent e) {
+                userGuideLink.setCursor(Cursor.getDefaultCursor());
+            }
+        });
+
+
+
+
         //Добавляем поток загрузки файла (если активна кнопка uploadile)
 
 
@@ -186,17 +246,24 @@ public class WindowApp extends JFrame{
         //Размещение кнопок в интерфейсе
         panel.setLayout(new FlowLayout());
 
+        //создала нижнюю панель для последних двух блоков с инструкцией и ссылкой
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.Y_AXIS));
 
         panel.add(l);
         panel.add(uploadFile);
         panel.add(sendToProssesing);
         panel.add(filterFile);
 
-        panel.add(userGuide);
+        bottomPanel.add(userGuide);
+        bottomPanel.add(Box.createVerticalStrut(10)); // Отступ между блоками
+        bottomPanel.add(userGuideLink);
+
 
         //Вывод окна на экран
+        panel.add(bottomPanel);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setBounds(750, 350, 1000, 700);
+        setBounds(500, 150, 1150, 800);
         add(panel);
         setVisible(true);
     }
