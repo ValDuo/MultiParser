@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2013c051-8813-47e2-a055-b0a6c9219881" name="Changes" comment="шрифты в другой папке">
+    <list default="true" id="2013c051-8813-47e2-a055-b0a6c9219881" name="Changes" comment="modified ComparatorSentRecieved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ComparatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComparatorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +31,12 @@
     }
   }
 }</component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "https://gitlab.com/builders702344/parcing-of-kadastrs.git",
-    "second": "588bfaea-623c-4f15-8ac4-cf923c525d62"
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.com/builders702344/parcing-of-kadastrs.git&quot;,
+    &quot;second&quot;: &quot;588bfaea-623c-4f15-8ac4-cf923c525d62&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -60,7 +59,8 @@
     "last_opened_file_path": "C:/Users/d.kostukov/OneDrive - Южный Федеральный Университет/архитектура/Accounting",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "inlay.hints"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,7 +71,7 @@
       <recent name="C:\Users\d.kostukov\IdeaProjects\parcing-of-kadastrs\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ComparatorTest">
+  <component name="RunManager" selected="Application.WindowApp">
     <configuration name="ComparatorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ComparatorTest" />
       <module name="parcing-of-kadastrs" />
@@ -152,14 +152,31 @@
       <option name="presentableId" value="Default" />
       <updated>1733467285084</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006">
+      <option name="closed" value="true" />
+      <created>1733475747780</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733475747780</updated>
+    </task>
+    <task id="LOCAL-00007" summary="modified ComparatorSentRecieved">
+      <option name="closed" value="true" />
+      <created>1733475831487</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733475831487</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="without any waste" />
     <MESSAGE value="Modified ComparatorSentRecieved" />
     <MESSAGE value="шрифты в другой папке" />
-    <option name="LAST_COMMIT_MESSAGE" value="шрифты в другой папке" />
+    <MESSAGE value="modified ComparatorSentRecieved" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified ComparatorSentRecieved" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

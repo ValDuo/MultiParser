@@ -11,8 +11,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.*;
 
 public class ComparatorSentRecieved {
-    private HashSet requestSet;
-    private HashSet responseSet;
+    private HashSet<String> requestSet;
+    private HashSet<String> responseSet;
     private File requestFile;
     private File responseDirectory;
     private File extractingDir;
@@ -126,12 +126,30 @@ public class ComparatorSentRecieved {
     }
     private HashSet<String> getRequestSet(){
         HashSet<String> requestSet = new HashSet<>();
-        return null;
+        CSV_IO csv = new CSV_IO(this.requestFile);
+        ArrayList<String> addresses = csv.readLines();
+        for (String address:addresses){
+            requestSet.add(address);
+        }
+        this.requestSet = requestSet;
+        return requestSet;
     }
     public void compare(){
-        //extractZip();
-        //delete_non_xml();
-        System.out.println(getXmls());
+         extractZip();
+         delete_non_xml();
+         HashSet<String> difference = new HashSet<>();
+         for(String request_address: this.requestSet){
+            if (!this.responseSet.contains(request_address)){
+                difference.add(request_address);
+            }
+         }
+    }
+    private void saveCompare(HashSet<String> difference){
+        CSV_IO difference_csv = new CSV_IO(extractingDirPath+"new.csv");
+        ArrayList<String> difference_array = (ArrayList<String>) difference.stream().toList();
+        for(String address:difference_array){
+            difference_csv.writeCSVLine(address);
+        }
     }
 
 
