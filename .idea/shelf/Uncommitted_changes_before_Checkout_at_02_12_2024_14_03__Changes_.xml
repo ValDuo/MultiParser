@@ -1,0 +1,34 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]" date="1733137425200" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 02.12.2024 14:03 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/WindowApp$1.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/WindowApp$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]/WindowApp$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/CSV_IO.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/CSV_IO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]/CSV_IO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/WindowApp$2.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/WindowApp$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]/WindowApp$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/WindowApp.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/WindowApp.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]/WindowApp.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/SeleniumParser.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/SeleniumParser.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]/SeleniumParser.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/BigCSVCutter.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/BigCSVCutter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_02_12_2024_14_03_[Changes]/BigCSVCutter.class" />
+  </binary>
+</changelist>

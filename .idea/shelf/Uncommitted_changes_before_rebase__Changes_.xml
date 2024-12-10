@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_rebase_[Changes]" date="1732692850766" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/CSV_IO.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/CSV_IO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/CSV_IO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/SeleniumParser.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/SeleniumParser.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/SeleniumParser.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/parcing-of-kadastrs/BigCSVCutter.class" />
+    <option name="AFTER_PATH" value="out/production/parcing-of-kadastrs/BigCSVCutter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/BigCSVCutter.class" />
+  </binary>
+</changelist>

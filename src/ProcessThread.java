@@ -1,22 +1,24 @@
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
 
 public class ProcessThread extends Thread{
-    private boolean isActive;
-    private CSV_IO csv;
-    void disable(){
-        isActive= false;
+    private boolean isActive = true;
+    private final CSV_IO csv;
+    private final WebDriver driver;
+    void disable() {
+        this.isActive = false;
     }
-    ProcessThread(CSV_IO srcFile){
+    ProcessThread(CSV_IO srcFile, WebDriver driver){
         super();
-        isActive = true;
         this.csv = srcFile;
+        this.isActive = true;
+        this.driver = driver;
     }
+
     @Override
     public void run() {// Этот метод будет вызван при старте потока
-        SeleniumParser parser = new SeleniumParser(new ChromeDriver());
+        SeleniumParser parser = new SeleniumParser(driver);
         parser.setSrcAndDst(csv);
         parser.startParse();
-//        this.disable();
     }
 }
 
