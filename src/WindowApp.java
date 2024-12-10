@@ -71,18 +71,14 @@ public class WindowApp extends JFrame{
     public File[] upload(){
         fileChooser.setDialogTitle("Выбор файла");
         fileChooser.setMultiSelectionEnabled(true);
-        // Определение режима - только каталог
+        // Определение режима - только файлы
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-
         int result = fileChooser.showOpenDialog(null);
-        // Если директория выбрана, покажем ее в сообщении
         if (result == JFileChooser.APPROVE_OPTION) {
-            //массив выбранных файлов
             File[] files = fileChooser.getSelectedFiles();
             JOptionPane.showMessageDialog(null,
                     "Файл(ы) импортированы.");
             l.setText("");
-
             for (File file : files) {
                 l.setText(l.getText() +"   "+ file.getName());
             }
@@ -132,20 +128,17 @@ public class WindowApp extends JFrame{
 
     //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
     public void filter() {
-
-
+        JFileChooser fileChooser = new JFileChooser();
         int result = fileChooser.showOpenDialog(null);
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         if (result == JFileChooser.APPROVE_OPTION){
-            JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Выбор файла");
             fileChooser.setMultiSelectionEnabled(true);
-
-            fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            //выбираем только папки
             File[] files = fileChooser.getSelectedFiles();
             for (File _ : files) {
                 FilterThread filteringEvent = new FilterThread();// в параметре тут было new CSV_IO(file.getAbsolutePath())
                 filteringEvent.start();
-
                 //надо доработать поток и добавить в него функционал
 
             }
@@ -185,9 +178,6 @@ public class WindowApp extends JFrame{
                 userGuideLink.setCursor(Cursor.getDefaultCursor());
             }
         });
-
-
-
 
         //Добавляем поток загрузки файла (если активна кнопка uploadile)
 
