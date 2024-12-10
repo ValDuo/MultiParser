@@ -128,24 +128,36 @@ public class WindowApp extends JFrame{
 
     //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
     public void filter() {
-        JFileChooser fileChooser = new JFileChooser();
-        int result = fileChooser.showOpenDialog(null);
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        if (result == JFileChooser.APPROVE_OPTION){
-            fileChooser.setDialogTitle("Выбор файла");
-            fileChooser.setMultiSelectionEnabled(true);
-            //выбираем только папки
-            File[] files = fileChooser.getSelectedFiles();
-            for (File _ : files) {
-                FilterThread filteringEvent = new FilterThread();// в параметре тут было new CSV_IO(file.getAbsolutePath())
-                filteringEvent.start();
-                //надо доработать поток и добавить в него функционал
+        JFileChooser folderChooser = new JFileChooser();
+        folderChooser.setDialogTitle("Выберите папку с файлами");
+        folderChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        folderChooser.setMultiSelectionEnabled(false);
 
+        int folderResult = folderChooser.showOpenDialog(null);
+        if (folderResult == JFileChooser.APPROVE_OPTION) {
+            File selectedFolder = folderChooser.getSelectedFile();
+
+            JFileChooser zipChooser = new JFileChooser();
+            zipChooser.setDialogTitle("Выберите zip-архив");
+            zipChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            zipChooser.setMultiSelectionEnabled(false);
+
+            int zipResult = zipChooser.showOpenDialog(null);
+            if (zipResult == JFileChooser.APPROVE_OPTION) {
+                File selectedZipFile = zipChooser.getSelectedFile();
+                if (selectedZipFile == null || !selectedZipFile.exists() || !selectedZipFile.isFile()) {
+                    JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
+                    return;
+                }
+
+                // Запускаем поток для обработки выбранной папки и архива
+                FilterThread filteringEvent = new FilterThread(selectedFolder.getAbsolutePath(), selectedZipFile.getAbsolutePath());
+                filteringEvent.start();
+            } else {
+                JOptionPane.showMessageDialog(null, "Выберите zip-архив.");
             }
-        }
-        else {
-            JOptionPane.showMessageDialog(null,
-                    "Ошибка фильтрации! Выберите папку с файлами.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Выберите папку с файлами.");
         }
     }
 
