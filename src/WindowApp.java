@@ -13,9 +13,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.*;
 import java.net.URI;
-import java.net.URISyntaxException;
 import javax.swing.filechooser.*;
-import javax.swing.text.BadLocationException;
 /*
 
 <html>" +
@@ -65,8 +63,6 @@ public class WindowApp extends JFrame{
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
             "csv", "csv");
 
-    // Модальное окно для выбора браузера
-    private String selectedBrowser = "Chrome";
     WebDriver driver;
 
 
@@ -115,7 +111,8 @@ public class WindowApp extends JFrame{
     // Метод для выбора браузера
     private WebDriver chooseBrowser() {
         String[] browsers = {"Chrome", "Firefox", "Edge"};
-        selectedBrowser = (String) JOptionPane.showInputDialog(
+        // Модальное окно для выбора браузера
+        String selectedBrowser = (String) JOptionPane.showInputDialog(
                 this,
                 "Выберите браузер для обработки:",
                 "Выбор браузера",
@@ -129,9 +126,6 @@ public class WindowApp extends JFrame{
         }
         else if (selectedBrowser.equalsIgnoreCase("firefox")){
             return this.driver = new FirefoxDriver(new FirefoxOptions());
-        }
-        if (selectedBrowser == null) {
-            return this.driver = new ChromeDriver(new ChromeOptions());
         }
         return this.driver = new ChromeDriver(new ChromeOptions());
     }
@@ -148,7 +142,7 @@ public class WindowApp extends JFrame{
 
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
             File[] files = fileChooser.getSelectedFiles();
-            for (File file : files) {
+            for (File _ : files) {
                 FilterThread filteringEvent = new FilterThread();// в параметре тут было new CSV_IO(file.getAbsolutePath())
                 filteringEvent.start();
 
@@ -197,17 +191,16 @@ public class WindowApp extends JFrame{
 
         //Добавляем поток загрузки файла (если активна кнопка uploadile)
 
+        uploadFile.addActionListener(_ -> files = upload());
 
-        uploadFile.addActionListener(e -> files = upload());
+        //Добавляем поток сохранения файла (если активна кнопка getFile)
 
- //       Добавляем поток сохранения файла (если активна кнопка getFile)
-
-        sendToProssesing.addActionListener(e -> process(files));
+        sendToProssesing.addActionListener(_ -> process(files));
 
 
         //обработанные файлы достаем из папки dstFiles подаем в следующую функцию
 
-        filterFile.addActionListener(e -> filter());
+        filterFile.addActionListener(_ -> filter());
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(formatFilter);
