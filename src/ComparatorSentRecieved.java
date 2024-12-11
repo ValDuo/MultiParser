@@ -172,6 +172,4 @@ public class ComparatorSentRecieved {
             difference_csv.writeCSVLine(address);
         }
     }
-
-
 }
