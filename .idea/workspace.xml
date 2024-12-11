@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="Modified ComparatorSentRecieved">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" afterDir="false" />
+    <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)">
+      <change afterPath="$PROJECT_DIR$/src/Tests/UserGuideHTML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,25 +21,25 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPENED",
-    "assignee": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-      "username": "project_63025756_bot_4e0d9bfa996137f9867998ca215d3c3d",
-      "fullname": "a"
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;project_63025756_bot_4e0d9bfa996137f9867998ca215d3c3d&quot;,
+      &quot;fullname&quot;: &quot;a&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "https://gitlab.com/builders702344/parcing-of-kadastrs.git",
-    "second": "588bfaea-623c-4f15-8ac4-cf923c525d62"
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab.com/builders702344/parcing-of-kadastrs.git&quot;,
+    &quot;second&quot;: &quot;588bfaea-623c-4f15-8ac4-cf923c525d62&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2q3mG11wfmumakVGIaBCUoriCpk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -322,17 +319,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modified ComparatorSentRecieved" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified ComparatorSentRecieved" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/WindowApp.java</url>
-          <line>154</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)" />
   </component>
 </project>

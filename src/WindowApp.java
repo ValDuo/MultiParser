@@ -14,22 +14,6 @@ import java.awt.event.MouseEvent;
 import java.io.*;
 import java.net.URI;
 import javax.swing.filechooser.*;
-/*
-
-<html>" +
-            "<div style='width:700px; margin: 0 auto; font-weight: normal;'>" +
-            "<i><h1 style='text-align: center; margin-top: 45px;'>Руководство пользователя</h1></i>" +
-            "<ol style='font-size: 16px;'>" +
-            "<li style='margin-top: 10px;'>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». <div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic;'>Внимание! Вы можете выбрать только файлы формата .csv</div></li>" +
-            "<li style='margin-top: 10px;'>Для подачи файла на поиск кадастровых номеров достаточно нажать на синюю кнопку «Подать на обработку».</li>" +
-            "<li style='margin-top: 10px;'>При успешном завершении операции обработанные файлы будут храниться на вашем компьютере в выбранной вами папке.</li>" +
-            "<li style='margin-top: 10px;'>Для того, чтобы просеять папку с файлами на наличие факта получения загруженных файлов из Росеестра, нужно нажать на кнопку «Отбор файлов без кадастрового номера».</li>" +
-            "</ol></div>" +
-            "<div><h1 style='text-align: center; margin-top: 20px;'>Контакты техподдержки</h1>" +
-            "<div style = 'font-size: 16px; text-align: center; font-weight: normal;'>Что-то не работает? Пишите нам на почту, мы Вам ответим, как только сможем!<br><a style ='font-size: 16px; font-weight: bold;' href='mailto:dvdlera@gmail.com'>dvdlera@gmail.com</a></div>" +
-            "</div></html>
-
-            */
 
 public class WindowApp extends JFrame{
     Color dark_green = new Color(48, 133, 66);
@@ -42,20 +26,9 @@ public class WindowApp extends JFrame{
     JFileChooser fileChooser = new JFileChooser();
 
     JPanel panel = new JPanel(new FlowLayout());
-    // TODO: вкинь html в отдельные классы, пожалуйста
-    JLabel userGuide = new JLabel("<html>" +
-            "<div style='width:700px; margin: 0 auto; font-weight: normal;'>" +
-            "<i><h1 style='text-align: center; margin-top: 45px;'>Руководство пользователя</h1></i>" +
-            "<ol style='font-size: 16px;'>" +
-            "<li style='margin-top: 10px;'>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». <div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic;'>Внимание! Вы можете выбрать только файлы формата .csv</div></li>" +
-            "<li style='margin-top: 10px;'>Для подачи файла на поиск кадастровых номеров достаточно нажать на синюю кнопку «Подать на обработку».</li>" +
-            "<li style='margin-top: 10px;'>При успешном завершении операции обработанные файлы будут храниться на вашем компьютере в выбранной вами папке.</li>" +
-            "<li style='margin-top: 10px;'>Для того, чтобы просеять папку с файлами на наличие факта получения загруженных файлов из Росеестра, нужно нажать на кнопку «Отбор файлов без кадастрового номера».</li>" +
-            "</ol></div>" +
-            "<div><h1 style='text-align: center; margin-top: 20px;'>Контакты техподдержки</h1>" +
-            "<div style = 'font-size: 16px; text-align: center; font-weight: normal;'>Что-то не работает? Пишите нам на почту, мы Вам ответим, как только сможем!</div>" +
-            "</div></html>");
-    JLabel userGuideLink = new JLabel("<html><div style='margin-left: 260px;'><a style ='font-size: 16px; font-weight: bold; text-align: center;' href='mailto:dvdlera@gmail.com'>dvdlera@gmail.com</a></div></html>");
+    JLabel userGuide = new JLabel(UserGuideHTML.HTML_CONTENT);
+    JLabel userGuideLink = new JLabel(UserGuideLinkHTML.HTML_CONTENT);
+
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
     RoundedButton filterFile = new RoundedButton("Сравнить отправленные и полученные файлы");
