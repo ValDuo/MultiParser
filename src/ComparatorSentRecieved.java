@@ -138,7 +138,7 @@ public class ComparatorSentRecieved {
         CSV_IO csv = new CSV_IO(requestFile);
         ArrayList<String> addresses = csv.readLines();
         for (String address:addresses){
-            requestSet.add(address.split(";")[1]);
+            requestSet.add(address.split(";")[1].strip());
         }
         this.requestSet = requestSet;
         return requestSet;
