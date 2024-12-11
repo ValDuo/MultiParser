@@ -128,36 +128,30 @@ public class WindowApp extends JFrame{
 
     //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
     public void filter() {
-        JFileChooser folderChooser = new JFileChooser();
-        folderChooser.setDialogTitle("Выберите папку с файлами");
-        folderChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        folderChooser.setMultiSelectionEnabled(false);
-
-        int folderResult = folderChooser.showOpenDialog(null);
-        if (folderResult == JFileChooser.APPROVE_OPTION) {
-            File selectedFolder = folderChooser.getSelectedFile();
-
-            JFileChooser zipChooser = new JFileChooser();
-            zipChooser.setDialogTitle("Выберите zip-архив");
-            zipChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            zipChooser.setMultiSelectionEnabled(false);
-
-            int zipResult = zipChooser.showOpenDialog(null);
-            if (zipResult == JFileChooser.APPROVE_OPTION) {
-                File selectedZipFile = zipChooser.getSelectedFile();
-                if (selectedZipFile == null || !selectedZipFile.exists() || !selectedZipFile.isFile()) {
-                    JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
-                    return;
-                }
-
-                // Запускаем поток для обработки выбранной папки и архива
-                FilterThread filteringEvent = new FilterThread(selectedFolder.getAbsolutePath(), selectedZipFile.getAbsolutePath());
-                filteringEvent.start();
-            } else {
-                JOptionPane.showMessageDialog(null, "Выберите zip-архив.");
+        JFileChooser zipChooser = new JFileChooser();
+        zipChooser.setDialogTitle("Выберите zip-архив");
+        zipChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        zipChooser.setMultiSelectionEnabled(false);
+        int zipResult = zipChooser.showOpenDialog(null);
+        if (zipResult == JFileChooser.APPROVE_OPTION) {
+            File selectedZipFile = zipChooser.getSelectedFile();
+            if (selectedZipFile == null || !selectedZipFile.exists() || !selectedZipFile.isFile()) {
+                JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
+                return;
             }
-        } else {
-            JOptionPane.showMessageDialog(null, "Выберите папку с файлами.");
+            if (files[0] != null) {
+                // Запускаем поток для обработки выбранного файла С КАДАСТРАМИ и архива
+                FilterThread filteringEvent = new FilterThread(files[0], selectedZipFile.getAbsolutePath());
+                filteringEvent.start();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Файл .csv с кадастровыми номерами не выбран!");
+                return;
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Выберите zip-архив.");
+            return;
         }
     }
 
