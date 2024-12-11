@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)">
-      <change afterPath="$PROJECT_DIR$/src/Tests/UserGuideHTML.java" afterDir="false" />
+    <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="Modified ComparatorSentRecieved">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="forHTML" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -319,7 +321,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modified ComparatorSentRecieved" />
-    <MESSAGE value="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified ComparatorSentRecieved" />
   </component>
 </project>

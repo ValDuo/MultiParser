@@ -41,7 +41,6 @@ public class WindowApp extends JFrame{
 
 
 
-
     public File[] upload(){
         fileChooser.setDialogTitle("Выбор файла");
         fileChooser.setMultiSelectionEnabled(true);
@@ -78,6 +77,38 @@ public class WindowApp extends JFrame{
 
         }
     }
+
+
+
+    //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
+    public void filter() {
+        JFileChooser zipChooser = new JFileChooser();
+        zipChooser.setDialogTitle("Выберите zip-архив");
+        zipChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        zipChooser.setMultiSelectionEnabled(false);
+        int zipResult = zipChooser.showOpenDialog(null);
+        if (zipResult == JFileChooser.APPROVE_OPTION) {
+            File selectedZipFile = zipChooser.getSelectedFile();
+            if (selectedZipFile == null || !selectedZipFile.exists()) {
+                JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
+                return;
+            }
+            if (files[0] != null) {
+                // Запускаем поток для обработки выбранного файла С КАДАСТРАМИ и архива
+                FilterThread filteringEvent = new FilterThread(files, selectedZipFile.getAbsolutePath());
+                filteringEvent.start();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Файл .csv с кадастровыми номерами не выбран!");
+                return;
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Выберите zip-архив.");
+            return;
+        }
+    }
+
     // Метод для выбора браузера
     private WebDriver chooseBrowser() {
         String[] browsers = {"Chrome", "Firefox", "Edge"};
@@ -99,36 +130,6 @@ public class WindowApp extends JFrame{
         }
         return this.driver = new ChromeDriver(new ChromeOptions());
     }
-
-    //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
-    public void filter() {
-        JFileChooser zipChooser = new JFileChooser();
-        zipChooser.setDialogTitle("Выберите zip-архив");
-        zipChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        zipChooser.setMultiSelectionEnabled(false);
-        int zipResult = zipChooser.showOpenDialog(null);
-        if (zipResult == JFileChooser.APPROVE_OPTION) {
-            File selectedZipFile = zipChooser.getSelectedFile();
-            if (selectedZipFile == null || !selectedZipFile.exists() || !selectedZipFile.isFile()) {
-                JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
-                return;
-            }
-            if (files[0] != null) {
-                // Запускаем поток для обработки выбранного файла С КАДАСТРАМИ и архива
-                FilterThread filteringEvent = new FilterThread(files[0], selectedZipFile.getAbsolutePath());
-                filteringEvent.start();
-            }
-            else {
-                JOptionPane.showMessageDialog(null, "Файл .csv с кадастровыми номерами не выбран!");
-                return;
-            }
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "Выберите zip-архив.");
-            return;
-        }
-    }
-
 
 
     public WindowApp() {
@@ -159,21 +160,20 @@ public class WindowApp extends JFrame{
             }
         });
 
-        //Добавляем поток загрузки файла (если активна кнопка uploadile)
 
+        //Добавляем поток загрузки файла (если активна кнопка uploadile)
         uploadFile.addActionListener(_ -> files = upload());
 
         //Добавляем поток сохранения файла (если активна кнопка getFile)
-
         sendToProssesing.addActionListener(_ -> process(files));
 
-
         //обработанные файлы достаем из папки dstFiles подаем в следующую функцию
-
         filterFile.addActionListener(_ -> filter());
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(formatFilter);
+
+
 
         //Добавляем стилизацию на кнопку добавления файлов
         uploadFile.setPreferredSize(new Dimension(350, 50));
@@ -203,9 +203,6 @@ public class WindowApp extends JFrame{
         filterFile.setArcHeight(20);
         filterFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-
-
-
         //Размещение кнопок в интерфейсе
         panel.setLayout(new FlowLayout());
 
@@ -221,10 +218,8 @@ public class WindowApp extends JFrame{
         bottomPanel.add(userGuide);
         bottomPanel.add(Box.createVerticalStrut(10)); // Отступ между блоками
         bottomPanel.add(userGuideLink);
-
-
-        //Вывод окна на экран
         panel.add(bottomPanel);
+
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(500, 150, 1150, 800);
         add(panel);
@@ -233,7 +228,6 @@ public class WindowApp extends JFrame{
 
 
     public static void main(String[] args) {
-
 
         UIManager.put(
                 "FileChooser.saveButtonText", "Сохранить");
