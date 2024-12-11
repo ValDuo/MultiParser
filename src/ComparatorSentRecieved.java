@@ -35,7 +35,7 @@ public class ComparatorSentRecieved {
     }
     ComparatorSentRecieved(File[] requestFiles, String responseDirectoryPath) throws IOException{
         for(File file:requestFiles)
-            checkFiles(file,responseDirectory);
+            checkFiles(file, new File(responseDirectoryPath));
         this.requestFiles = requestFiles;
         this.responseDirectory = new File(responseDirectoryPath);
         this.extractingDir = createExctractDirectory();
@@ -135,7 +135,7 @@ public class ComparatorSentRecieved {
     }
     private HashSet<String> getRequestSet(File requestFile){
         HashSet<String> requestSet = new HashSet<>();
-        CSV_IO csv = new CSV_IO(requestFile);
+        CSV_IO csv = new CSV_IO(requestFile.getAbsolutePath());
         ArrayList<String> addresses = csv.readLines();
         for (String address:addresses){
             requestSet.add(address.split(";")[1].strip());
@@ -155,6 +155,11 @@ public class ComparatorSentRecieved {
     public void compare(){
          extractZip();
          delete_non_xml();
+         if (this.requestFiles != null)
+             getRequestSet(requestFiles);
+         else
+             getRequestSet(requestFile);
+         getResponseSet();
          HashSet<String> difference = new HashSet<>();
              for (String request_address : this.requestSet) {
                  if (!this.responseSet.contains(request_address)) {
@@ -165,11 +170,21 @@ public class ComparatorSentRecieved {
     }
 
 
-    private void saveCompared(HashSet<String> difference){
-        CSV_IO difference_csv = new CSV_IO(extractingDirPath+"new.csv");
-        ArrayList<String> difference_array = (ArrayList<String>) difference.stream().toList();
+    private void saveCompared(HashSet<String> difference) {
+        CSV_IO difference_csv = new CSV_IO(extractingDirPath+".csv");
+        try {
+            if(difference_csv.exists()){
+                difference_csv.delete();
+            }
+            difference_csv.createNewFile();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        ArrayList<String> difference_array = new ArrayList<>(difference);
         for(String address:difference_array){
             difference_csv.writeCSVLine(address);
         }
+        System.out.println("Все сохранено в файл " + extractingDirPath+".csv");
     }
 }
