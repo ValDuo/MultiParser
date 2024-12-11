@@ -57,7 +57,7 @@ public class WindowApp extends JFrame{
     JLabel userGuideLink = new JLabel("<html><div style='margin-left: 260px;'><a style ='font-size: 16px; font-weight: bold; text-align: center;' href='mailto:dvdlera@gmail.com'>dvdlera@gmail.com</a></div></html>");
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
-    RoundedButton filterFile = new RoundedButton("Отбор файлов без кадастрового номера");
+    RoundedButton filterFile = new RoundedButton("Сравнить отправленные и полученные файлы");
 
     File[] files;
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
