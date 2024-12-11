@@ -42,6 +42,7 @@ public class WindowApp extends JFrame{
     JFileChooser fileChooser = new JFileChooser();
 
     JPanel panel = new JPanel(new FlowLayout());
+    // TODO: вкинь html в отдельные классы, пожалуйста
     JLabel userGuide = new JLabel("<html>" +
             "<div style='width:700px; margin: 0 auto; font-weight: normal;'>" +
             "<i><h1 style='text-align: center; margin-top: 45px;'>Руководство пользователя</h1></i>" +
