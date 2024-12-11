@@ -14,9 +14,11 @@ public class ComparatorSentRecieved {
     private HashSet<String> requestSet;
     private HashSet<String> responseSet;
     private File requestFile;
+    private File[] requestFiles;
     private File responseDirectory;
     private File extractingDir;
     private String extractingDirPath;
+
     ComparatorSentRecieved(String requestFilePath, String responseDirectoryPath) throws IOException{
         File request = new File(requestFilePath);
         File response = new File(responseDirectoryPath);
@@ -29,6 +31,13 @@ public class ComparatorSentRecieved {
         checkFiles(requestFile, responseDirectory);
         this.requestFile = requestFile;
         this.responseDirectory = responseDirectory;
+        this.extractingDir = createExctractDirectory();
+    }
+    ComparatorSentRecieved(File[] requestFiles, String responseDirectoryPath) throws IOException{
+        for(File file:requestFiles)
+            checkFiles(file,responseDirectory);
+        this.requestFiles = requestFiles;
+        this.responseDirectory = new File(responseDirectoryPath);
         this.extractingDir = createExctractDirectory();
     }
     private void checkFiles(File requestFile, File responseDirectory) throws IOException{
@@ -124,12 +133,21 @@ public class ComparatorSentRecieved {
         this.responseSet = responseSet;
         return responseSet;
     }
-    private HashSet<String> getRequestSet(){
+    private HashSet<String> getRequestSet(File requestFile){
         HashSet<String> requestSet = new HashSet<>();
-        CSV_IO csv = new CSV_IO(this.requestFile);
+        CSV_IO csv = new CSV_IO(requestFile);
         ArrayList<String> addresses = csv.readLines();
         for (String address:addresses){
-            requestSet.add(address);
+            requestSet.add(address.split(";")[1]);
+        }
+        this.requestSet = requestSet;
+        return requestSet;
+    }
+    private HashSet<String> getRequestSet(File[] requestFiles){
+        HashSet<String> requestSet = new HashSet<>();
+        for(int i = 0; i < requestFiles.length; i++) {
+            HashSet<String> oneFileSet = getRequestSet(requestFiles[i]);
+            requestSet.addAll(oneFileSet);
         }
         this.requestSet = requestSet;
         return requestSet;
@@ -138,19 +156,20 @@ public class ComparatorSentRecieved {
          extractZip();
          delete_non_xml();
          HashSet<String> difference = new HashSet<>();
-         for(String request_address: this.requestSet){
-            if (!this.responseSet.contains(request_address)){
-                difference.add(request_address);
-            }
-         }
+             for (String request_address : this.requestSet) {
+                 if (!this.responseSet.contains(request_address)) {
+                     difference.add(request_address);
+                 }
+             }
+        saveCompared(difference);
     }
-    private void saveCompare(HashSet<String> difference){
+
+
+    private void saveCompared(HashSet<String> difference){
         CSV_IO difference_csv = new CSV_IO(extractingDirPath+"new.csv");
         ArrayList<String> difference_array = (ArrayList<String>) difference.stream().toList();
         for(String address:difference_array){
             difference_csv.writeCSVLine(address);
         }
     }
-
-
 }

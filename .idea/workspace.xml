@@ -4,46 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)" />
+    <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="Modified ComparatorSentRecieved">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="UML Sequence" />
-        <option value="UML Component" />
-        <option value="UML State" />
-        <option value="UML Object" />
-        <option value="UML Deployment" />
-        <option value="UML Gantt" />
-        <option value="UML MindMap" />
-        <option value="Salt Wireframe" />
-        <option value="Work Breakdown Structure" />
-        <option value="UML YAML Data" />
-        <option value="EBNF" />
-        <option value="UML Use Case" />
-        <option value="UML Class" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="LOCAL">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="graphics" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -51,33 +24,32 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPENED&quot;,
-    &quot;assignee&quot;: {
-      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
-      &quot;username&quot;: &quot;dubina-valeriia&quot;,
-      &quot;fullname&quot;: &quot;Valeriia&quot;
+  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPENED",
+    "assignee": {
+      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
+      "username": "project_63025756_bot_4e0d9bfa996137f9867998ca215d3c3d",
+      "fullname": "a"
     }
   }
-}</component>
-  <component name="GitLabMergeRequestsSettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;first&quot;: &quot;https://gitlab.com/builders702344/parcing-of-kadastrs.git&quot;,
-    &quot;second&quot;: &quot;6b544823-bd13-4d23-9c93-aa10e9161d19&quot;
+}]]></component>
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "first": "https://gitlab.com/builders702344/parcing-of-kadastrs.git",
+    "second": "588bfaea-623c-4f15-8ac4-cf923c525d62"
   }
-}</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$USER_HOME$/.jdks/openjdk-23/lib/src.zip!/java.desktop/java/awt/Color.java" root0="SKIP_INSPECTION" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
-  <component name="ProjectId" id="2p1Y33m1BXV9AMp8GyA0YopH4jm" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2q3mG11wfmumakVGIaBCUoriCpk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -122,28 +94,20 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="5b79b220-ff84-48ea-ab4a-9a0daa5041bf" name="Changes" comment="" />
-      <created>1731934845651</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1731934845651</updated>
-    </task>
-    <task id="LOCAL-00001" summary="123">
+    <task id="LOCAL-00001" summary="Modified ComparatorSentRecieved">
       <option name="closed" value="true" />
-      <created>1731935012876</created>
+      <created>1733819849939</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1731935012876</updated>
+      <updated>1733819849939</updated>
     </task>
-    <task id="LOCAL-00002" summary="lera actual">
-      <option name="closed" value="true" />
-      <created>1731935461525</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1731935461525</updated>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="Modified ComparatorSentRecieved" />
+      <created>1733899537904</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733899537904</updated>
     </task>
     <task id="LOCAL-00003" summary="добавила умл к проекту">
       <option name="closed" value="true" />
@@ -353,49 +317,22 @@
       <option name="project" value="LOCAL" />
       <updated>1733821849423</updated>
     </task>
-    <task id="LOCAL-00029" summary="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)">
-      <option name="closed" value="true" />
-      <created>1733901757169</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1733901757169</updated>
-    </task>
-    <task id="LOCAL-00030" summary="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)">
-      <option name="closed" value="true" />
-      <created>1733902785939</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1733902785939</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="123" />
-    <MESSAGE value="lera actual" />
-    <MESSAGE value="добавила умл к проекту" />
-    <MESSAGE value="добавила roundedbutton" />
-    <MESSAGE value="graphics" />
-    <MESSAGE value="последний коммит графики" />
-    <MESSAGE value="added uml diagrams" />
-    <MESSAGE value="окончательная версия" />
-    <MESSAGE value="added 3 button 'filter files'" />
-    <MESSAGE value="refactoring + 3 button final" />
-    <MESSAGE value="- gitignore" />
-    <MESSAGE value="- out" />
-    <MESSAGE value="ultra beautiful buttons" />
-    <MESSAGE value="ultra beautiful buttons + folder uml" />
-    <MESSAGE value="without any waste" />
-    <MESSAGE value="добавлен поток для фильтрации, открытие файлового менеджера с функцией выбора только папок для 3 фиолетовой кнопки фильтрации" />
-    <MESSAGE value="шрифты в другой папке" />
     <MESSAGE value="Modified ComparatorSentRecieved" />
-    <MESSAGE value="добавлена инструкция" />
-    <MESSAGE value="добавлена техподдержка(надо исправить клик по ссылке)" />
-    <MESSAGE value="исправлен функционал выбор только папок" />
-    <MESSAGE value="добавлен функционал на  filter, но его надо доработать" />
-    <MESSAGE value="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправлена функция filter в WindowApp, но осталась ошибка вызова формирования потока FilterThread, так как он ожидает другой тип данных (не переделан функционал фильтр-потока)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified ComparatorSentRecieved" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/WindowApp.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
