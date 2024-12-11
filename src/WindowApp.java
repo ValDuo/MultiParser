@@ -88,14 +88,14 @@ public class WindowApp extends JFrame{
         zipChooser.setMultiSelectionEnabled(false);
         int zipResult = zipChooser.showOpenDialog(null);
         if (zipResult == JFileChooser.APPROVE_OPTION) {
-            File selectedZipFile = zipChooser.getSelectedFile();
-            if (selectedZipFile == null || !selectedZipFile.exists()) {
+            File selectedZipFiles = zipChooser.getSelectedFile();
+            if (selectedZipFiles == null) {
                 JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
                 return;
             }
-            if (files[0] != null) {
+            if (files != null) {
                 // Запускаем поток для обработки выбранного файла С КАДАСТРАМИ и архива
-                FilterThread filteringEvent = new FilterThread(files, selectedZipFile.getAbsolutePath());
+                FilterThread filteringEvent = new FilterThread(files, selectedZipFiles.getAbsolutePath());
                 filteringEvent.start();
             }
             else {
