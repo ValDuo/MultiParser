@@ -138,7 +138,7 @@ public class WindowApp extends JFrame{
 
 
 
-    public WindowApp() {
+    private WindowApp() {
         super("Работа с выписками");
 
         //функционал написания письма в техподдержку
@@ -266,8 +266,9 @@ public class WindowApp extends JFrame{
         setInstance();
         return WindowApp.instance;
     }
-    public void setProgressBar(int step){
-        this.progressBar.setValue(this.progressBar.getValue() + step);
+    public void setProgressBar(int progress){
+        this.progressBar.setValue(progress);
+
     }
 
 }
