@@ -21,6 +21,8 @@ public class FilterThread extends Thread{
         this.responsePath = responsePath;
 
     }
+
+
     @Override
     public void run() {// Этот метод будет вызван при старте потока
         try {

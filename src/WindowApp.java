@@ -18,6 +18,8 @@ import javax.swing.filechooser.*;
 
 public class WindowApp extends JFrame{
 
+    private static WindowApp instance;
+
     Color dark_green = new Color(48, 133, 66);
     Color dark_dark_green = new Color(23, 83, 36);
     Color dark_blue = new Color(38, 99, 191);
@@ -26,7 +28,7 @@ public class WindowApp extends JFrame{
     Color dark_purple = new Color(88, 17, 120);
     JLabel l = new JLabel("<html><h2>Файлы не выбраны</h2></html>");
     JFileChooser fileChooser = new JFileChooser();
-
+    JProgressBar progressBar = new JProgressBar();
     JPanel panel = new JPanel(new FlowLayout());
     JLabel userGuide = new JLabel(UserGuideHTML.HTML_CONTENT);
     JLabel userGuideLink = new JLabel(UserGuideLinkHTML.HTML_CONTENT);
@@ -85,14 +87,14 @@ public class WindowApp extends JFrame{
     //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
     public void filter() {
         JFileChooser zipChooser = new JFileChooser();
-        zipChooser.setDialogTitle("Выберите zip-архив");
+        zipChooser.setDialogTitle("Выберите папку с zip-архивами");
         zipChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         zipChooser.setMultiSelectionEnabled(false);
         int zipResult = zipChooser.showOpenDialog(null);
         if (zipResult == JFileChooser.APPROVE_OPTION) {
             File selectedZipFiles = zipChooser.getSelectedFile();
             if (selectedZipFiles == null) {
-                JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
+                JOptionPane.showMessageDialog(null, "Неверный путь к папке!");
                 return;
             }
             if (files != null) {
@@ -106,7 +108,7 @@ public class WindowApp extends JFrame{
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Выберите zip-архив.");
+            JOptionPane.showMessageDialog(null, "Выберите папку с zip-архивами.");
             return;
         }
     }
@@ -132,6 +134,8 @@ public class WindowApp extends JFrame{
         }
         return this.driver = new ChromeDriver(new ChromeOptions());
     }
+
+
 
 
     public WindowApp() {
@@ -212,10 +216,18 @@ public class WindowApp extends JFrame{
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.Y_AXIS));
 
+        //прогресс-бар
+        progressBar.setStringPainted(true);
+        progressBar.setMinimum(0);
+        progressBar.setMaximum(100);
+        progressBar.setValue(0);
+        progressBar.setPreferredSize(new Dimension(650, 30));
+
         panel.add(l);
         panel.add(uploadFile);
         panel.add(sendToProssesing);
         panel.add(filterFile);
+        panel.add(progressBar);
 
         bottomPanel.add(userGuide);
         bottomPanel.add(Box.createVerticalStrut(10)); // Отступ между блоками
@@ -226,19 +238,6 @@ public class WindowApp extends JFrame{
         setBounds(500, 150, 1150, 800);
         add(panel);
         setVisible(true);
-    }
-
-
-    //для реализации паттерна синглтон
-    private static class Singleton {
-        private static final WindowApp INSTANCE = new WindowApp();
-    }
-
-    public static WindowApp getInstance() {
-        return Singleton.INSTANCE;
-    }
-
-    public static void main(String[] args) {
 
         UIManager.put(
                 "FileChooser.saveButtonText", "Сохранить");
@@ -254,7 +253,21 @@ public class WindowApp extends JFrame{
                 "FileChooser.saveInLabelText", "Сохранить в директории");
         UIManager.put(
                 "FileChooser.folderNameLabelText", "Путь директории");
-        WindowApp.getInstance();
-
     }
+
+
+    //для реализации паттерна синглтон
+    private static void setInstance(){
+        if (WindowApp.instance == null)
+            WindowApp.instance = new WindowApp();
+    }
+
+    public static WindowApp getInstance() {
+        setInstance();
+        return WindowApp.instance;
+    }
+    public void setProgressBar(int step){
+        this.progressBar.setValue(this.progressBar.getValue() + step);
+    }
+
 }
