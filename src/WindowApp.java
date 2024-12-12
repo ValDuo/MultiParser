@@ -258,12 +258,14 @@ public class WindowApp extends JFrame{
     private static void setInstance(){
         if (WindowApp.instance == null)
             WindowApp.instance = new WindowApp();
-
     }
 
     public static WindowApp getInstance() {
         setInstance();
         return WindowApp.instance;
+    }
+    public void setProgressBar(int step){
+        this.progressBar.setValue(this.progressBar.getValue() + step);
     }
 
 }
