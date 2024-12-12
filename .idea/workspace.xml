@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="add process bar backend&#10;add singletone">
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilterThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilterThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
