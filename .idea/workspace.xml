@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="Modified ComparatorSentRecieved">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/ComparatorSentRecieved.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ComparatorSentRecieved.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +16,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="forHTML" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLabDefaultAccount">
+    <option name="defaultAccountId" value="944d08f4-87d9-4c3f-8049-16f0a31a315f" />
   </component>
   <component name="GitLabMergeRequestFiltersHistory">{
   &quot;lastFilter&quot;: {
@@ -55,13 +57,13 @@
     "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "LoadLabel",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/v.dubina/IdeaProjects/parcingCopy",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.gitlab.GitLabSettingsConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -315,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733821849423</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Modified ComparatorSentRecieved">
+      <option name="closed" value="true" />
+      <created>1733907571760</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1733907571760</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -327,7 +337,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ComparatorSentRecieved.java</url>
-          <line>136</line>
+          <line>138</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
