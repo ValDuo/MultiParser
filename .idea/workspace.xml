@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="add process bar backend&#10;add singletone">
-      <change beforePath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/parcing-of-kadastrs/WindowApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FilterThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FilterThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WindowApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WindowApp.java" afterDir="false" />
-    </list>
+    <list default="true" id="81c56b1b-88a7-484f-8d11-e462333471e8" name="Changes" comment="добавлен прогресс бар" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -350,14 +346,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733992162108</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="добавлен прогресс бар">
+      <option name="closed" value="true" />
+      <created>1733993456800</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1733993456800</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modified ComparatorSentRecieved" />
     <MESSAGE value="ппросто сделала красиво" />
     <MESSAGE value="add process bar backend&#10;add singletone" />
-    <option name="LAST_COMMIT_MESSAGE" value="add process bar backend&#10;add singletone" />
+    <MESSAGE value="добавлен прогресс бар" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлен прогресс бар" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
