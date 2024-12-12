@@ -28,7 +28,7 @@ public class WindowApp extends JFrame{
     Color dark_purple = new Color(88, 17, 120);
     JLabel l = new JLabel("<html><h2>Файлы не выбраны</h2></html>");
     JFileChooser fileChooser = new JFileChooser();
-
+    JProgressBar progressBar = new JProgressBar();
     JPanel panel = new JPanel(new FlowLayout());
     JLabel userGuide = new JLabel(UserGuideHTML.HTML_CONTENT);
     JLabel userGuideLink = new JLabel(UserGuideLinkHTML.HTML_CONTENT);
@@ -87,14 +87,14 @@ public class WindowApp extends JFrame{
     //подаем на вход массив файлов File [] из папки обработанных функцией process() файлов и возвращаем обработанный массив файлов пользователю в другую папку
     public void filter() {
         JFileChooser zipChooser = new JFileChooser();
-        zipChooser.setDialogTitle("Выберите zip-архив");
+        zipChooser.setDialogTitle("Выберите папку с zip-архивами");
         zipChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
         zipChooser.setMultiSelectionEnabled(false);
         int zipResult = zipChooser.showOpenDialog(null);
         if (zipResult == JFileChooser.APPROVE_OPTION) {
             File selectedZipFiles = zipChooser.getSelectedFile();
             if (selectedZipFiles == null) {
-                JOptionPane.showMessageDialog(null, "Неверный путь к zip-архиву.");
+                JOptionPane.showMessageDialog(null, "Неверный путь к папке!");
                 return;
             }
             if (files != null) {
@@ -108,7 +108,7 @@ public class WindowApp extends JFrame{
             }
         }
         else {
-            JOptionPane.showMessageDialog(null, "Выберите zip-архив.");
+            JOptionPane.showMessageDialog(null, "Выберите папку с zip-архивами.");
             return;
         }
     }
@@ -134,6 +134,8 @@ public class WindowApp extends JFrame{
         }
         return this.driver = new ChromeDriver(new ChromeOptions());
     }
+
+
 
 
     public WindowApp() {
@@ -214,10 +216,18 @@ public class WindowApp extends JFrame{
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new BoxLayout(bottomPanel, BoxLayout.Y_AXIS));
 
+        //прогресс-бар
+        progressBar.setStringPainted(true);
+        progressBar.setMinimum(0);
+        progressBar.setMaximum(100);
+        progressBar.setValue(0);
+        progressBar.setPreferredSize(new Dimension(650, 30));
+
         panel.add(l);
         panel.add(uploadFile);
         panel.add(sendToProssesing);
         panel.add(filterFile);
+        panel.add(progressBar);
 
         bottomPanel.add(userGuide);
         bottomPanel.add(Box.createVerticalStrut(10)); // Отступ между блоками
