@@ -15,7 +15,9 @@ import java.io.*;
 import java.net.URI;
 import javax.swing.filechooser.*;
 
+
 public class WindowApp extends JFrame{
+
     Color dark_green = new Color(48, 133, 66);
     Color dark_dark_green = new Color(23, 83, 36);
     Color dark_blue = new Color(38, 99, 191);
@@ -227,6 +229,15 @@ public class WindowApp extends JFrame{
     }
 
 
+    //для реализации паттерна синглтон
+    private static class Singleton {
+        private static final WindowApp INSTANCE = new WindowApp();
+    }
+
+    public static WindowApp getInstance() {
+        return Singleton.INSTANCE;
+    }
+
     public static void main(String[] args) {
 
         UIManager.put(
@@ -243,8 +254,7 @@ public class WindowApp extends JFrame{
                 "FileChooser.saveInLabelText", "Сохранить в директории");
         UIManager.put(
                 "FileChooser.folderNameLabelText", "Путь директории");
-        new WindowApp();
-
+        WindowApp.getInstance();
 
     }
 }
