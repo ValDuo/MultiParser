@@ -18,7 +18,7 @@ public class ComparatorSentRecieved {
     private File responseDirectory;
     private File extractingDir;
     private String extractingDirPath;
-
+    private Double processPercent = 0d;
     ComparatorSentRecieved(String requestFilePath, String responseDirectoryPath) throws IOException{
         File request = new File(requestFilePath);
         File response = new File(responseDirectoryPath);
@@ -52,9 +52,10 @@ public class ComparatorSentRecieved {
     private void extractZip(){
         File[] zipFiles = responseDirectory.listFiles();
         ZipInputStream zipInputStream;
-        ZipOutputStream zipOutputStream;
-
         if (zipFiles!= null){
+            int zipFilesLength = zipFiles.length;
+            double step = zipFilesLength/100.0;
+            step = step/2;
             for(File zipFile: zipFiles){
                 try {
                     zipInputStream= new ZipInputStream(new FileInputStream(zipFile));
@@ -68,6 +69,7 @@ public class ComparatorSentRecieved {
                         zipInputStream.closeEntry();
                         zipUnpacking.close();
                     }
+                    setProcessBar(step);
                 }
                 catch(IOException e){
                     System.out.println(e);
@@ -182,9 +184,16 @@ public class ComparatorSentRecieved {
             System.out.println(e);
         }
         ArrayList<String> difference_array = new ArrayList<>(difference);
+        double remainingPercent = 100 - this.processPercent;
+        double remainingStep = remainingPercent/difference_array.size();
         for(String address:difference_array){
             difference_csv.writeCSVLine(address);
+            setProcessBar(remainingStep);
         }
         System.out.println("Все сохранено в файл " + extractingDirPath+".csv");
+    }
+    private void setProcessBar(double step){
+        WindowApp windowApp = new WindowApp();
+        this.processPercent += step;
     }
 }
