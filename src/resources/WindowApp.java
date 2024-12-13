@@ -150,6 +150,7 @@ public class WindowApp extends JFrame{
         super("Работа с выписками");
 
         setJFileChooserButtonText();
+
         //функционал написания письма в техподдержку
         userGuideLink.addMouseListener(new MouseAdapter() {
             @Override

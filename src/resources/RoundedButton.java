@@ -3,8 +3,7 @@ package resources;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.RoundRectangle2D;
-import java.io.File;
-import java.io.IOException;
+
 
 public class RoundedButton extends JButton {
     private Color bgColor;
@@ -26,12 +25,7 @@ public class RoundedButton extends JButton {
         setBorderPainted(false);
         setFocusPainted(false);
 
-        try {
-            customFont = Font.createFont(Font.TRUETYPE_FONT, new File("other/Montserrat-Bold.ttf")).deriveFont(20f);
-        } catch (FontFormatException | IOException e) {
-            e.printStackTrace();
-            customFont = new Font("Arial", Font.BOLD, 16); // В случае ошибки используем стандартный шрифт
-        }
+        customFont = new Font("Arial", Font.BOLD, 22);
 
         setFont(customFont);  // Устанавливаем шрифт
         setForeground(textColor);
