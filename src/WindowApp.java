@@ -26,7 +26,7 @@ public class WindowApp extends JFrame{
     Color dark_dark_blue = new Color(5, 48, 113);
     Color purple = new Color(141,68,173);
     Color dark_purple = new Color(88, 17, 120);
-    JLabel l = new JLabel("<html><h2>Файлы не выбраны</h2></html>");
+    JLabel l = new JLabel();
     JFileChooser fileChooser = new JFileChooser();
     JProgressBar progressBar = new JProgressBar();
     JPanel panel = new JPanel(new FlowLayout());
@@ -53,11 +53,9 @@ public class WindowApp extends JFrame{
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
             File[] files = fileChooser.getSelectedFiles();
-            JOptionPane.showMessageDialog(null,
-                    "Файл(ы) импортированы.");
-            l.setText("");
             for (File file : files) {
-                l.setText(l.getText() +"   "+ file.getName());
+                JOptionPane.showMessageDialog(null,
+                        "Файл " + file.getName() + " импортирован.");
             }
             return files;
         } else {
@@ -138,7 +136,7 @@ public class WindowApp extends JFrame{
 
 
 
-    private WindowApp() {
+    public WindowApp() {
         super("Работа с выписками");
 
         //функционал написания письма в техподдержку
@@ -266,9 +264,8 @@ public class WindowApp extends JFrame{
         setInstance();
         return WindowApp.instance;
     }
-    public void setProgressBar(int progress){
-        this.progressBar.setValue(progress);
-
+    public void setProgressBar(int step){
+        this.progressBar.setValue(this.progressBar.getValue() + step);
     }
 
 }
