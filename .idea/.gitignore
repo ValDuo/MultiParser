@@ -9,3 +9,4 @@
 *.sig
 *.class
 .out
+*.xml
