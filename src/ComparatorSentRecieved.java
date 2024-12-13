@@ -202,4 +202,5 @@ public class ComparatorSentRecieved {
     private void setProgressZero(){
         WindowApp.getInstance().setProgressBar(0);
     }
+
 }
