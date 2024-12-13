@@ -26,7 +26,7 @@ def add_home(addresses:list):
         addresses[index] = ", ".join(address_split)
 def main():
     src_file=input("Введите файл, откуда получить адреса")
-    addresses = read_excel(src)
+    addresses = read_excel(resources)
     add_home(addresses)
     #print(*addresses,sep="\n")
 

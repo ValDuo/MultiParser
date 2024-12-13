@@ -1,3 +1,4 @@
+package resources;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,6 +45,15 @@ public class WindowApp extends JFrame{
     WebDriver driver;
 
 
+    public void setJFileChooserButtonText(){
+        UIManager.put("FileChooser.openButtonText", "Добавить файл");
+        UIManager.put("FileChooser.saveButtonText", "Сохранить файл");
+        UIManager.put("FileChooser.cancelButtonText", "Отмена");
+        UIManager.put("FileChooser.approveButtonText", "Выбрать");
+        UIManager.put("FileChooser.saveAsButtonText", "Сохранить как...");
+        UIManager.put("FileChooser.newFolderToolTipText", "Новая папка");
+        UIManager.put("FileChooser.fileAttrPatternText", "Показать скрытые файлы");
+    }
 
     public File[] upload(){
         fileChooser.setDialogTitle("Выбор файла");
@@ -139,6 +149,7 @@ public class WindowApp extends JFrame{
     public WindowApp() {
         super("Работа с выписками");
 
+        setJFileChooserButtonText();
         //функционал написания письма в техподдержку
         userGuideLink.addMouseListener(new MouseAdapter() {
             @Override
@@ -237,20 +248,7 @@ public class WindowApp extends JFrame{
         add(panel);
         setVisible(true);
 
-        UIManager.put(
-                "FileChooser.saveButtonText", "Сохранить");
-        UIManager.put(
-                "FileChooser.cancelButtonText", "Отмена");
-        UIManager.put(
-                "FileChooser.fileNameLabelText", "Наименование файла");
-        UIManager.put(
-                "FileChooser.filesOfTypeLabelText", "Типы файлов");
-        UIManager.put(
-                "FileChooser.lookInLabelText", "Директория");
-        UIManager.put(
-                "FileChooser.saveInLabelText", "Сохранить в директории");
-        UIManager.put(
-                "FileChooser.folderNameLabelText", "Путь директории");
+
     }
 
 
@@ -265,7 +263,7 @@ public class WindowApp extends JFrame{
         return WindowApp.instance;
     }
     public void setProgressBar(int step){
-        this.progressBar.setValue(this.progressBar.getValue() + step);
+        this.progressBar.setValue(step);
     }
 
 }

@@ -1,3 +1,5 @@
+package resources;
+
 public class UserGuideHTML {
     public static final String HTML_CONTENT = "<html>" +
             "<div style='width:700px; margin: 0 auto; font-weight: normal;'>" +

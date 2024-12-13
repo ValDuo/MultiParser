@@ -1,3 +1,5 @@
+package resources;
+
 import java.io.IOException;
 import java.io.File;
 public class FilterThread extends Thread{

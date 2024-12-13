@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/src/Tests/Tests.iml" filepath="$PROJECT_DIR$/src/Tests/Tests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/parcing-of-kadastrs.iml" filepath="$PROJECT_DIR$/src/parcing-of-kadastrs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/resources/parcing-of-kadastrs.iml" filepath="$PROJECT_DIR$/src/resources/parcing-of-kadastrs.iml" />
     </modules>
   </component>
 </project>

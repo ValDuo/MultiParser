@@ -1,3 +1,5 @@
+package resources;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -5,6 +7,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.zip.*;
 import java.util.ArrayList;
+import javax.swing.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -190,7 +193,8 @@ public class ComparatorSentRecieved {
             difference_csv.writeCSVLine(address);
             setProcessBar();
         }
-        System.out.println("Все сохранено в файл " + extractingDirPath+".csv");
+        //делаем дроп месседжа
+        JOptionPane.showMessageDialog(null, "Все сохранено в файл " + extractingDirPath+".csv");
         setProgressZero();
     }
     private void setProcessBar(){

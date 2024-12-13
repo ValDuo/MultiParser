@@ -1,3 +1,5 @@
+package resources;
+
 public class UploadThread extends Thread{
     private boolean isActive;
     void disable(){
