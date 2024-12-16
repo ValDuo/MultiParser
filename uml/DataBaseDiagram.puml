@@ -1,15 +1,15 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-WindowApp <|-- SeleniumParser
-WindowApp <|-- CSVReader
-WindowApp <|-- DebtorList
-WindowApp <|-- IncomingEmails
-CSVReader <|-- BigCSVCutter
-SeleniumParser <|-- Status
+src.WindowApp <|-- src.SeleniumParser
+src.WindowApp <|-- CSVReader
+src.WindowApp <|-- DebtorList
+src.WindowApp <|-- IncomingEmails
+CSVReader <|-- src.BigCSVCutter
+src.SeleniumParser <|-- Status
 IncomingEmails <|-- WithKadastrList
 
-class BigCSVCutter {
+class src.BigCSVCutter {
    # Integer countLine
    # Integer countFile
    # Date date
@@ -17,7 +17,7 @@ class BigCSVCutter {
    # File folder
    # Boolean created
 }
-class SeleniumParser {
+class src.SeleniumParser {
     - Integer driver
     - String srcDstFiles
 }
@@ -38,7 +38,7 @@ class DebtorList {
     - Boolean kadastr
 
 }
-class WindowApp{
+class src.WindowApp{
     - String kadastrNumber
     - String personalAddress
     - String personalAccount

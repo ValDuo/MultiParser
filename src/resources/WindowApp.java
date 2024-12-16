@@ -178,13 +178,13 @@ public class WindowApp extends JFrame{
 
 
         //Добавляем поток загрузки файла (если активна кнопка uploadile)
-        uploadFile.addActionListener(_ -> files = upload());
+        uploadFile.addActionListener(X -> files = upload());
 
         //Добавляем поток сохранения файла (если активна кнопка getFile)
-        sendToProssesing.addActionListener(_ -> process(files));
+        sendToProssesing.addActionListener(X -> process(files));
 
         //обработанные файлы достаем из папки dstFiles подаем в следующую функцию
-        filterFile.addActionListener(_ -> filter());
+        filterFile.addActionListener(X -> filter());
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(formatFilter);
