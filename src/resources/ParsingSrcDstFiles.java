@@ -37,14 +37,12 @@ public class ParsingSrcDstFiles {
         //this.distination = new CSV_IO(path);
         String path = this.source.getAbsolutePath().replace(".csv", "new.csv");
         this.distination = new CSV_IO(path);
-        if (!this.distination.isFile() && !this.distination.isDirectory()){
-            try{
-                boolean created = this.distination.createNewFile();
-                System.out.println(created);
-            }
-            catch (Exception e){
-                System.out.println(e.toString());
-            }
+        try{
+            boolean created = this.distination.createNewFile();
+            System.out.println(created);
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
         }
     }
     private void setDistination(String path){
