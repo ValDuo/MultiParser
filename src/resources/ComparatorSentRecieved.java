@@ -198,7 +198,7 @@ public class ComparatorSentRecieved {
         setProgressZero();
     }
     private void setProcessBar(){
-        if(this.processPercent < 99)
+        if(this.processPercent <= 99)
             this.processPercent+=1;
         WindowApp app = WindowApp.getInstance();
         app.setProgressBar(this.processPercent);

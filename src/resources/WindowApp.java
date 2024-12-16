@@ -36,7 +36,7 @@ public class WindowApp extends JFrame{
 
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
-    RoundedButton filterFile = new RoundedButton("Сравнить отправленные и полученные файлы");
+    RoundedButton filterFile = new RoundedButton("Получить кадастровые номера и пришедшие выписки");
 
     File[] files;
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
@@ -188,7 +188,6 @@ public class WindowApp extends JFrame{
 
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(formatFilter);
-
 
 
         //Добавляем стилизацию на кнопку добавления файлов
