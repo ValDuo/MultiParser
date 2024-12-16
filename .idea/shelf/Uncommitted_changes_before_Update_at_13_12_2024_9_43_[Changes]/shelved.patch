@@ -1,0 +1,111 @@
+Index: out/production/parcing-of-kadastrs/index.html
+===================================================================
+diff --git a/out/production/parcing-of-kadastrs/index.html b/out/production/parcing-of-kadastrs/index.html
+deleted file mode 100644
+--- a/out/production/parcing-of-kadastrs/index.html	(revision 77e32546b43fd34a389e69d533151bb32c53701c)
++++ /dev/null	(revision 77e32546b43fd34a389e69d533151bb32c53701c)
+@@ -1,64 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+-   <meta charset="UTF-8">
+-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-   <style>
+-      body {
+-         font-family: Montserrat;
+-         font-weight: normal;
+-      }
+-      .container {
+-         width: 700px;
+-         margin: 0 auto;
+-      }
+-      h1, h3 {
+-         text-align: center;
+-      }
+-      ol {
+-         font-size: 16px;
+-         list-style-type: decimal;
+-      }
+-      li {
+-         margin-top: 10px;
+-      }
+-      .important-text {
+-         color: rgb(118, 15, 15);
+-         font-weight: bold;
+-         font-style: italic;
+-      }
+-      .contact-section {
+-         margin-top: 20px;
+-      }
+-      .contact-section div {
+-         font-size: 16px;
+-         text-align: center;
+-         font-weight: normal;
+-      }
+-      .contact-email {
+-         font-size: 16px;
+-         font-weight: bold;
+-      }
+-   </style>
+-</head>
+-<body>
+-   <div class="container">
+-      <i><h1>Руководство пользователя</h1></i>
+-      <ol>
+-         <li>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». 
+-            <span class="important-text">Внимание! Вы можете выбрать только файлы формата .csv</span>
+-         </li>
+-         <li>Для подачи файла на поиск кадастровых номеров достаточно нажать на синюю кнопку «Подать на обработку».</li>
+-         <li>При успешном завершении операции обработанные файлы будут храниться на вашем компьютере в выбранной вами папке.</li>
+-         <li>Для того, чтобы просеять папку с файлами на наличие факта получения загруженных файлов из Росеестра, нужно нажать на кнопку «Отбор файлов без кадастрового номера».</li>
+-      </ol>
+-   </div>
+-   <div class="contact-section">
+-      <h1>Контакты техподдержки</h1>
+-      <div>
+-         Что-то не работает? Пишите нам на почту, мы Вам ответим, как только сможем!<br>
+-         <a class="contact-email" href="mailto:dvdlera@gmail.com">dvdlera@gmail.com</a>
+-      </div>
+-   </div>
+-</body>
+-</html>
+Index: out/production/parcing-of-kadastrs/parcing-of-kadastrs.iml
+===================================================================
+diff --git a/out/production/parcing-of-kadastrs/parcing-of-kadastrs.iml b/out/production/parcing-of-kadastrs/parcing-of-kadastrs.iml
+deleted file mode 100644
+--- a/out/production/parcing-of-kadastrs/parcing-of-kadastrs.iml	(revision 77e32546b43fd34a389e69d533151bb32c53701c)
++++ /dev/null	(revision 77e32546b43fd34a389e69d533151bb32c53701c)
+@@ -1,13 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$/..">
+-      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="library" name="selenium-java-4" level="project" />
+-    <orderEntry type="library" name="selenium-java-4.25" level="project" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: out/production/parcing-of-kadastrs/.gitignore
+===================================================================
+diff --git a/out/production/parcing-of-kadastrs/.gitignore b/out/production/parcing-of-kadastrs/.gitignore
+deleted file mode 100644
+--- a/out/production/parcing-of-kadastrs/.gitignore	(revision 77e32546b43fd34a389e69d533151bb32c53701c)
++++ /dev/null	(revision 77e32546b43fd34a389e69d533151bb32c53701c)
+@@ -1,11 +0,0 @@
+-# Default ignored files
+-/srcFiles/
+-/emaple.java/
+-/dstFiles/
+-*.csv
+-*.zip
+-*.xmls
+-*.xls
+-*.pdf
+-*.sig
+-*.class
+\ No newline at end of file

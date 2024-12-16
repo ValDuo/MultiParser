@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.Keys;
+
+import javax.swing.*;
 import java.util.ArrayList;
 
 
@@ -49,6 +51,7 @@ public class SeleniumParser {
             form_input = driver.findElement(By.id("form_search"));
             this.clear_input(form_input, addresses.get(i));
         }
+
     }
     private void clear_input(WebElement input, String address){
         for(int i = 0; i < address.length(); i++)

@@ -2,6 +2,8 @@ package resources;
 
 import org.openqa.selenium.WebDriver;
 
+import javax.swing.*;
+
 public class ProcessThread extends Thread{
     private boolean isActive = true;
     private final CSV_IO csv;
@@ -21,6 +23,7 @@ public class ProcessThread extends Thread{
         SeleniumParser parser = new SeleniumParser(driver);
         parser.setSrcAndDst(csv);
         parser.startParse();
+        JOptionPane.showMessageDialog(null, "Все сохранено в файл "+ csv.getAbsolutePath());
     }
 }
 
