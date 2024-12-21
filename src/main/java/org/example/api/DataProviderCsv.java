@@ -54,7 +54,6 @@ public class DataProviderCsv implements IDataProvider {
             CSVParser parser = CSVFormat.DEFAULT.withHeader().parse(reader);
             boolean updated = false;
 
-            // Iterate through records and update the matching one
             for (CSVRecord record : parser) {
                 if (record.get("id").equals(id)) {
                     writer.write(toCsv(updatedRecord));
@@ -69,8 +68,6 @@ public class DataProviderCsv implements IDataProvider {
             if (!updated) {
                 throw new Exception("Record with id " + id + " not found.");
             }
-
-            // Replace the original file with the updated one
             if (!inputFile.delete()) {
                 throw new Exception("Failed to delete original file.");
             }
@@ -128,13 +125,11 @@ public class DataProviderCsv implements IDataProvider {
     }
 
     private String toCsv(HistoryContent record) {
-        // Преобразуем объект в строку CSV
         return record.getId() + "," + record.getClassName() + "," + record.getCreatedDate() + ","
                 + record.getActor() + "," + record.getMethodName() + "," + record.getStatus();
     }
 
     private HistoryContent fromCsv(CSVRecord record) {
-        // Преобразуем строку CSV обратно в объект
         String id = record.get("id");
         String className = record.get("className");
         String createdDate = record.get("createdDate");
@@ -142,14 +137,13 @@ public class DataProviderCsv implements IDataProvider {
         String methodName = record.get("methodName");
         HistoryContent.Status status = HistoryContent.Status.valueOf(record.get("status"));
 
-        Map<String, Object> object = new HashMap<>(); // Пример, если объект нужен
+        Map<String, Object> object = new HashMap<>();
 
-        return new HistoryContent(className, createdDate, actor, methodName, object, status);
+        return new HistoryContent(className, createdDate, actor, methodName, (Serializable) object, status);
     }
 
     @Override
     public void close() throws Exception {
-        // В данном случае метод close может быть не обязательным, если вы не используете ресурсы, требующие явного закрытия
-        // Однако, если вам нужно, можно реализовать закрытие файлов, потоков и т.д.
+
     }
 }
