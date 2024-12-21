@@ -1,8 +1,9 @@
 package org.example.models;
 
 import org.bson.types.ObjectId;
+
+import java.io.Serializable;
 import java.util.HashMap;
-import java.util.Map;
 
 public class HistoryContent {
 
@@ -11,10 +12,10 @@ public class HistoryContent {
     private String createdDate;
     private String actor;
     private String methodName;
-    private Map<String, Object> object;
+    private Serializable object;
     private Status status;
 
-    public HistoryContent(String className, String createdDate, String actor, String methodName, Map<String, Object> object, Status status) {
+    public HistoryContent(String className, String createdDate, String actor, String methodName, Serializable object, Status status) {
         this.id = new ObjectId();
         this.className = className;
         this.createdDate = createdDate != null ? createdDate : "Not Available";
@@ -28,7 +29,7 @@ public class HistoryContent {
         SENT, FAILURE, LOST
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
@@ -72,9 +73,6 @@ public class HistoryContent {
         return object.toString();
     }
 
-    public void setObject(String object) {
-        this.object = object;
-    }
 
     public Status getStatus() {
         return status;

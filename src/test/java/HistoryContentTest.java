@@ -2,6 +2,7 @@ import org.example.models.HistoryContent;
 import org.junit.jupiter.api.*;
 import ru.sfedu.dubina.Constants;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ public class HistoryContentTest {
             testObject.put("key1", "value1");
             testObject.put("key2", "value2");
 
-            historyContent = new HistoryContent("TestClass", "2024-12-09", "1L", "Test Method", testObject, HistoryContent.Status.SENT);
+            historyContent = new HistoryContent("TestClass", "2024-12-09", "1L", "Test Method", (Serializable) testObject, HistoryContent.Status.SENT);
         } catch (Exception e) {
             System.err.println("Error during setUp: " + e.getMessage());
             fail("Setup failed due to exception: " + e.getMessage());
@@ -43,7 +44,7 @@ public class HistoryContentTest {
             assertEquals("1L", historyContent.getActor(), "Actor should match.");
             assertEquals("Test Method", historyContent.getMethodName(), "Method name should match.");
             assertNotNull(historyContent.getObject(), "Object map should not be null.");
-            assertEquals(2, historyContent.getObject().size(), "Object map should have 2 entries.");
+            assertEquals(2, historyContent.getObject().length(), "Object map should have 2 entries.");
             assertEquals(HistoryContent.Status.SENT, historyContent.getStatus(), "Status should match SENT.");
         } catch (Exception e) {
             System.err.println("Error during testCreateHistoryContent: " + e.getMessage());
