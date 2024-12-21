@@ -8,6 +8,6 @@ public class Constants {
     public static final String DATABASE_NAME = "historyDB";
     public static final String COLLECTION_NAME = "history";
     public static final String CLIENT_ID = "mongodb://localhost:27017";
-
+    public static final String CSV_FILE = "src/test/resources/historyContent.csv";
 
 }

@@ -1,46 +1,34 @@
 package org.example.models;
 
-
 import org.bson.types.ObjectId;
-
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-
 
 public class HistoryContent {
 
     private ObjectId id;
     private String className;
-    private Date createdDate;
+    private String createdDate;
     private String actor;
     private String methodName;
     private Map<String, Object> object;
     private Status status;
 
-    public HistoryContent(String className, String createdDate, String actor, String methodName, String object, Status status) {
+    public HistoryContent(String className, String createdDate, String actor, String methodName, Map<String, Object> object, Status status) {
         this.id = new ObjectId();
-        this.createdDate = new Date();
-        this.actor = "system";
-        this.object = new HashMap<>();
-    }
-
-    public HistoryContent(String className, String methodName, Map<String, Object> object, Status status) {
-        this.id = new ObjectId();
-        this.createdDate = createdDate != null ? new Date(String.valueOf(createdDate)) : new Date();
-        this.actor = actor != null ? actor : "system";
         this.className = className;
+        this.createdDate = createdDate != null ? createdDate : "Not Available";
+        this.actor = actor != null ? actor : "system";
         this.methodName = methodName;
-        this.object = object;
-        this.status = status;
+        this.object = object != null ? object : new HashMap<>();
+        this.status = status != null ? status : Status.SENT;
     }
+
     public enum Status {
-        SUCCESS, FAILURE
+        SENT, FAILURE, LOST
     }
 
-
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
@@ -56,11 +44,11 @@ public class HistoryContent {
         this.className = className;
     }
 
-    public Date getCreatedDate() {
+    public String getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Date createdDate) {
+    public void setCreatedDate(String createdDate) {
         this.createdDate = createdDate;
     }
 
@@ -80,11 +68,11 @@ public class HistoryContent {
         this.methodName = methodName;
     }
 
-    public Map<String, Object> getObject() {
-        return object;
+    public String getObject() {
+        return object.toString();
     }
 
-    public void setObject(Map<String, Object> object) {
+    public void setObject(String object) {
         this.object = object;
     }
 
@@ -101,7 +89,7 @@ public class HistoryContent {
         return "HistoryContent{" +
                 "id=" + id +
                 ", className='" + className + '\'' +
-                ", createdDate=" + createdDate +
+                ", createdDate='" + createdDate + '\'' +
                 ", actor='" + actor + '\'' +
                 ", methodName='" + methodName + '\'' +
                 ", object=" + object +
