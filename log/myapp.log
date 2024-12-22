@@ -985,3 +985,12 @@ java.lang.NullPointerException: Cannot invoke "org.example.models.HistoryContent
 java.lang.NullPointerException: Cannot invoke "org.example.models.HistoryContent$Status.toString()" because the return value of "org.example.models.HistoryContent.getStatus()" is null
 	at org.example.api.DataProviderMongo.saveHistoryContent(DataProviderMongo.java:28)
 	at org.example.Main.main(Main.java:27)
+12.22:12.36.27ERROR	org.example.api.DataProviderMongo:60 - error при получении данных
+12.22:12.41.58ERROR	org.example.api.DataProviderMongo:60 - error при получении данных
+12.22:12.47.45ERROR	org.example.api.DataProviderMongo:58 - error при получении данных
+12.22:12.48.27ERROR	org.example.api.DataProviderMongo:58 - error при получении данных
+12.22:12.50.56ERROR	org.example.api.DataProviderMongo:59 - error при получении данных
+12.22:12.51.30ERROR	org.example.api.DataProviderMongo:59 - error при получении данных
+12.22:12.52.48ERROR	org.example.api.DataProviderMongo:59 - error при получении данных
+12.22:19.58.11ERROR	org.example.api.DataProviderCsv:24 - Cannot invoke "java.util.List.add(Object)" because "this.persInfList" is null
+12.22:19.58.11ERROR	org.example.api.DataProviderCsv:47 - Cannot invoke "java.util.List.stream()" because "this.persInfList" is null

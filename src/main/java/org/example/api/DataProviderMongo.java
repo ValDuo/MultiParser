@@ -1,67 +1,87 @@
 package org.example.api;
 
 import com.mongodb.client.*;
+import org.apache.log4j.Logger;
 import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.example.models.HistoryContent;
 import ru.sfedu.dubina.Constants;
 import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Updates;
+
+import java.time.LocalDateTime;
 
 public class DataProviderMongo {
-    private MongoClient mongoClient;
-    private MongoDatabase database;
     private MongoCollection<Document> collection;
+    private Logger logger = Logger.getLogger(DataProviderMongo.class);
 
     public DataProviderMongo() {
-        mongoClient = MongoClients.create(Constants.CLIENT_ID);
-        database = mongoClient.getDatabase(Constants.DATABASE_NAME);
-        collection = database.getCollection(Constants.COLLECTION_NAME);
+        MongoClient mongoClient = MongoClients.create(Constants.CLIENT_ID);
+        MongoDatabase mongoDatabase = mongoClient.getDatabase(Constants.DATABASE_NAME);
+        this.collection = mongoDatabase.getCollection(Constants.COLLECTION_NAME);
     }
 
     public void saveHistoryContent(HistoryContent historyContent) {
-        Document document = new Document("className", historyContent.getClassName())
-                .append("createdDate", historyContent.getCreatedDate())
-                .append("actor", historyContent.getActor())
-                .append("methodName", historyContent.getMethodName())
-                .append("object", historyContent.getObject())
-                .append("status", historyContent.getStatus().toString());
+        try {
+            Document document = new Document("id", historyContent.getId())
+                    .append("className", historyContent.getClassName())
+                    .append("createdDate", historyContent.getCreatedDate())
+                    .append("actor", historyContent.getActor())
+                    .append("methodName", historyContent.getMethodName())
+                    .append("object", historyContent.getObject())
+                    .append("status", historyContent.getStatus().toString());
 
-        collection.insertOne(document);
+            collection.insertOne(document);
+        }
+        catch (Exception exception) {
+            logger.error("произошла ошибка при сохранении");
+        }
     }
-    public HistoryContent getHistoryContent(String actor) {
-        Bson filter = Filters.eq("actor", actor);
-        Document document = collection.find(filter).first();
+    public HistoryContent getHistoryContent(String id) {
+        try{
+            Document document = collection.find(Filters.eq("id", id)).first();
+            if (document != null) {
+                HistoryContent historyContent = new HistoryContent();
+                historyContent.setId(document.getString("id"));
+                historyContent.setClassName(document.getString("className"));
+                historyContent.setCreatedDate(LocalDateTime.parse(document.getString("createdDate")));
+                historyContent.setActor(document.getString("actor"));
+                historyContent.setMethodName(document.getString("methodName"));
 
-        if (document != null) {
-            return new HistoryContent(
-                    document.getString("className"),
-                    document.getString("createdDate"),
-                    document.getString("actor"),
-                    document.getString("methodName"),
-                    document.getString("object"),
-                    HistoryContent.Status.valueOf(document.getString("status"))
-            );
+                Document objectDoc = document.get("object", Document.class);
+
+                if (objectDoc != null){
+                    historyContent.setObject(objectDoc);
+                }
+                historyContent.setStatus(HistoryContent.Status.valueOf(document.getString("status")));
+                return historyContent;
+            }
+        }
+        catch (Exception e){
+            logger.error("error при получении данных");
         }
         return null;
     }
-    public void updateHistoryContent(String actor, HistoryContent historyContent) {
-        Bson filter = Filters.eq("actor", actor);
-        Bson update = Updates.combine(
-                Updates.set("className", historyContent.getClassName()),
-                Updates.set("createdDate", historyContent.getCreatedDate()),
-                Updates.set("methodName", historyContent.getMethodName()),
-                Updates.set("object", historyContent.getObject()),
-                Updates.set("status", historyContent.getStatus().toString())
-        );
-        collection.updateOne(filter, update);
+    public void updateHistoryContent(HistoryContent historyContent) {
+        try{
+            Document updatedDoc = new Document("className", historyContent.getClassName())
+                    .append("createdDate", historyContent.getCreatedDate().toString())
+                    .append("actor", historyContent.getActor())
+                    .append("methodName", historyContent.getMethodName())
+                    .append("object", historyContent.getObject())
+                    .append("status", historyContent.getStatus().name());
+            collection.updateOne(Filters.eq("id", historyContent.getId()), new Document("$set", updatedDoc));
+        }
+        catch (Exception e) {
+            logger.error("ошибка при обновлении");
+        }
     }
-    public void deleteHistoryContent(String actor) {
-        Bson filter = Filters.eq("actor", actor);
-        collection.deleteOne(filter);
+    public void deleteHistoryContent(String id) {
+        try{
+            collection.deleteOne(Filters.eq("id", id));
+        }
+        catch (Exception e){
+            logger.error("ошибка при удалении");
+        }
+
     }
 
-    public void close() {
-        mongoClient.close();
-    }
 }

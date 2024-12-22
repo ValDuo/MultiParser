@@ -1,52 +1,68 @@
 package org.example.api;
 
-import org.example.models.HistoryContent;
-import org.simpleframework.xml.Serializer;
+import org.apache.log4j.Logger;
+import org.example.models.PersForApi;
+import org.example.models.PersInfList;
+import org.simpleframework.xml.*;
 import org.simpleframework.xml.core.Persister;
+import ru.sfedu.dubina.Constants;
 
 import java.io.*;
+import java.util.*;
 
-public class DataProviderXML implements IDataProvider {
-
-    private static final String XML_FILE = "historyContent.xml";
-
+public abstract class DataProviderXML implements IDataProvider<PersForApi> {
+    private List<PersForApi> persInfList;
+    Logger logger = Logger.getLogger(DataProviderCsv.class);
     @Override
-    public void initDataSource() throws Exception {
-        File file = new File(XML_FILE);
-        if (!file.exists()) {
-            file.createNewFile();
+    public void saveRecord(PersForApi record) {
+        try {
+            persInfList.add(record);
+            Serializer serializer = new Persister();
+            PersInfList container = new PersInfList(persInfList);
+            serializer.write(container, new File(Constants.xmlFilePath));
+        } catch (Exception e) {
+           logger.error(e.getMessage());
+        }
+    }
+    @Override
+    public void deleteRecord(Long id) {
+        try {
+            persInfList.removeIf(p -> p.getId().equals(id));
+            Serializer serializer = new Persister();
+            PersInfList container = new PersInfList(persInfList);
+            serializer.write(container, new File(Constants.xmlFilePath));
+        } catch (Exception e) {
+            logger.error(e.getMessage());
         }
     }
 
     @Override
-    public void saveRecord(HistoryContent historyContent) throws Exception {
-        Serializer serializer = new Persister();
-        File result = new File(XML_FILE);
-        serializer.write(historyContent, result);
-    }
-
-    @Override
-    public HistoryContent getRecordById(String id) throws Exception {
-        Serializer serializer = new Persister();
-        File source = new File(XML_FILE);
-        HistoryContent historyContent = serializer.read(HistoryContent.class, source);
-        if (historyContent.getActor().equals(id)) {
-            return historyContent;
+    public PersForApi getRecordById(Long id) {
+        try {
+            return persInfList.stream()
+                    .filter(record -> record.getId() == id)
+                    .findFirst()
+                    .orElse(null);
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            return null;
         }
-        return null;
     }
 
     @Override
-    public void updateRecord(String id, HistoryContent historyContent) throws Exception {
-
-    }
-
-    @Override
-    public void deleteRecord(String id) throws Exception {
-
-    }
-
-    @Override
-    public void close() {
+    public void initDataSource() {
+        try {
+            File file = new File(Constants.xmlFilePath);
+            if (file.exists() && file.length() > 0) {
+                Serializer serializer = new Persister();
+                PersInfList container = serializer.read(PersInfList.class, file);
+                persInfList = container.getRecords();
+            } else {
+                persInfList = new ArrayList<>();
+            }
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            persInfList = new ArrayList<>();
+        }
     }
 }

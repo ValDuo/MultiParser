@@ -2,38 +2,37 @@ package org.example.models;
 
 import org.bson.types.ObjectId;
 
+import javax.swing.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.HashMap;
+import java.util.Map;
 
 public class HistoryContent {
-
-    private ObjectId id;
+    private String id;
     private String className;
-    private String createdDate;
+    private LocalDateTime createdDate;
     private String actor;
     private String methodName;
-    private Serializable object;
+    private Map<String, Object> object;
     private Status status;
 
-    public HistoryContent(String className, String createdDate, String actor, String methodName, Serializable object, Status status) {
-        this.id = new ObjectId();
-        this.className = className;
-        this.createdDate = createdDate != null ? createdDate : "Not Available";
-        this.actor = actor != null ? actor : "system";
-        this.methodName = methodName;
-        this.object = object != null ? object : new HashMap<>();
-        this.status = status != null ? status : Status.SENT;
+    public HistoryContent(){
+        this.createdDate = LocalDateTime.now();
+    }
+    public void setObject(Map<String, Object> object) {
+        this.object = object;
     }
 
     public enum Status {
-        SENT, FAILURE, LOST
+        SENT, FAILURE
     }
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,11 +44,11 @@ public class HistoryContent {
         this.className = className;
     }
 
-    public String getCreatedDate() {
+    public LocalDateTime getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(String createdDate) {
+    public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
     }
 

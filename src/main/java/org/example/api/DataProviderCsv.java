@@ -1,149 +1,77 @@
 package org.example.api;
 
-import org.example.models.HistoryContent;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+import org.apache.log4j.Logger;
+import org.example.models.PersForApi;
+import ru.sfedu.dubina.Constants;
+
 import java.io.*;
 import java.util.*;
 
-public class DataProviderCsv implements IDataProvider {
-    private String csvFilePath;
-
-    public DataProviderCsv(String csvFilePath) {
-        this.csvFilePath = csvFilePath;
+public abstract class DataProviderCsv implements IDataProvider<PersForApi> {
+    Logger logger = Logger.getLogger(DataProviderCsv.class);
+    private List<PersForApi> persInfList;
+    public DataProviderCsv() {
+        this.persInfList = new ArrayList<>();
+        initDataSource();
     }
 
     @Override
-    public void saveRecord(HistoryContent record) throws Exception {
-        try (FileWriter writer = new FileWriter(csvFilePath, true);
-             BufferedWriter bufferedWriter = new BufferedWriter(writer)) {
-
-            // Преобразование объекта в строку CSV
-            String recordAsCsv = toCsv(record);
-            bufferedWriter.write(recordAsCsv);
-            bufferedWriter.newLine();
+    public void saveRecord(PersForApi record) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(Constants.csvFilePath, true))) {
+            String[] values = {String.valueOf(record.getId()), record.getName(), record.getEmail()};
+            writer.writeNext(values);
+            persInfList.add(record);
         } catch (IOException e) {
-            throw new Exception("Error saving record to CSV file", e);
+            logger.error(e.getMessage());
         }
     }
 
-    @Override
-    public HistoryContent getRecordById(String id) throws Exception {
-        try (BufferedReader reader = new BufferedReader(new FileReader(csvFilePath))) {
-            CSVParser parser = CSVFormat.DEFAULT.withHeader().parse(reader);
-            for (CSVRecord record : parser) {
-                if (record.get("id").equals(id)) {
-                    return fromCsv(record);
+    public void deleteRecord(Long id) {
+        persInfList.removeIf(person -> person.getId() == id);
+        try (CSVWriter writer = new CSVWriter(new FileWriter(Constants.csvFilePath))) {
+            for (PersForApi person : persInfList) {
+                String[] values = {String.valueOf(person.getId()), person.getName(), person.getEmail()};
+                writer.writeNext(values);
+            }
+        } catch (IOException e) {
+            logger.error(e.getMessage());
+        }
+    }
+
+    public PersForApi getRecordById(Long id) {
+        for (PersForApi person : persInfList) {
+            if (person.getId().equals(id)) {
+                return person;
+            }
+        }
+        return null;
+    }
+
+        @Override
+        public void initDataSource() {
+            persInfList = new ArrayList<>();
+            File file = new File(Constants.csvFilePath);
+            if(!file.exists()) {
+                try{
+                    file.createNewFile();
+                } catch (IOException e) {
+                    logger.error(e.getMessage());
+                }
+            }else{
+                try(CSVReader reader = new CSVReader(new FileReader(Constants.csvFilePath))) {
+                    String[] nextLine;
+                    while((nextLine = reader.readNext())!=null){
+                        Long id = Long.parseLong(nextLine[0]);
+                        String name = nextLine[1];
+                        String email = nextLine[2];
+                        persInfList.add(new PersForApi(id, name, email));
+                    }
+                }catch (Exception e){
+                    logger.error(e.getMessage());
                 }
             }
-            return null; // Record not found
-        } catch (IOException e) {
-            throw new Exception("Error reading CSV file", e);
         }
-    }
 
-    @Override
-    public void updateRecord(String id, HistoryContent updatedRecord) throws Exception {
-        File inputFile = new File(csvFilePath);
-        File tempFile = new File("temp.csv");
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
-
-            CSVParser parser = CSVFormat.DEFAULT.withHeader().parse(reader);
-            boolean updated = false;
-
-            for (CSVRecord record : parser) {
-                if (record.get("id").equals(id)) {
-                    writer.write(toCsv(updatedRecord));
-                    writer.newLine();
-                    updated = true;
-                } else {
-                    writer.write(record.toString());
-                    writer.newLine();
-                }
-            }
-
-            if (!updated) {
-                throw new Exception("Record with id " + id + " not found.");
-            }
-            if (!inputFile.delete()) {
-                throw new Exception("Failed to delete original file.");
-            }
-            if (!tempFile.renameTo(inputFile)) {
-                throw new Exception("Failed to rename temporary file.");
-            }
-
-        } catch (IOException e) {
-            throw new Exception("Error updating record in CSV file", e);
-        }
-    }
-
-    @Override
-    public void deleteRecord(String id) throws Exception {
-        File inputFile = new File(csvFilePath);
-        File tempFile = new File("temp.csv");
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(inputFile));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile))) {
-
-            CSVParser parser = CSVFormat.DEFAULT.withHeader().parse(reader);
-
-            boolean deleted = false;
-
-            // Iterate through records and remove the one with matching ID
-            for (CSVRecord record : parser) {
-                if (record.get("id").equals(id)) {
-                    deleted = true;
-                } else {
-                    writer.write(record.toString());
-                    writer.newLine();
-                }
-            }
-
-            if (!deleted) {
-                throw new Exception("Record with id " + id + " not found.");
-            }
-
-            // Replace the original file with the updated one
-            if (!inputFile.delete()) {
-                throw new Exception("Failed to delete original file.");
-            }
-            if (!tempFile.renameTo(inputFile)) {
-                throw new Exception("Failed to rename temporary file.");
-            }
-
-        } catch (IOException e) {
-            throw new Exception("Error deleting record from CSV file", e);
-        }
-    }
-
-    @Override
-    public void initDataSource() throws Exception {
-
-    }
-
-    private String toCsv(HistoryContent record) {
-        return record.getId() + "," + record.getClassName() + "," + record.getCreatedDate() + ","
-                + record.getActor() + "," + record.getMethodName() + "," + record.getStatus();
-    }
-
-    private HistoryContent fromCsv(CSVRecord record) {
-        String id = record.get("id");
-        String className = record.get("className");
-        String createdDate = record.get("createdDate");
-        String actor = record.get("actor");
-        String methodName = record.get("methodName");
-        HistoryContent.Status status = HistoryContent.Status.valueOf(record.get("status"));
-
-        Map<String, Object> object = new HashMap<>();
-
-        return new HistoryContent(className, createdDate, actor, methodName, (Serializable) object, status);
-    }
-
-    @Override
-    public void close() throws Exception {
-
-    }
 }
