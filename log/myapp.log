@@ -994,3 +994,4 @@ java.lang.NullPointerException: Cannot invoke "org.example.models.HistoryContent
 12.22:12.52.48ERROR	org.example.api.DataProviderMongo:59 - error при получении данных
 12.22:19.58.11ERROR	org.example.api.DataProviderCsv:24 - Cannot invoke "java.util.List.add(Object)" because "this.persInfList" is null
 12.22:19.58.11ERROR	org.example.api.DataProviderCsv:47 - Cannot invoke "java.util.List.stream()" because "this.persInfList" is null
+12.23:17.44.31ERROR	org.example.api.DataProviderMongo:59 - error при получении данных

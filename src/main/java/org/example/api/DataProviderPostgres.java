@@ -1,64 +1,83 @@
 package org.example.api;
 
-import org.example.api.IDataProvider;
-import org.example.models.HistoryContent;
+import org.apache.log4j.Logger;
+import org.example.models.PersForApi;
+import ru.sfedu.dubina.Constants;
+
 import java.sql.*;
-import java.util.Optional;
 
-public class DataProviderPostgres implements IDataProvider<HistoryContent> {
-
+public class DataProviderPostgres implements IDataProvider<PersForApi> {
+    private Logger logger = Logger.getLogger(DataProviderPostgres.class);
     private Connection connection;
-
-    public DataProviderPostgres() {
-        initDataSource();  // Инициализация источника данных
-    }
 
     @Override
     public void initDataSource() {
         try {
-            String url = "jdbc:postgresql://localhost:5432/yourdatabase"; // Укажите свой URL
-            String user = "yourusername";  // Укажите свой пользователь
-            String password = "yourpassword";  // Укажите свой пароль
-            connection = DriverManager.getConnection(url, user, password);
+            connection = DriverManager.getConnection(Constants.URL, Constants.USER, Constants.PASSWORD);
+            logger.info("Соединение с базой данных установлено.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Ошибка соединения с базой данных.", e);
         }
     }
 
     @Override
-    public void saveRecord(HistoryContent record) {
-        String query = "INSERT INTO history (content) VALUES (?)";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, record.getContent());
+    public void saveRecord(PersForApi record) {
+        String sql = "INSERT INTO persons (name, email) VALUES (?, ?)";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, record.getName());
+            stmt.setString(2, record.getEmail());
             stmt.executeUpdate();
+            logger.info("Запись сохранена");
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Ошибка сохранения записи.", e);
         }
     }
 
     @Override
     public void deleteRecord(Long id) {
-        String query = "DELETE FROM history WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+        String sql = "DELETE FROM persons WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setLong(1, id);
-            stmt.executeUpdate();
+            int rowsAffected = stmt.executeUpdate();
+            if (rowsAffected > 0) {
+                logger.info("Запись удалена.");
+            } else {
+                logger.warn("Запись не найдена.");
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Ошибка удаления записи.", e);
         }
     }
 
     @Override
-    public HistoryContent getRecordById(Long id) {
-        String query = "SELECT * FROM history WHERE id = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+    public PersForApi getRecordById(Long id) {
+        String sql = "SELECT * FROM persons WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setLong(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                return new HistoryContent(rs.getLong("id"), rs.getString("content"));
+                PersForApi record = new PersForApi(
+                        rs.getLong("id"),
+                        rs.getString("name"),
+                        rs.getString("email")
+                );
+                logger.info("Запись найдена");
+                return record;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("ошибка получения записи по айдишнику.", e);
         }
         return null;
+    }
+
+    public void closeConnection() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+                logger.info("Соединение с базой данных завершено.");
+            }
+        } catch (SQLException e) {
+            logger.error("Ошибка завершения процесса соединения с базой данных.", e);
+        }
     }
 }

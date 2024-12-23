@@ -14,7 +14,7 @@ public class DataProviderMongoTest {
 
         HistoryContent content = new HistoryContent();
         content.setId("1");
-        content.setClassName("ExampleClass");
+        content.setClassName("ЛераДубина");
         content.setMethodName("exampleMethod");
         content.setObject(Map.of("key1", "value1", "key2", "value2"));
         content.setStatus(HistoryContent.Status.SENT);

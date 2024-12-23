@@ -10,5 +10,9 @@ public class Constants {
     public static final String CLIENT_ID = "mongodb://localhost:27017";
     public static String csvFilePath = "src/test/resources/historyContent.csv";
     public static String xmlFilePath = "src/test/resources/testXML.xml";
+    //для postgreSQL
+    public static final String URL = "jdbc:postgresql://localhost:5432/mydb";
+    public static final String USER = "lera";
+    public static final String PASSWORD = "password";
 
 }

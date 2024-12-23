@@ -3,7 +3,6 @@ package org.example.api;
 import org.apache.log4j.Logger;
 import org.example.models.PersForApi;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import ru.sfedu.dubina.Constants;
 
