@@ -9,26 +9,32 @@ public class BigCSVCutter extends CSV_IO {
     public BigCSVCutter(String pathname) {
         super(pathname);
     }
-    protected void extractInFolder(File folder){
+    protected boolean extractInFolder(File folder){
         ArrayList<String> lines = this.readLikeCSV();
         int countLine = 0;
         int countFile = 1;
-        Date date = new Date();
-        String dateStr = String.format("%d-%d-%d_", date.getDay(), date.getMonth(), date.getYear()-100);
-        for(int i = 0; i < this.fileLen(); i+=50){
-            CSV_IO curFile = new CSV_IO(dateStr+countFile);
+        stop:
+        for(int i = 0; i < lines.size(); i+=50){
+            CSV_IO curFile = new CSV_IO(folder.getAbsolutePath()+"/"+countFile+".csv");
+            try {
+                curFile.createNewFile();
+            } catch (IOException e) {
+                System.out.println(e);
+                return false;
+            }
             for(int j = i; j < i + 50; j++){
-                if (j > lines.size())
-                    return;
-                curFile.write(lines.get(j));
+                if (j > lines.size()) break stop;
+                curFile.write(lines.get(j)+"\n");
             }
             countFile+=1;
         }
+        return true;
     }
 
     protected File createFolder() throws IOException{
         String path = this.csvFile.getAbsolutePath();
-        path = path.replaceAll(".csv", "");
+        path = path.replaceAll("\\.csv", "");
+        path+="_cut";
         File folder = new File(path);
         boolean created = folder.mkdir();
         if (created){
@@ -37,6 +43,20 @@ public class BigCSVCutter extends CSV_IO {
         else{
             throw new IOException("Не удалось создать папку");
         }
+    }
+    public boolean cut(){
+        File folder;
+        try {
+
+            folder = createFolder();
+        }
+        catch (IOException e){
+            System.out.println(e);
+            return false;
+        }
+        boolean result = extractInFolder(folder);
+        return result;
+
     }
 
 }

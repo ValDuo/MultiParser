@@ -35,5 +35,6 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="parcing-of-kadastrs" scope="TEST" />
   </component>
 </module>
