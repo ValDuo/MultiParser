@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
-
 public class BigCSVCutter extends CSV_IO {
 
     public BigCSVCutter(String pathname) {
@@ -27,11 +26,13 @@ public class BigCSVCutter extends CSV_IO {
         }
     }
 
-    protected void createFolder(String path) throws IOException{
+    protected File createFolder() throws IOException{
+        String path = this.csvFile.getAbsolutePath();
+        path = path.replaceAll(".csv", "");
         File folder = new File(path);
         boolean created = folder.mkdir();
         if (created){
-            extractInFolder(folder);
+            return folder;
         }
         else{
             throw new IOException("Не удалось создать папку");
