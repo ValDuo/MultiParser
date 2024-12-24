@@ -3,7 +3,6 @@ package resources;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 public class BigCSVCutter extends CSV_IO {
 
     public BigCSVCutter(String pathname) {
@@ -33,7 +32,7 @@ public class BigCSVCutter extends CSV_IO {
 
     protected File createFolder() throws IOException{
         String path = this.csvFile.getAbsolutePath();
-        path = path.replaceAll("\\.csv", "");
+        path = path.replaceAll("/.csv", "");
         path+="_cut";
         File folder = new File(path);
         boolean created = folder.mkdir();

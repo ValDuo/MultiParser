@@ -27,6 +27,8 @@ public class WindowApp extends JFrame{
     Color dark_dark_blue = new Color(5, 48, 113);
     Color purple = new Color(141,68,173);
     Color dark_purple = new Color(88, 17, 120);
+    Color orange = new Color(229,125,38);
+    Color dark_orange = new Color(162,107,1);
     JLabel l = new JLabel();
     JFileChooser fileChooser = new JFileChooser();
     JProgressBar progressBar = new JProgressBar();
@@ -34,9 +36,12 @@ public class WindowApp extends JFrame{
     JLabel userGuide = new JLabel(UserGuideHTML.HTML_CONTENT);
     JLabel userGuideLink = new JLabel(UserGuideLinkHTML.HTML_CONTENT);
 
+
+
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
     RoundedButton filterFile = new RoundedButton("Получить кадастровые номера и пришедшие выписки");
+    RoundedButton cutFile = new RoundedButton("Нарезать файл по 50 строк");
 
     File[] files;
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
@@ -58,7 +63,6 @@ public class WindowApp extends JFrame{
     public File[] upload(){
         fileChooser.setDialogTitle("Выбор файла");
         fileChooser.setMultiSelectionEnabled(true);
-        // Определение режима - только файлы
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
         int result = fileChooser.showOpenDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
@@ -74,6 +78,30 @@ public class WindowApp extends JFrame{
         return null;
     }
 
+    public void cut() {
+        if (files == null || files.length == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "Список не загружен! Нажмите кнопку 'Выбрать файлы'.");
+            return;
+        }
+
+        for (File file : files) {
+            BigCSVCutter cutter = new BigCSVCutter(file.getAbsolutePath());
+
+            boolean result = cutter.cut();
+            if (result) {
+                try {
+                    JOptionPane.showMessageDialog(null,
+                            "Файл " + file.getName() + " успешно нарезан и сохранен в папке "+ file.getAbsolutePath());
+                }
+                catch (Exception e){
+                    JOptionPane.showMessageDialog(null,
+                            "Ошибка при нарезке файла " + file.getName() + ".");
+                }
+            }
+        }
+
+    }
 
     public void process(File[] files) {
         if (files == null){
@@ -102,7 +130,7 @@ public class WindowApp extends JFrame{
         if (zipResult == JFileChooser.APPROVE_OPTION) {
             File selectedZipFiles = zipChooser.getSelectedFile();
             if (selectedZipFiles == null) {
-                JOptionPane.showMessageDialog(null, "Неверный путь к папке!");
+                JOptionPane.showMessageDialog(null, "Неверный путь к папке!"    );
                 return;
             }
             if (files != null) {
@@ -189,6 +217,9 @@ public class WindowApp extends JFrame{
         //Добавляем фильтр форматов загружаемого файла (only Excel)
         fileChooser.setFileFilter(formatFilter);
 
+        //Добавляем функционал на кнопку нарезки файлов по 50
+        cutFile.addActionListener(e -> cut());
+
 
         //Добавляем стилизацию на кнопку добавления файлов
         uploadFile.setPreferredSize(new Dimension(350, 50));
@@ -218,6 +249,16 @@ public class WindowApp extends JFrame{
         filterFile.setArcHeight(20);
         filterFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
+        //Добавиола стилей на кнопку нарезки
+
+        cutFile.setPreferredSize(new Dimension(350, 50));
+        cutFile.setBgColor(orange);
+        cutFile.setBorderColor(dark_orange);
+        cutFile.setTextColor(Color.WHITE);
+        cutFile.setArcWidth(20);
+        cutFile.setArcHeight(20);
+        cutFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
         //Размещение кнопок в интерфейсе
         panel.setLayout(new FlowLayout());
 
@@ -234,6 +275,7 @@ public class WindowApp extends JFrame{
 
         panel.add(l);
         panel.add(uploadFile);
+        panel.add(cutFile);
         panel.add(sendToProssesing);
         panel.add(filterFile);
         panel.add(progressBar);
