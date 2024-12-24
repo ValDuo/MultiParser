@@ -1,5 +1,6 @@
 package resources;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,7 +19,8 @@ public class BigCSVCutter extends CSV_IO {
             try {
                 curFile.createNewFile();
             } catch (IOException e) {
-                System.out.println(e);
+                JOptionPane.showMessageDialog(null,
+                        "Ошибка при нарезке файла " + e + ".");
                 return false;
             }
             for(int j = i; j < i + 50; j++){
@@ -30,32 +32,41 @@ public class BigCSVCutter extends CSV_IO {
         return true;
     }
 
-    protected File createFolder() throws IOException{
+    protected File createFolder() throws IOException {
         String path = this.csvFile.getAbsolutePath();
-        path = path.replaceAll("/.csv", "");
-        path+="_cut";
+        if (path.endsWith(".csv")) {
+            path = path.substring(0, path.lastIndexOf(".csv"));
+        }
+        path += "_cut";
         File folder = new File(path);
-        boolean created = folder.mkdir();
-        if (created){
+        if (folder.exists()) {
+            JOptionPane.showMessageDialog(null, "Такой файл уже прошел этап нарезки, смотрите результат в папке "+ folder.getAbsolutePath());
             return folder;
         }
-        else{
-            throw new IOException("Не удалось создать папку");
+
+        boolean created = folder.mkdir();
+        if (created) {
+            return folder;
+        } else {
+            throw new IOException("Не удалось создать папку: " + path);
         }
     }
-    public boolean cut(){
+
+    public boolean cut() {
         File folder;
         try {
-
+            // Пытаемся создать папку
             folder = createFolder();
-        }
-        catch (IOException e){
-            System.out.println(e);
+        } catch (IOException e) {
+            // Показываем сообщение об ошибке и возвращаем false
+            JOptionPane.showMessageDialog(null, e.getMessage());
             return false;
         }
+
+        // Пытаемся выполнить извлечение в папку
         boolean result = extractInFolder(folder);
         return result;
-
     }
+
 
 }
