@@ -46,7 +46,8 @@ public class SeleniumParser {
             }
             ArrayList<WebElement> addressesRecieved = (ArrayList<WebElement>) driver.findElements(By.className("search-result__row"));
             String result_text = checkReciviedAddress(addressesRecieved);
-            srcDstFiles.getDistination().writeCSVLine(result_text);
+            if  (result_text != null)
+                srcDstFiles.getDistination().writeCSVLine(result_text);
             // чистим поле ввода, clear не работает :(((((((
             form_input = driver.findElement(By.id("form_search"));
             this.clear_input(form_input, addresses.get(i));
