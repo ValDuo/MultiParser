@@ -184,9 +184,9 @@ public class WindowApp extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 String labelText = userGuideLink.getText();
-                if (labelText.contains("dvdlera@gmail.com")) {
+                if (labelText.contains("fondkr.support@fondkrro.ru")) {
                     try {
-                        Desktop.getDesktop().mail(new URI("mailto:dvdlera@gmail.com"));
+                        Desktop.getDesktop().mail(new URI("mailto:fondkr.support@fondkrro.ru"));
                     } catch (Exception ex) {
                         ex.printStackTrace();
                     }
