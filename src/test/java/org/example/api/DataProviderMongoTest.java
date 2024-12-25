@@ -27,6 +27,6 @@ public class DataProviderMongoTest {
         content.setStatus(HistoryContent.Status.FAILURE);
         dataProvider.updateHistoryContent(content);
 
-        //dataProvider.deleteHistoryContent("1");
+        dataProvider.deleteHistoryContent("1");
     }
 }

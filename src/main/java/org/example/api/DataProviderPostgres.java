@@ -4,13 +4,31 @@ import org.apache.log4j.Logger;
 import org.example.models.PersForApi;
 import ru.sfedu.dubina.Constants;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.*;
+import java.util.Properties;
 
-public class DataProviderPostgres implements IDataProvider<PersForApi> {
+public class DataProviderPostgres  {
     private Logger logger = Logger.getLogger(DataProviderPostgres.class);
-    private Connection connection;
+    private static Connection connection;
 
-    @Override
+    public static Connection getConnection() throws SQLException, IOException {
+        if (connection == null) {
+            Properties props = new Properties();
+            try(InputStream input = DataProviderPostgres.class.getClassLoader().
+                    getResourceAsStream("database.properties")) {
+                props.load(input);
+            }
+            String url = props.getProperty("db.url");
+            String user = props.getProperty("db.user");
+            String password = props.getProperty("db.password");
+            connection = DriverManager.getConnection(url, user, password);
+        }
+        return connection;
+    }
+
+
     public void initDataSource() {
         try {
             connection = DriverManager.getConnection(Constants.URL, Constants.USER, Constants.PASSWORD);
@@ -20,7 +38,7 @@ public class DataProviderPostgres implements IDataProvider<PersForApi> {
         }
     }
 
-    @Override
+
     public void saveRecord(PersForApi record) {
         String sql = "INSERT INTO persons (name, email) VALUES (?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -33,7 +51,7 @@ public class DataProviderPostgres implements IDataProvider<PersForApi> {
         }
     }
 
-    @Override
+
     public void deleteRecord(Long id) {
         String sql = "DELETE FROM persons WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -49,7 +67,7 @@ public class DataProviderPostgres implements IDataProvider<PersForApi> {
         }
     }
 
-    @Override
+
     public PersForApi getRecordById(Long id) {
         String sql = "SELECT * FROM persons WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {

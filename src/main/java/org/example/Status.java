@@ -2,5 +2,7 @@ package org.example;
 
 public enum Status {
     SUCCESS,
-    FAULT
+    SENT_TO_PROCESSING,
+    NO_KADASTRS,
+    ERROR
 }
