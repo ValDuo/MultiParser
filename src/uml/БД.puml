@@ -1,0 +1,67 @@
+@startuml
+
+entity src.WindowApp {
+    + kadastrNumber: varchar(60)
+    + personalAddress: varchar
+    + personalAccount: varchar
+    + square: int
+    + emailCounter: int FK(IncomingEmails(emails)
+    + personalId: serial
+    + createDate: DateTime
+    + uploadDate: DateTime
+    + create: timestamp
+    + update: timestamp
+}
+entity DebtorList{
+    + ownerName: varchar FK(src.WindowApp(personalAccount)
+    + payerName: varchar
+    + accruedMoney: int
+    + returnedMoney: int
+    + create: timestamp
+    + update: timestamp
+    + kadastr: varchar FK(src.WindowApp(kadastrNumber))
+
+}
+entity CSVReader{
++ kadastr: varchar FK(src.WindowApp(kadastrNumber))
+    + pathname: varchar(60)
+    + csvFile: File
+    + words: Array
+    + lines: Array
+}
+entity src.SeleniumParser{
+   + driver: int FK(src.WindowApp(personalId))
+   + srcDstFiles: varchar
+}
+entity IncomingEmails{
+    + emails: int
+    +  emailAddress: varchar
+    +  emailSender: varchar(60)
+    +  emailReceiver: varchar
+    + create: timestamp
+    + update: timestamp
+}
+entity src.BigCSVCutter{
+   +  countLine: int
+   +  countFile: int
+   +  date: DateTime
+   +  dateStr: varchar
+   +  folder: varchar FK(CSVReader(pathname))
+   +  created: Boolean
+}
+entity WithKadastrList{
+   +  source: varchar FK(IncomingEmails(emailSender))
+   + destination: varchar
+    +  createdTime: DateTime
+    + create: timestamp
+    + update: timestamp
+}
+
+src.WindowApp ||--|| src.SeleniumParser
+src.WindowApp ||--|| CSVReader
+src.WindowApp }o--|| DebtorList
+src.WindowApp ||--|| IncomingEmails
+src.WindowApp ||--|| src.BigCSVCutter
+CSVReader ||--|| src.BigCSVCutter
+IncomingEmails ||--|| WithKadastrList
+@enduml

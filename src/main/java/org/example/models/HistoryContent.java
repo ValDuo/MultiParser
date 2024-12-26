@@ -1,7 +1,7 @@
 package org.example.models;
 
 import org.bson.types.ObjectId;
-
+import lombok.*;
 import javax.swing.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;

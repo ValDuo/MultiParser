@@ -1,7 +1,6 @@
 package org.example.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.File;
 import java.util.Date;
@@ -22,4 +21,6 @@ public class BigCSVCutter {
         this.folder = folder;
         this.created = created;
     }
+
+
 }

@@ -1,7 +1,6 @@
 package org.example.models;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.File;
 import java.lang.reflect.Array;
