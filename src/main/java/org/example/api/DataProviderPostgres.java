@@ -9,9 +9,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.sql.Date;
+import java.util.*;
 
 public class DataProviderPostgres  {
     private Logger logger = Logger.getLogger(DataProviderPostgres.class);
