@@ -4,6 +4,7 @@ package org.example.api;
 import java.io.*;
 import java.sql.*;
 
+import org.example.models.*;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,157 +28,165 @@ class DataProviderPSQLTest {
 
     @Test
     void testCRUDMethodsWithBigCSVCutter() throws SQLException {
-        PersInf persInf = new PersInf("Merilin","Monro","+7999163334", "merilin@mail.ru");
+        BigCSVCutter bigCSVCutter = new BigCSVCutter(50,2, new Date(2000, 12, 21), new File("mavenproject/src/test/testFolder"), true);
 
-        dataProviderPSQL.createPersInf(persInf);
+        dataProviderPSQL.createBigCSVCutter(bigCSVCutter);
 
-        PersInf retrievedUser = dataProviderPSQL.readPersInf(persInf, persInf.getId());
+        BigCSVCutter retrievedUser = dataProviderPSQL.getBigCSVCutterById(bigCSVCutter.getId());
         assertNotNull(retrievedUser);
-        assertEquals("Merilin", retrievedUser.getSurname());
-        assertEquals("Monro", retrievedUser.getName());
-        assertEquals("+7999163334", retrievedUser.getPhoneNumber());
-        assertEquals("merilin@mail.ru", retrievedUser.getEmail());
+        assertEquals(50, retrievedUser.getCountLine());
+        assertEquals(2, retrievedUser.getCountFile());
+        assertEquals(new Date(2000, 12,21), retrievedUser.getDate());
+        assertEquals("mavenproject/src/test/testFolder", retrievedUser.getFolder());
+        assertEquals(true, retrievedUser.getCreated());
 
-        retrievedUser.setSurname("Updated");
-        retrievedUser.setName("User");
-        dataProviderPSQL.updatePersInf(retrievedUser);
+        retrievedUser.setFolder(new File("mavenproject/src/test/testFolder2"));
+        retrievedUser.setDate(new Date(2012, 13, 30));
+        dataProviderPSQL.updateBigCSVCutter(retrievedUser);
 
 
-        PersInf updatedUser = dataProviderPSQL.readPersInf(retrievedUser, retrievedUser.getId());
-        assertEquals("Updated", updatedUser.getSurname());
-        assertEquals("User", updatedUser.getName());
+        BigCSVCutter updatedFile = dataProviderPSQL.getBigCSVCutterById(retrievedUser.getId());
+        assertEquals("c:/users/lera/somefolder2", updatedFile.getFolder());
+        assertEquals(new Date(2012, 13, 30), updatedFile.getDate());
 
-        dataProviderPSQL.deletePersInf(persInf.getId());
+        dataProviderPSQL.deleteBigCSVCutter(bigCSVCutter.getId());
     }
 
     @Test
-    void testCRUDMethodsWithProfInf() throws SQLException {
-        PersInf persInf = new PersInf("Jackie","Chan","+79180540546", "jackie@mail.ru");
-        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
-                "Java backend developer", 5.5, 4.0);
+    void testCRUDMethodsWithCSVReader() throws SQLException {
+        CSVReader csvReader = new CSVReader("mavenproject/src/test/testFolder", new File ("mavenproject\\src\\test\\testFolder\\test.csv"), 15);
 
-        dataProviderPSQL.createPersInf(persInf);
-        dataProviderPSQL.createProfInf(profInf, persInf);
-
-        ProfInf retrievedUser = dataProviderPSQL.readProfInf(profInf, persInf.getId());
+        dataProviderPSQL.createCSVReader(csvReader);
+        CSVReader retrievedUser = dataProviderPSQL.getCSVReaderById(Integer.parseInt(csvReader.getId()));
         assertNotNull(retrievedUser);
-        assertEquals("Programming", retrievedUser.getSkillName());
-        assertEquals("Programming in Java", retrievedUser.getSkillDescription());
-        assertEquals(2500.00, retrievedUser.getCost());
-        assertEquals("Java backend developer", retrievedUser.getPersDescription());
-        assertEquals(5.5, retrievedUser.getExp());
-        assertEquals(4.0, retrievedUser.getRating());
+        assertEquals("mavenproject\\src\\test\\testFolder\\test.csv", retrievedUser.getCsvFile());
+        assertEquals("mavenproject/src/test/testFolder", retrievedUser.getPathName());
+        assertEquals(14, retrievedUser.getWords());
 
-        retrievedUser.setSkillName("UpdatedSkill");
-        dataProviderPSQL.updateProfInf(retrievedUser);
+        retrievedUser.setWords(100);
+        dataProviderPSQL.updateCSVReader(Integer.parseInt(retrievedUser.getId()), retrievedUser);
 
-        ProfInf updatedUser = dataProviderPSQL.readProfInf(profInf, retrievedUser.getPersId());
-        assertEquals("UpdatedSkill", updatedUser.getSkillName());
+        CSVReader updatedUser = dataProviderPSQL.getCSVReaderById(Integer.parseInt(retrievedUser.getId()));
+        assertEquals(100, updatedUser.getWords());
 
-        dataProviderPSQL.deleteProfInf(profInf.getPersId());
-        dataProviderPSQL.deletePersInf(persInf.getId());
+        dataProviderPSQL.deleteCSVReader(Integer.parseInt(csvReader.getId()));
     }
 
     @Test
-    void testCRUDMethodsWithSkillExchange() throws SQLException {
-        PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
-        PersInf persInf = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
-        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
-                "Java backend developer", 5.5, 4.0);
-        SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
+    void testCRUDMethodsWithDebtorList() throws SQLException {
 
-        dataProviderPSQL.createPersInf(persInf);
-        dataProviderPSQL.createPersInf(persInfRequesting);
-        dataProviderPSQL.createProfInf(profInf, persInf);
-        dataProviderPSQL.createSkillExchange(skillExchange);
+        DebtorList debtor = new DebtorList("John Doe", "Jane Smith", 5000L, 3000L, new Date(2000,12, 12), new Date(2000, 12, 13), true);
+        boolean createResult = dataProviderPSQL.createDebtorList(debtor);
+        assertTrue(createResult, "Ошибка при создании записи.");
 
-        SkillExchange retrievedSkillExchange = dataProviderPSQL.readSkillExchange(skillExchange);
-        assertNotNull(retrievedSkillExchange);
-        assertEquals(persInfRequesting.getId(), retrievedSkillExchange.getUserRequesting());
-        assertEquals(profInf.getPersId(), retrievedSkillExchange.getUserOffering());
-        assertEquals(profInf.getSkillName(), retrievedSkillExchange.getSkillOffered());
+        DebtorList retrievedDebtor = dataProviderPSQL.getDebtorListById(Integer.parseInt(debtor.getId()));
+        assertNotNull(retrievedDebtor, "Запись не найдена.");
+        assertEquals("John Doe", retrievedDebtor.getOwnerName(), "Неверное значение ownerName.");
+        assertEquals("Jane Smith", retrievedDebtor.getPayerName(), "Неверное значение payerName.");
+        assertEquals(5000L, retrievedDebtor.getAccruedMoney(), "Неверное значение accruedMoney.");
+        assertEquals(3000L, retrievedDebtor.getReturnedMoney(), "Неверное значение returnedMoney.");
+        assertNotNull(retrievedDebtor.getCreateDateOfPayment(), "Неверное значение createDateOfPayment.");
+        assertNotNull(retrievedDebtor.getUploadDateOfPayment(), "Неверное значение uploadDateOfPayment.");
+        assertTrue(retrievedDebtor.getKadastr(), "Неверное значение kadastr.");
 
-        retrievedSkillExchange.setSkillOffered("UpdatedSkill");
-        dataProviderPSQL.updateSkillExchange(retrievedSkillExchange);
+        retrievedDebtor.setAccruedMoney(6000L);
+        retrievedDebtor.setReturnedMoney(4000L);
+        retrievedDebtor.setKadastr(false);
+        boolean updateResult = dataProviderPSQL.updateDebtorList(Integer.parseInt(debtor.getId()), retrievedDebtor);
+        assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        SkillExchange updatedSkillExchange = dataProviderPSQL.readSkillExchange(retrievedSkillExchange);
-        assertEquals("UpdatedSkill", updatedSkillExchange.getSkillOffered());
 
-        dataProviderPSQL.deleteSkillExchange(skillExchange.getExchangeId());
-        dataProviderPSQL.deleteProfInf(profInf.getPersId());
-        dataProviderPSQL.deletePersInf(persInf.getId());
-        dataProviderPSQL.deletePersInf(persInfRequesting.getId());
+        boolean deleteResult = dataProviderPSQL.deleteDebtorList(Integer.parseInt(debtor.getId()));
+        assertTrue(deleteResult, "Ошибка при удалении записи.");
     }
 
     @Test
-    void testCRUDMethodsWithReview() throws SQLException {
-        PersInf persInfReviewer = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
-        PersInf persInfEvaluated = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
-        ProfInf profInf = new ProfInf(persInfEvaluated.getId(), "Programming","Programming in Java", 2500.00,
-                "Java backend developer", 5.5, 4.0);
-        Review review = new Review(4.5, "Good job!", persInfReviewer.getId(), profInf.getPersId());
+    void testCRUDMethodsWithIncomingEmails() throws SQLException {
+        IncomingEmails email = new IncomingEmails("john.doe@example.com", "jane.smith@example.com", "john.doe@example.com");
+        boolean createResult = dataProviderPSQL.createIncomingEmail(email);
+        assertTrue(createResult, "Ошибка при создании записи.");
 
-        dataProviderPSQL.createPersInf(persInfReviewer);
-        dataProviderPSQL.createPersInf(persInfEvaluated);
-        dataProviderPSQL.createProfInf(profInf, persInfEvaluated);
-        dataProviderPSQL.createReview(review);
+        IncomingEmails retrievedEmail = dataProviderPSQL.getIncomingEmailById(Integer.parseInt(email.getId()));
+        assertNotNull(retrievedEmail, "Запись не найдена.");
+        assertEquals("john.doe@example.com", retrievedEmail.getEmailAddress(), "Неверное значение emailAddress.");
+        assertEquals("jane.smith@example.com", retrievedEmail.getEmailSender(), "Неверное значение emailSender.");
+        assertEquals("john.doe@example.com", retrievedEmail.getEmailReceiver(), "Неверное значение emailReceiver.");
 
-        Review retrievedReview = dataProviderPSQL.readReview(review);
-        assertNotNull(retrievedReview);
-        assertEquals(4.5, retrievedReview.getRating());
-        assertEquals("Good job!", retrievedReview.getComment());
-        assertEquals(persInfReviewer.getId(), retrievedReview.getReviewer());
-        assertEquals(profInf.getPersId(), retrievedReview.getUserEvaluated());
+        retrievedEmail.setEmailSender("updated.sender@example.com");
+        retrievedEmail.setEmailReceiver("updated.receiver@example.com");
+        boolean updateResult = dataProviderPSQL.updateIncomingEmail(Integer.parseInt(email.getId()), retrievedEmail);
+        assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        review.setComment("Not God Job!");
-        dataProviderPSQL.updateReview(review);
+        boolean deleteResult = dataProviderPSQL.deleteIncomingEmail(Integer.parseInt(email.getId()));
+        assertTrue(deleteResult, "Ошибка при удалении записи.");
 
-        Review updatedReview = dataProviderPSQL.readReview(review);
-        assertEquals("Not God Job!", updatedReview.getComment());
-
-        dataProviderPSQL.deleteReview(review);
-        dataProviderPSQL.deleteSkillExchange(review.getReviewId());
-        dataProviderPSQL.deleteProfInf(profInf.getPersId());
-        dataProviderPSQL.deletePersInf(persInfReviewer.getId());
-        dataProviderPSQL.deletePersInf(persInfEvaluated.getId());
 
     }
 
     @Test
-    void testCRUDMethodsWithTransaction() throws SQLException {
-        PersInf persInfRequesting = new PersInf("Bober","Curwa","+88005553535", "curwa@mail.ru");
-        PersInf persInf = new PersInf("Jackie","Chan","+87005553636", "jackie@mail.ru");
-        ProfInf profInf = new ProfInf(persInf.getId(), "Programming","Programming in Java", 2500.00,
-                "Java backend developer", 5.5, 4.0);
-        SkillExchange skillExchange = new SkillExchange(profInf.getSkillName(),persInfRequesting.getId(),profInf.getPersId());
-        Transaction transaction = new Transaction(Status.COMPLETED, skillExchange.getExchangeId());
+    void testCRUDMethodsWithSeleniumParser() throws SQLException {
+        SeleniumParser seleniumParser = new SeleniumParser(1, "src/dst/file");
+        boolean createResult = dataProviderPSQL.createSeleniumParser(seleniumParser);
+        assertTrue(createResult, "Ошибка при создании записи.");
 
-        dataProviderPSQL.createPersInf(persInf);
-        dataProviderPSQL.createPersInf(persInfRequesting);
-        dataProviderPSQL.createProfInf(profInf, persInf);
-        dataProviderPSQL.createSkillExchange(skillExchange);
-        dataProviderPSQL.createTransaction(transaction);
+        SeleniumParser retrievedParser = dataProviderPSQL.getSeleniumParserById(Integer.parseInt(seleniumParser.getId()));
+        assertNotNull(retrievedParser, "Запись не найдена.");
+        assertEquals(1, retrievedParser.getDriver(), "Неверное значение driver.");
+        assertEquals("src/dst/file", retrievedParser.getSrcDstFiles(), "Неверное значение srcDstFiles.");
 
-        Transaction retrievedTransaction = dataProviderPSQL.readTransaction(transaction);
-        assertNotNull(retrievedTransaction);
-        assertEquals(Status.COMPLETED, retrievedTransaction.getStatus());
-        assertEquals(skillExchange.getExchangeId(), transaction.getChangeId());
+        retrievedParser.setDriver(2);
+        retrievedParser.setSrcDstFiles("new/src/dst/file");
+        boolean updateResult = dataProviderPSQL.updateSeleniumParser(Integer.parseInt(seleniumParser.getId()), retrievedParser);
+        assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        retrievedTransaction.setStatus(Status.IN_PROCESS);
-        dataProviderPSQL.updateTransaction(retrievedTransaction);
+        boolean deleteResult = dataProviderPSQL.deleteSeleniumParser(Integer.parseInt(seleniumParser.getId()));
+        assertTrue(deleteResult, "Ошибка при удалении записи.");
 
-        Transaction updatedTransaction = dataProviderPSQL.readTransaction(transaction);
-        assertEquals(Status.IN_PROCESS, updatedTransaction.getStatus());
-
-        dataProviderPSQL.deleteTransaction(transaction);
-        dataProviderPSQL.deleteSkillExchange(skillExchange.getExchangeId());
-        dataProviderPSQL.deleteProfInf(profInf.getPersId());
-        dataProviderPSQL.deletePersInf(persInf.getId());
-        dataProviderPSQL.deletePersInf(persInfRequesting.getId());
     }
 
     @Test
-    void testGetSkillByName() throws SQLException {
-        dataProviderPSQL.printProfInfList(dataProviderPSQL.readProfInfBySkillName("java"));
+    void testCRUDMethodsWithWindowApp() throws SQLException {
+        WindowApp windowApp = new WindowApp("12345", "Some Address", "67890", 123456789L, 50, 10, 1001, new Date(2020, 12, 30));
+        boolean createResult = dataProviderPSQL.createWindowApp(windowApp);
+        assertTrue(createResult, "Ошибка при создании записи.");
+
+
+        WindowApp retrievedWindowApp = dataProviderPSQL.getWindowAppById(Integer.parseInt(windowApp.getId()));
+        assertNotNull(retrievedWindowApp, "Запись не найдена.");
+        assertEquals("12345", retrievedWindowApp.getKadastrNumber(), "Неверное значение kadastrNumber.");
+        assertEquals("Some Address", retrievedWindowApp.getPersonalAddress(), "Неверное значение personalAddress.");
+        assertEquals("67890", retrievedWindowApp.getPersonalAccount(), "Неверное значение personalAccount.");
+        assertEquals(123456789L, retrievedWindowApp.getPersonalNumber(), "Неверное значение personalNumber.");
+        assertEquals(50, retrievedWindowApp.getSquare(), "Неверное значение square.");
+        assertEquals(10, retrievedWindowApp.getEmailCounter(), "Неверное значение emailCounter.");
+        assertEquals(1001, retrievedWindowApp.getPersonalID(), "Неверное значение personalID.");
+
+        retrievedWindowApp.setKadastrNumber("543211234");
+        retrievedWindowApp.setPersonalAddress("Updated Address");
+        retrievedWindowApp.setSquare(60);
+        boolean updateResult = dataProviderPSQL.updateWindowApp(Integer.parseInt(windowApp.getId()), retrievedWindowApp);
+        assertTrue(updateResult, "Ошибка при обновлении записи.");
+
+    }
+
+    @Test
+    void testCRUDMethodsWithKadastrList() throws SQLException {
+        WithKadastrList withKadastrList = new WithKadastrList("SourceAddress", "DestinationAddress", new Date(2012, 12, 10));
+        boolean createResult = dataProviderPSQL.createWithKadastrList(withKadastrList);
+        assertTrue(createResult, "Ошибка при создании записи.");
+
+        WithKadastrList retrievedWithKadastrList = dataProviderPSQL.getWithKadastrListById(Integer.parseInt(withKadastrList.getId()));
+        assertNotNull(retrievedWithKadastrList, "Запись не найдена.");
+        assertEquals("SourceAddress", retrievedWithKadastrList.getSource(), "Неверное значение source.");
+        assertEquals("DestinationAddress", retrievedWithKadastrList.getDestination(), "Неверное значение destination.");
+        assertNotNull(retrievedWithKadastrList.getCreatedTime(), "Неверное значение createdTime.");
+
+        retrievedWithKadastrList.setSource("UpdatedSource");
+        retrievedWithKadastrList.setDestination("UpdatedDestination");
+        boolean updateResult = dataProviderPSQL.updateWithKadastrList(Integer.parseInt(withKadastrList.getId()), retrievedWithKadastrList);
+        assertTrue(updateResult, "Ошибка при обновлении записи.");
+
+        boolean deleteResult = dataProviderPSQL.deleteWithKadastrList(Integer.parseInt(withKadastrList.getId()));
+        assertTrue(deleteResult, "Ошибка при удалении записи.");
     }
 }

@@ -11,7 +11,7 @@ public class Constants {
     public static String csvFilePath = "src/test/resources/historyContent.csv";
     public static String xmlFilePath = "src/test/resources/testXML.xml";
     //для postgreSQL
-    public static final String URL = "jdbc:postgresql://localhost:5432/valerland";
+    public static final String URL = "jdbc:postgresql://localhost:5432/test/valerland";
     public static final String USER = "postgres";
     public static final String PASSWORD = "postgres";
 

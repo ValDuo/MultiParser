@@ -17,6 +17,7 @@ public class WindowApp {
     private Integer personalID;
     private LocalDateTime createDate;
     private Date uploadDate;
+    private String id;
 
     public WindowApp(String kadastrNumber, String personalAddress, String personalAccount, Long personalNumber, Integer square, Integer emailCounter, Integer personalID, Date uploadDate) {
         this.kadastrNumber = kadastrNumber;
@@ -28,5 +29,6 @@ public class WindowApp {
         this.personalID = personalID;
         this.createDate = LocalDateTime.now();
         this.uploadDate = uploadDate;
+        this.id = "1";
     }
 }

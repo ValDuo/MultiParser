@@ -50,7 +50,7 @@ public class DataProviderPostgres  {
             statement.setInt(2, cutter.getCountFile());
             statement.setTimestamp(3, new Timestamp(cutter.getDate().getTime()));
             statement.setString(4, cutter.getFolder().getAbsolutePath());
-            statement.setBoolean(5, cutter.isCreated());
+            statement.setBoolean(5, cutter.getCreated());
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -59,10 +59,10 @@ public class DataProviderPostgres  {
         return false;
     }
 
-    public BigCSVCutter getBigCSVCutterById(int id) {
+    public BigCSVCutter getBigCSVCutterById(String id) {
         String sql = "SELECT * FROM BigCSVCutter WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new BigCSVCutter(
@@ -80,15 +80,14 @@ public class DataProviderPostgres  {
         return null;
     }
 
-    public boolean updateBigCSVCutter(int id, BigCSVCutter cutter) {
+    public boolean updateBigCSVCutter(BigCSVCutter cutter) {
         String sql = "UPDATE BigCSVCutter SET countLine = ?, countFile = ?, date = ?, folder = ?, created = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, cutter.getCountLine());
             statement.setInt(2, cutter.getCountFile());
             statement.setTimestamp(3, new Timestamp(cutter.getDate().getTime()));
             statement.setString(4, cutter.getFolder().getAbsolutePath());
-            statement.setBoolean(5, cutter.isCreated());
-            statement.setInt(6, id);
+            statement.setBoolean(5, cutter.getCreated());
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
@@ -98,10 +97,10 @@ public class DataProviderPostgres  {
     }
 
 
-    public boolean deleteBigCSVCutter(int id) {
+    public boolean deleteBigCSVCutter(String id) {
         String sql = "DELETE FROM BigCSVCutter WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setInt(1, Integer.parseInt(id));
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {
@@ -136,7 +135,7 @@ public class DataProviderPostgres  {
                     return new CSVReader(
                             resultSet.getString("pathName"),
                             new File(resultSet.getString("csvFile")),
-                            (Array) resultSet.getObject("words")
+                            resultSet.getInt("words")
                     );
                 }
             }
@@ -287,7 +286,6 @@ public class DataProviderPostgres  {
                     history.setMethodName(resultSet.getString("methodName"));
 
                     Map<String, Object> objectMap = new HashMap<>();
-                    // Here, you may need a proper deserialization for object
                     objectMap.put("data", resultSet.getString("object"));
                     history.setObject(objectMap);
 

@@ -8,17 +8,17 @@ public class Main {
         dataProvider.initDataSource();
 
 
-        PersForApi newPerson = new PersForApi(null, "John Doe", "john.doe@example.com");
-        dataProvider.saveRecord(newPerson);
+        //PersForApi newPerson = new PersForApi(null, "John Doe", "john.doe@example.com");
+       // dataProvider.saveRecord(newPerson);
 
 
-        PersForApi person = dataProvider.getRecordById(1L);
-        System.out.println(person);
+        //PersForApi person = dataProvider.getRecordById(1L);
+        ///System.out.println(person);
 
 
-        dataProvider.deleteRecord(1L);
+       // dataProvider.deleteRecord(1L);
 
 
-        dataProvider.closeConnection();
+       // dataProvider.closeConnection();
     }
 }

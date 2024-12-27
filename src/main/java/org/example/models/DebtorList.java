@@ -15,8 +15,10 @@ public class DebtorList {
     private LocalDateTime createDateOfPayment;
     private Date uploadDateOfPayment;
     private Boolean kadastr;
+    private String id;
 
     public DebtorList(String ownerName, String payerName, Long accruedMoney, Long returnedMoney, Date createDateOfPayment, Date uploadDateOfPayment, Boolean kadastr) {
+        this.id = "12345";
         this.ownerName = ownerName;
         this.payerName = payerName;
         this.accruedMoney = accruedMoney;
