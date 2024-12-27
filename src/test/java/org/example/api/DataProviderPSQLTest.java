@@ -125,7 +125,7 @@ class DataProviderPSQLTest {
 
     @Test
     void testCRUDMethodsWithSeleniumParser() throws SQLException {
-        SeleniumParser seleniumParser = new SeleniumParser(1, "src/dst/file");
+        SeleniumParser seleniumParser = new SeleniumParser(1, "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\test\\testFolder");
         boolean createResult = dataProviderPSQL.createSeleniumParser(seleniumParser);
         assertTrue(createResult, "Ошибка при создании записи.");
 
