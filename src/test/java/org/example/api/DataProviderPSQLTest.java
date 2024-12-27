@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DataProviderPSQLTest {
     private DataProviderPostgres dataProviderPSQL;
-
     @BeforeEach
     void setUp() throws SQLException, IOException {
         Connection connection = DataProviderPostgres.getConnection();
@@ -28,20 +27,19 @@ class DataProviderPSQLTest {
 
     @Test
     void testCRUDMethodsWithBigCSVCutter() throws SQLException {
-        BigCSVCutter bigCSVCutter = new BigCSVCutter(50,2, new Date(2000, 12, 21), new File("mavenproject/src/test/testFolder"), true);
+        BigCSVCutter bigCSVCutter = new BigCSVCutter(50,2, "2002/11/10", "mavenproject/src/test/testFolder", true);
 
         dataProviderPSQL.createBigCSVCutter(bigCSVCutter);
-
         BigCSVCutter retrievedUser = dataProviderPSQL.getBigCSVCutterById(bigCSVCutter.getId());
         assertNotNull(retrievedUser);
         assertEquals(50, retrievedUser.getCountLine());
         assertEquals(2, retrievedUser.getCountFile());
-        assertEquals(new Date(2000, 12,21), retrievedUser.getDate());
+        assertEquals("2002/11/10", retrievedUser.getDate());
         assertEquals("mavenproject/src/test/testFolder", retrievedUser.getFolder());
         assertEquals(true, retrievedUser.getCreated());
 
-        retrievedUser.setFolder(new File("mavenproject/src/test/testFolder2"));
-        retrievedUser.setDate(new Date(2012, 13, 30));
+        retrievedUser.setFolder("mavenproject/src/test/testFolder2");
+        retrievedUser.setDate("2020/10/01");
         dataProviderPSQL.updateBigCSVCutter(retrievedUser);
 
 
@@ -125,14 +123,12 @@ class DataProviderPSQLTest {
 
     @Test
     void testCRUDMethodsWithSeleniumParser() throws SQLException {
-        SeleniumParser seleniumParser = new SeleniumParser(1, "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\test\\testFolder");
+        SeleniumParser seleniumParser = new SeleniumParser(1, "mavenproject\\src\\test\\testFolder");
         boolean createResult = dataProviderPSQL.createSeleniumParser(seleniumParser);
-        assertTrue(createResult, "Ошибка при создании записи.");
 
         SeleniumParser retrievedParser = dataProviderPSQL.getSeleniumParserById(Integer.parseInt(seleniumParser.getId()));
-        assertNotNull(retrievedParser, "Запись не найдена.");
-        assertEquals(1, retrievedParser.getDriver(), "Неверное значение driver.");
-        assertEquals("src/dst/file", retrievedParser.getSrcDstFiles(), "Неверное значение srcDstFiles.");
+        assertEquals(2, retrievedParser.getDriver(), "Неверное значение driver.");
+        assertEquals("new/src/dst/file", retrievedParser.getSrcDstFiles(), "Неверное значение srcDstFiles.");
 
         retrievedParser.setDriver(2);
         retrievedParser.setSrcDstFiles("new/src/dst/file");

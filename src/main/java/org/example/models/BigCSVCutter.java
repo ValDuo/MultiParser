@@ -2,21 +2,18 @@ package org.example.models;
 
 import lombok.*;
 
-import java.io.File;
-import java.util.Date;
-
 @Getter
 @Setter
 public class BigCSVCutter {
     private String id;
     private Integer countLine;
     private Integer countFile;
-    private Date date;
-    private File folder;
+    private String date;
+    private String folder;
     private Boolean created;
 
-    public BigCSVCutter(Integer countLine, Integer countFile, Date date, File folder, boolean created) {
-        this.id = "123";
+    public BigCSVCutter(Integer countLine, Integer countFile, String date, String folder, boolean created) {
+        this.id = "12223";
         this.countLine = countLine;
         this.countFile = countFile;
         this.date = date;

@@ -31,26 +31,18 @@ public class DataProviderPostgres  {
         return connection;
     }
 
-
-    public void initDataSource() {
-        try {
-            connection = DriverManager.getConnection(Constants.URL, Constants.USER, Constants.PASSWORD);
-            logger.info("Соединение с базой данных установлено.");
-        } catch (SQLException e) {
-            logger.error("Ошибка соединения с базой данных.", e);
-        }
-    }
-
     // CRUD-операции для BigCSVCutter
 
     public boolean createBigCSVCutter(BigCSVCutter cutter) {
-        String sql = "INSERT INTO BigCSVCutter (countLine, countFile, date, folder, created) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO bigCSVCutter (id, countLine, countFile, date, folder, created) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, cutter.getCountLine());
-            statement.setInt(2, cutter.getCountFile());
-            statement.setTimestamp(3, new Timestamp(cutter.getDate().getTime()));
-            statement.setString(4, cutter.getFolder().getAbsolutePath());
-            statement.setBoolean(5, cutter.getCreated());
+            statement.setString(1, cutter.getId());
+            statement.setInt(2, cutter.getCountLine());
+            statement.setInt(3, cutter.getCountFile());
+            statement.setString(4, cutter.getDate());
+            statement.setString(5, cutter.getFolder());
+            statement.setBoolean(6, cutter.getCreated());
+
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -60,7 +52,7 @@ public class DataProviderPostgres  {
     }
 
     public BigCSVCutter getBigCSVCutterById(String id) {
-        String sql = "SELECT * FROM BigCSVCutter WHERE id = ?";
+        String sql = "SELECT * FROM bigCSVCutter";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -68,8 +60,8 @@ public class DataProviderPostgres  {
                     return new BigCSVCutter(
                             resultSet.getInt("countLine"),
                             resultSet.getInt("countFile"),
-                            resultSet.getTimestamp("date"),
-                            new File(resultSet.getString("folder")),
+                            resultSet.getString("date"),
+                            resultSet.getString("folder"),
                             resultSet.getBoolean("created")
                     );
                 }
@@ -81,12 +73,12 @@ public class DataProviderPostgres  {
     }
 
     public boolean updateBigCSVCutter(BigCSVCutter cutter) {
-        String sql = "UPDATE BigCSVCutter SET countLine = ?, countFile = ?, date = ?, folder = ?, created = ? WHERE id = ?";
+        String sql = "UPDATE bigCSVCutter SET countLine = ?, countFile = ?, date = ?, folder = ?, created = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, cutter.getCountLine());
             statement.setInt(2, cutter.getCountFile());
-            statement.setTimestamp(3, new Timestamp(cutter.getDate().getTime()));
-            statement.setString(4, cutter.getFolder().getAbsolutePath());
+            statement.setString(3, cutter.getDate());
+            statement.setString(4, cutter.getFolder());
             statement.setBoolean(5, cutter.getCreated());
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
@@ -98,7 +90,7 @@ public class DataProviderPostgres  {
 
 
     public boolean deleteBigCSVCutter(String id) {
-        String sql = "DELETE FROM BigCSVCutter WHERE id = ?";
+        String sql = "DELETE FROM bigCSVCutter WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, Integer.parseInt(id));
             int rowsDeleted = statement.executeUpdate();
@@ -400,23 +392,24 @@ public class DataProviderPostgres  {
 
     // Create
     public boolean createSeleniumParser(SeleniumParser parser) {
-        String sql = "INSERT INTO SeleniumParser (driver, srcDstFiles) VALUES (?, ?)";
+        String sql = "INSERT INTO parcer (id, driver, srcDstFiles) VALUES (?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, parser.getDriver());
-            statement.setString(2, parser.getSrcDstFiles());
+            statement.setString(1, parser.getId());
+            statement.setInt(2, parser.getDriver());
+            statement.setString(3, parser.getSrcDstFiles());
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при добавлении записи SeleniumParser.", e);
+            logger.error("Ошибка при добавлении записи parcer.", e);
         }
         return false;
     }
 
     // Read
     public SeleniumParser getSeleniumParserById(int id) {
-        String sql = "SELECT * FROM SeleniumParser WHERE id = ?";
+        String sql = "SELECT * FROM parcer WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new SeleniumParser(
@@ -426,35 +419,35 @@ public class DataProviderPostgres  {
                 }
             }
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при получении записи SeleniumParser.", e);
+            logger.error("Ошибка при получении записи parcer.", e);
         }
         return null;
     }
 
     // Update
     public boolean updateSeleniumParser(int id, SeleniumParser parser) {
-        String sql = "UPDATE SeleniumParser SET driver = ?, srcDstFiles = ? WHERE id = ?";
+        String sql = "UPDATE parcer SET driver = ?, srcDstFiles = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, parser.getDriver());
             statement.setString(2, parser.getSrcDstFiles());
-            statement.setInt(3, id);
+            statement.setString(3, String.valueOf(id));
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при обновлении записи SeleniumParser.", e);
+            logger.error("Ошибка при обновлении записи parcer.", e);
         }
         return false;
     }
 
     // Delete
     public boolean deleteSeleniumParser(int id) {
-        String sql = "DELETE FROM SeleniumParser WHERE id = ?";
+        String sql = "DELETE FROM parcer WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при удалении записи SeleniumParser.", e);
+            logger.error("Ошибка при удалении записи parcer.", e);
         }
         return false;
     }
