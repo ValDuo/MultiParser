@@ -1,11 +1,12 @@
-package org.example.api;
+package ru.sfedu.dubina.api;
 
 import org.apache.log4j.Logger;
-import org.example.models.PersForApi;
-import org.example.models.PersInfList;
+import ru.sfedu.dubina.models.PersForApi;
+import ru.sfedu.dubina.models.PersInfList;
 import org.simpleframework.xml.*;
 import org.simpleframework.xml.core.Persister;
-import ru.sfedu.dubina.Constants;
+import ru.sfedu.dubina.utils.Constants;
+
 
 import java.io.*;
 import java.util.*;

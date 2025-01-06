@@ -13,7 +13,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
-import static ru.sfedu.dubina.Constants.*;
+import static ru.sfedu.dubina.utils.Constants.*;
+
 
 public class ClientTest {
     private static Logger logger = Logger.getLogger(ClientTest.class);

@@ -1,6 +1,4 @@
-package org.example.api;
-
-import org.example.models.PersForApi;
+package ru.sfedu.dubina.api;
 
 public interface IDataProvider <T> {
     void saveRecord(T record);

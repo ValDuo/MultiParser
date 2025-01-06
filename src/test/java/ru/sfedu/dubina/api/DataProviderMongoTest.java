@@ -1,6 +1,6 @@
-package org.example.api;
+package ru.sfedu.dubina.api;
 
-import org.example.models.HistoryContent;
+import ru.sfedu.dubina.models.HistoryContent;
 import org.junit.jupiter.api.Test;
 
 

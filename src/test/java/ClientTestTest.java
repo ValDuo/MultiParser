@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
-import static ru.sfedu.dubina.Constants.*;
+import static ru.sfedu.dubina.utils.Constants.*;
+
 
 import org.junit.Test;
 import java.util.List;

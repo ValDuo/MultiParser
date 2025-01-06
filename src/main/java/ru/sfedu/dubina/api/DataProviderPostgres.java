@@ -1,13 +1,13 @@
-package org.example.api;
+package ru.sfedu.dubina.api;
 
 import org.apache.log4j.Logger;
-import org.example.models.*;
-import ru.sfedu.dubina.Constants;
+
+import ru.sfedu.dubina.models.*;
+
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
@@ -325,11 +325,12 @@ public class DataProviderPostgres  {
 
     //crud incoming emails
     public boolean createIncomingEmail(IncomingEmails email) {
-        String sql = "INSERT INTO IncomingEmails (emailAddress, emailSender, emailReceiver) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO incoming_emails (email_address, email_sender, email_receiver, id) VALUES (?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, email.getEmailAddress());
             statement.setString(2, email.getEmailSender());
             statement.setString(3, email.getEmailReceiver());
+            statement.setInt(4, email.getId());
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -340,27 +341,27 @@ public class DataProviderPostgres  {
 
     // Read
     public IncomingEmails getIncomingEmailById(int id) {
-        String sql = "SELECT * FROM IncomingEmails WHERE id = ?";
+        String sql = "SELECT * FROM incoming_emails WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new IncomingEmails(
-                            resultSet.getString("emailAddress"),
-                            resultSet.getString("emailSender"),
-                            resultSet.getString("emailReceiver")
+                            resultSet.getString("email_address"),
+                            resultSet.getString("email_sender"),
+                            resultSet.getString("email_receiver")
                     );
                 }
             }
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при получении записи IncomingEmails.", e);
+            logger.error("Ошибка при получении записи incoming_emails.", e);
         }
         return null;
     }
 
     // Update
     public boolean updateIncomingEmail(int id, IncomingEmails email) {
-        String sql = "UPDATE IncomingEmails SET emailAddress = ?, emailSender = ?, emailReceiver = ? WHERE id = ?";
+        String sql = "UPDATE incoming_emails SET email_address = ?, email_sender = ?, email_receiver = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, email.getEmailAddress());
             statement.setString(2, email.getEmailSender());
@@ -369,20 +370,20 @@ public class DataProviderPostgres  {
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при обновлении записи IncomingEmails.", e);
+            logger.error("Ошибка при обновлении записи incoming_emails.", e);
         }
         return false;
     }
 
     // Delete
     public boolean deleteIncomingEmail(int id) {
-        String sql = "DELETE FROM IncomingEmails WHERE id = ?";
+        String sql = "DELETE FROM incoming_emails WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, id);
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при удалении записи IncomingEmails.", e);
+            logger.error("Ошибка при удалении записи incoming_emails.", e);
         }
         return false;
     }
@@ -456,7 +457,7 @@ public class DataProviderPostgres  {
 
     // Create
     public boolean createWindowApp(WindowApp windowApp) {
-        String sql = "INSERT INTO WindowApp (kadastrNumber, personalAddress, personalAccount, personalNumber, square, emailCounter, personalID, createDate, uploadDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Window_App (kadastrNumber, personalAddress, personalAccount, personalNumber, square, emailCounter, personalID, createDate, uploadDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, windowApp.getKadastrNumber());
             statement.setString(2, windowApp.getPersonalAddress());
@@ -477,7 +478,7 @@ public class DataProviderPostgres  {
 
     // Read
     public WindowApp getWindowAppById(int id) {
-        String sql = "SELECT * FROM WindowApp WHERE id = ?";
+        String sql = "SELECT * FROM Window_App WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -502,7 +503,7 @@ public class DataProviderPostgres  {
 
     // Update
     public boolean updateWindowApp(int id, WindowApp windowApp) {
-        String sql = "UPDATE WindowApp SET kadastrNumber = ?, personalAddress = ?, personalAccount = ?, personalNumber = ?, square = ?, emailCounter = ?, personalID = ?, createDate = ?, uploadDate = ? WHERE id = ?";
+        String sql = "UPDATE Window_App SET kadastrNumber = ?, personalAddress = ?, personalAccount = ?, personalNumber = ?, square = ?, emailCounter = ?, personalID = ?, createDate = ?, uploadDate = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, windowApp.getKadastrNumber());
             statement.setString(2, windowApp.getPersonalAddress());
@@ -524,7 +525,7 @@ public class DataProviderPostgres  {
 
     // Delete
     public boolean deleteWindowApp(int id) {
-        String sql = "DELETE FROM WindowApp WHERE id = ?";
+        String sql = "DELETE FROM Window_App WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, id);
             int rowsDeleted = statement.executeUpdate();

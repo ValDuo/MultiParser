@@ -1,13 +1,18 @@
-package org.example.api;
+package ru.sfedu.dubina.api;
 
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import org.apache.log4j.Logger;
-import org.example.models.PersForApi;
-import ru.sfedu.dubina.Constants;
+import ru.sfedu.dubina.models.PersForApi;
+import ru.sfedu.dubina.utils.Constants;
 
-import java.io.*;
-import java.util.*;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class DataProviderCsv implements IDataProvider<PersForApi> {
     Logger logger = Logger.getLogger(DataProviderCsv.class);

@@ -1,5 +1,4 @@
-package ru.sfedu.dubina;
-
+package ru.sfedu.dubina.utils;
 
 public class Constants {
     public static final String PATH_TO_XML = "mavenDubinaLab2/src/main/java/ru.sfedu.dubina/config.xml";

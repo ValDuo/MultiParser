@@ -1,4 +1,4 @@
-package org.example;
+package ru.sfedu.dubina.utils;
 
 public enum Status {
     SUCCESS,

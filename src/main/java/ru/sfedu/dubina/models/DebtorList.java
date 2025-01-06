@@ -1,4 +1,4 @@
-package org.example.models;
+package ru.sfedu.dubina.models;
 
 import lombok.*;
 

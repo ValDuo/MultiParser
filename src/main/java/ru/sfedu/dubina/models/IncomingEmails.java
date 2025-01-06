@@ -1,4 +1,4 @@
-package org.example.models;
+package ru.sfedu.dubina.models;
 
 import lombok.*;
 
@@ -8,10 +8,10 @@ public class IncomingEmails {
     private String emailAddress;
     private String emailSender;
     private String emailReceiver;
-    private String id;
+    private Integer id;
 
     public IncomingEmails(String emailAddress, String emailSender, String emailReceiver) {
-        this.id="123456";
+        this.id=111;
         this.emailAddress = emailAddress;
         this.emailSender = emailSender;
         this.emailReceiver = emailReceiver;

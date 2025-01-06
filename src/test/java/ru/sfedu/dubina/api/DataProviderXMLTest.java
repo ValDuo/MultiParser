@@ -1,9 +1,10 @@
-package org.example.api;
+package ru.sfedu.dubina.api;
 
 import org.apache.log4j.Logger;
-import org.example.models.PersForApi;
+import ru.sfedu.dubina.models.PersForApi;
 import org.junit.jupiter.api.*;
-import ru.sfedu.dubina.Constants;
+import ru.sfedu.dubina.utils.Constants;
+
 
 import java.io.*;
 import java.nio.file.Files;

@@ -1,11 +1,11 @@
-package org.example.api;
+package ru.sfedu.dubina.api;
 
 
 import java.io.*;
 import java.sql.*;
 
-import org.example.models.*;
 import org.junit.jupiter.api.*;
+import ru.sfedu.dubina.models.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +27,7 @@ class DataProviderPSQLTest {
 
     @Test
     void testCRUDMethodsWithBigCSVCutter() throws SQLException {
-        BigCSVCutter bigCSVCutter = new BigCSVCutter(50,2, "2002/11/10", "mavenproject/src/test/testFolder", true);
+        BigCSVCutter bigCSVCutter = new BigCSVCutter(50,2, "2002/11/10", "src/test/testFolder", true);
 
         dataProviderPSQL.createBigCSVCutter(bigCSVCutter);
         BigCSVCutter retrievedUser = dataProviderPSQL.getBigCSVCutterById(bigCSVCutter.getId());
@@ -35,10 +35,10 @@ class DataProviderPSQLTest {
         assertEquals(50, retrievedUser.getCountLine());
         assertEquals(2, retrievedUser.getCountFile());
         assertEquals("2002/11/10", retrievedUser.getDate());
-        assertEquals("mavenproject/src/test/testFolder", retrievedUser.getFolder());
+        assertEquals("src/test/testFolder", retrievedUser.getFolder());
         assertEquals(true, retrievedUser.getCreated());
 
-        retrievedUser.setFolder("mavenproject/src/test/testFolder2");
+        retrievedUser.setFolder("src/test/testFolder2");
         retrievedUser.setDate("2020/10/01");
         dataProviderPSQL.updateBigCSVCutter(retrievedUser);
 
@@ -104,34 +104,34 @@ class DataProviderPSQLTest {
         boolean createResult = dataProviderPSQL.createIncomingEmail(email);
         assertTrue(createResult, "Ошибка при создании записи.");
 
-        IncomingEmails retrievedEmail = dataProviderPSQL.getIncomingEmailById(Integer.parseInt(email.getId()));
-        assertNotNull(retrievedEmail, "Запись не найдена.");
+        IncomingEmails retrievedEmail = dataProviderPSQL.getIncomingEmailById(email.getId());
         assertEquals("john.doe@example.com", retrievedEmail.getEmailAddress(), "Неверное значение emailAddress.");
         assertEquals("jane.smith@example.com", retrievedEmail.getEmailSender(), "Неверное значение emailSender.");
         assertEquals("john.doe@example.com", retrievedEmail.getEmailReceiver(), "Неверное значение emailReceiver.");
 
+        retrievedEmail.setEmailAddress("updated.address@sfedu.ru");
         retrievedEmail.setEmailSender("updated.sender@example.com");
         retrievedEmail.setEmailReceiver("updated.receiver@example.com");
-        boolean updateResult = dataProviderPSQL.updateIncomingEmail(Integer.parseInt(email.getId()), retrievedEmail);
+        boolean updateResult = dataProviderPSQL.updateIncomingEmail(email.getId(), retrievedEmail);
         assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        boolean deleteResult = dataProviderPSQL.deleteIncomingEmail(Integer.parseInt(email.getId()));
+        boolean deleteResult = dataProviderPSQL.deleteIncomingEmail(email.getId());
         assertTrue(deleteResult, "Ошибка при удалении записи.");
-
 
     }
 
     @Test
     void testCRUDMethodsWithSeleniumParser() throws SQLException {
-        SeleniumParser seleniumParser = new SeleniumParser(1, "mavenproject\\src\\test\\testFolder");
+        SeleniumParser seleniumParser = new SeleniumParser(1, "new/src/dst/file");
         boolean createResult = dataProviderPSQL.createSeleniumParser(seleniumParser);
+        assertTrue(createResult, "Ошибка при создании записи.");
 
         SeleniumParser retrievedParser = dataProviderPSQL.getSeleniumParserById(Integer.parseInt(seleniumParser.getId()));
-        assertEquals(2, retrievedParser.getDriver(), "Неверное значение driver.");
+        assertEquals(1, retrievedParser.getDriver(), "Неверное значение driver.");
         assertEquals("new/src/dst/file", retrievedParser.getSrcDstFiles(), "Неверное значение srcDstFiles.");
 
         retrievedParser.setDriver(2);
-        retrievedParser.setSrcDstFiles("new/src/dst/file");
+        retrievedParser.setSrcDstFiles("new/src/dst/filee");
         boolean updateResult = dataProviderPSQL.updateSeleniumParser(Integer.parseInt(seleniumParser.getId()), retrievedParser);
         assertTrue(updateResult, "Ошибка при обновлении записи.");
 

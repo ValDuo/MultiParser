@@ -1,11 +1,11 @@
-package org.example.api;
+package ru.sfedu.dubina.api;
 
 import com.mongodb.client.*;
 import org.apache.log4j.Logger;
 import org.bson.Document;
-import org.example.models.HistoryContent;
-import ru.sfedu.dubina.Constants;
+import ru.sfedu.dubina.models.HistoryContent;
 import com.mongodb.client.model.Filters;
+import ru.sfedu.dubina.utils.Constants;
 
 import java.time.LocalDateTime;
 
