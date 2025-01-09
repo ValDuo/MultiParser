@@ -2,10 +2,12 @@ package ru.sfedu.dubina.models;
 
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter
 @Setter
 public class BigCSVCutter {
-    private String id;
+    private UUID id;
     private Integer countLine;
     private Integer countFile;
     private String date;
@@ -13,7 +15,6 @@ public class BigCSVCutter {
     private Boolean created;
 
     public BigCSVCutter(Integer countLine, Integer countFile, String date, String folder, boolean created) {
-        this.id = "12223";
         this.countLine = countLine;
         this.countFile = countFile;
         this.date = date;

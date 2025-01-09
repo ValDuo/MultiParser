@@ -55,19 +55,19 @@ class DataProviderPSQLTest {
         CSVReader csvReader = new CSVReader("mavenproject/src/test/testFolder", new File ("mavenproject\\src\\test\\testFolder\\test.csv"), 15);
 
         dataProviderPSQL.createCSVReader(csvReader);
-        CSVReader retrievedUser = dataProviderPSQL.getCSVReaderById(Integer.parseInt(csvReader.getId()));
+        CSVReader retrievedUser = dataProviderPSQL.getCSVReaderById(csvReader.getId());
         assertNotNull(retrievedUser);
         assertEquals("mavenproject\\src\\test\\testFolder\\test.csv", retrievedUser.getCsvFile());
         assertEquals("mavenproject/src/test/testFolder", retrievedUser.getPathName());
         assertEquals(14, retrievedUser.getWords());
 
         retrievedUser.setWords(100);
-        dataProviderPSQL.updateCSVReader(Integer.parseInt(retrievedUser.getId()), retrievedUser);
+        dataProviderPSQL.updateCSVReader(retrievedUser.getId(), retrievedUser);
 
-        CSVReader updatedUser = dataProviderPSQL.getCSVReaderById(Integer.parseInt(retrievedUser.getId()));
+        CSVReader updatedUser = dataProviderPSQL.getCSVReaderById(retrievedUser.getId());
         assertEquals(100, updatedUser.getWords());
 
-        dataProviderPSQL.deleteCSVReader(Integer.parseInt(csvReader.getId()));
+        dataProviderPSQL.deleteCSVReader(csvReader.getId());
     }
 
     @Test
@@ -77,7 +77,7 @@ class DataProviderPSQLTest {
         boolean createResult = dataProviderPSQL.createDebtorList(debtor);
         assertTrue(createResult, "Ошибка при создании записи.");
 
-        DebtorList retrievedDebtor = dataProviderPSQL.getDebtorListById(Integer.parseInt(debtor.getId()));
+        DebtorList retrievedDebtor = dataProviderPSQL.getDebtorListById(debtor.getId());
         assertNotNull(retrievedDebtor, "Запись не найдена.");
         assertEquals("John Doe", retrievedDebtor.getOwnerName(), "Неверное значение ownerName.");
         assertEquals("Jane Smith", retrievedDebtor.getPayerName(), "Неверное значение payerName.");
@@ -90,11 +90,11 @@ class DataProviderPSQLTest {
         retrievedDebtor.setAccruedMoney(6000L);
         retrievedDebtor.setReturnedMoney(4000L);
         retrievedDebtor.setKadastr(false);
-        boolean updateResult = dataProviderPSQL.updateDebtorList(Integer.parseInt(debtor.getId()), retrievedDebtor);
+        boolean updateResult = dataProviderPSQL.updateDebtorList(debtor.getId(), retrievedDebtor);
         assertTrue(updateResult, "Ошибка при обновлении записи.");
 
 
-        boolean deleteResult = dataProviderPSQL.deleteDebtorList(Integer.parseInt(debtor.getId()));
+        boolean deleteResult = dataProviderPSQL.deleteDebtorList(debtor.getId());
         assertTrue(deleteResult, "Ошибка при удалении записи.");
     }
 

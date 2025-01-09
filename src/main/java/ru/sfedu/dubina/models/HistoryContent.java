@@ -1,15 +1,16 @@
 package ru.sfedu.dubina.models;
 
-import org.bson.types.ObjectId;
 import lombok.*;
-import javax.swing.*;
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
+import ru.sfedu.dubina.utils.Status;
 
+import java.time.LocalDateTime;
+import java.util.Map;
+import java.util.UUID;
+
+@Getter
+@Setter
 public class HistoryContent {
-    private String id;
+    private UUID id;
     private String className;
     private LocalDateTime createdDate;
     private String actor;
@@ -17,80 +18,71 @@ public class HistoryContent {
     private Map<String, Object> object;
     private Status status;
 
-    public HistoryContent(){
-        this.createdDate = LocalDateTime.now();
-    }
-    public void setObject(Map<String, Object> object) {
-        this.object = object;
-    }
-
-    public enum Status {
-        SENT, FAILURE
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getClassName() {
-        return className;
-    }
-
-    public void setClassName(String className) {
+    public HistoryContent(String className, LocalDateTime createdDate, String actor, String methodName, Map<String, Object> object, Status status) {
         this.className = className;
-    }
-
-    public LocalDateTime getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
-    }
-
-    public String getActor() {
-        return actor;
-    }
-
-    public void setActor(String actor) {
         this.actor = actor;
-    }
-
-    public String getMethodName() {
-        return methodName;
-    }
-
-    public void setMethodName(String methodName) {
         this.methodName = methodName;
-    }
-
-    public String getObject() {
-        return object.toString();
-    }
-
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
+        this.object = object;
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "HistoryContent{" +
-                "id=" + id +
-                ", className='" + className + '\'' +
-                ", createdDate='" + createdDate + '\'' +
-                ", actor='" + actor + '\'' +
-                ", methodName='" + methodName + '\'' +
-                ", object=" + object +
-                ", status=" + status +
-                '}';
-    }
+
+//    public String getClassName() {
+//        return className;
+//    }
+//
+//    public void setClassName(String className) {
+//        this.className = className;
+//    }
+//
+//    public LocalDateTime getCreatedDate() {
+//        return createdDate;
+//    }
+//
+//    public void setCreatedDate(LocalDateTime createdDate) {
+//        this.createdDate = createdDate;
+//    }
+//
+//    public String getActor() {
+//        return actor;
+//    }
+//
+//    public void setActor(String actor) {
+//        this.actor = actor;
+//    }
+//
+//    public String getMethodName() {
+//        return methodName;
+//    }
+//
+//    public void setMethodName(String methodName) {
+//        this.methodName = methodName;
+//    }
+//
+//    public String getObject() {
+//        return object.toString();
+//    }
+//
+//
+//    public Status getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(Status status) {
+//        this.status = status;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "HistoryContent{" +
+//                "id=" + id +
+//                ", className='" + className + '\'' +
+//                ", createdDate='" + createdDate + '\'' +
+//                ", actor='" + actor + '\'' +
+//                ", methodName='" + methodName + '\'' +
+//                ", object=" + object +
+//                ", status=" + status +
+//                '}';
+//    }
 }

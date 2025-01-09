@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -15,10 +16,9 @@ public class DebtorList {
     private LocalDateTime createDateOfPayment;
     private Date uploadDateOfPayment;
     private Boolean kadastr;
-    private String id;
+    private UUID id;
 
     public DebtorList(String ownerName, String payerName, Long accruedMoney, Long returnedMoney, Date createDateOfPayment, Date uploadDateOfPayment, Boolean kadastr) {
-        this.id = "12345";
         this.ownerName = ownerName;
         this.payerName = payerName;
         this.accruedMoney = accruedMoney;
