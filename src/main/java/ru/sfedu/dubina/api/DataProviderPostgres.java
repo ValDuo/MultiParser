@@ -1,9 +1,13 @@
 package ru.sfedu.dubina.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.log4j.Logger;
 
 import ru.sfedu.dubina.models.*;
+import ru.sfedu.dubina.utils.Status;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.type.TypeReference;
 
 import java.io.File;
 import java.io.IOException;
@@ -264,26 +268,37 @@ public class DataProviderPostgres  {
         return false;
     }
 
+    //метод для работы с объектами типа Map<String, Object>
+    private Map<String, Object> parseObjectMap(String objectString) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            try {
+                return objectMapper.readValue(objectString, new TypeReference<Map<String, Object>>() {});
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+        } catch (Exception e) {
+            logger.error("Ошибка при парсинге object.", e);
+            return Collections.emptyMap();
+        }
+    }
+
     // Read
     public HistoryContent getHistoryContentById(UUID id) {
         String sql = "SELECT * FROM HistoryContent WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(id));
+            statement.setString(1, id.toString());
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    HistoryContent history = new HistoryContent();
-                    history.setId(resultSet.getString("id"));
-                    history.setClassName(resultSet.getString("className"));
-                    history.setCreatedDate(resultSet.getTimestamp("createdDate").toLocalDateTime());
-                    history.setActor(resultSet.getString("actor"));
-                    history.setMethodName(resultSet.getString("methodName"));
-
-                    Map<String, Object> objectMap = new HashMap<>();
-                    objectMap.put("data", resultSet.getString("object"));
-                    history.setObject(objectMap);
-
-                    history.setStatus(HistoryContent.Status.valueOf(resultSet.getString("status")));
-                    return history;
+                    Map<String, Object> objectMap = parseObjectMap(resultSet.getString("object"));
+                    return new HistoryContent(
+                            resultSet.getString("className"),
+                            resultSet.getTimestamp("createdDate").toLocalDateTime(),
+                            resultSet.getString("actor"),
+                            resultSet.getString("methodName"),
+                            objectMap,
+                            Status.valueOf(resultSet.getString("status"))
+                    );
                 }
             }
         } catch (SQLException | IOException e) {
@@ -302,7 +317,7 @@ public class DataProviderPostgres  {
             statement.setString(4, history.getMethodName());
             statement.setString(5, history.getObject().toString());
             statement.setString(6, history.getStatus().name());
-            statement.setString(7, String.valueOf(id));
+            statement.setString(7, id.toString());
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
@@ -331,7 +346,7 @@ public class DataProviderPostgres  {
             statement.setString(1, email.getEmailAddress());
             statement.setString(2, email.getEmailSender());
             statement.setString(3, email.getEmailReceiver());
-            statement.setInt(4, email.getId());
+            statement.setString(4, String.valueOf(email.getId()));
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -341,10 +356,10 @@ public class DataProviderPostgres  {
     }
 
     // Read
-    public IncomingEmails getIncomingEmailById(int id) {
+    public IncomingEmails getIncomingEmailById(UUID id) {
         String sql = "SELECT * FROM incoming_emails WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new IncomingEmails(
@@ -361,13 +376,13 @@ public class DataProviderPostgres  {
     }
 
     // Update
-    public boolean updateIncomingEmail(int id, IncomingEmails email) {
+    public boolean updateIncomingEmail(UUID id, IncomingEmails email) {
         String sql = "UPDATE incoming_emails SET email_address = ?, email_sender = ?, email_receiver = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, email.getEmailAddress());
             statement.setString(2, email.getEmailSender());
             statement.setString(3, email.getEmailReceiver());
-            statement.setInt(4, id);
+            statement.setString(4, String.valueOf(id));
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
@@ -377,10 +392,10 @@ public class DataProviderPostgres  {
     }
 
     // Delete
-    public boolean deleteIncomingEmail(int id) {
+    public boolean deleteIncomingEmail(UUID id) {
         String sql = "DELETE FROM incoming_emails WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {
@@ -396,7 +411,7 @@ public class DataProviderPostgres  {
     public boolean createSeleniumParser(SeleniumParser parser) {
         String sql = "INSERT INTO parcer (id, driver, srcDstFiles) VALUES (?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, parser.getId());
+            statement.setString(1, String.valueOf(parser.getId()));
             statement.setInt(2, parser.getDriver());
             statement.setString(3, parser.getSrcDstFiles());
             int rowsInserted = statement.executeUpdate();
@@ -408,7 +423,7 @@ public class DataProviderPostgres  {
     }
 
     // Read
-    public SeleniumParser getSeleniumParserById(int id) {
+    public SeleniumParser getSeleniumParserById(UUID id) {
         String sql = "SELECT * FROM parcer WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
@@ -427,7 +442,7 @@ public class DataProviderPostgres  {
     }
 
     // Update
-    public boolean updateSeleniumParser(int id, SeleniumParser parser) {
+    public boolean updateSeleniumParser(UUID id, SeleniumParser parser) {
         String sql = "UPDATE parcer SET driver = ?, srcDstFiles = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, parser.getDriver());
@@ -442,7 +457,7 @@ public class DataProviderPostgres  {
     }
 
     // Delete
-    public boolean deleteSeleniumParser(int id) {
+    public boolean deleteSeleniumParser(UUID id) {
         String sql = "DELETE FROM parcer WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
@@ -458,7 +473,7 @@ public class DataProviderPostgres  {
 
     // Create
     public boolean createWindowApp(WindowApp windowApp) {
-        String sql = "INSERT INTO Window_App (kadastrNumber, personalAddress, personalAccount, personalNumber, square, emailCounter, personalID, createDate, uploadDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Window_App (kadastrNumber, personalAddress, personalAccount, personalNumber, square, emailCounter, personalID, createDate, uploadDate, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, windowApp.getKadastrNumber());
             statement.setString(2, windowApp.getPersonalAddress());
@@ -469,6 +484,7 @@ public class DataProviderPostgres  {
             statement.setInt(7, windowApp.getPersonalID());
             statement.setTimestamp(8, Timestamp.valueOf(windowApp.getCreateDate()));
             statement.setTimestamp(9, new Timestamp(windowApp.getUploadDate().getTime()));
+            statement.setString(10, String.valueOf(windowApp.getId()));
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -478,10 +494,10 @@ public class DataProviderPostgres  {
     }
 
     // Read
-    public WindowApp getWindowAppById(int id) {
+    public WindowApp getWindowAppById(UUID id) {
         String sql = "SELECT * FROM Window_App WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new WindowApp(
@@ -503,7 +519,7 @@ public class DataProviderPostgres  {
     }
 
     // Update
-    public boolean updateWindowApp(int id, WindowApp windowApp) {
+    public boolean updateWindowApp(UUID id, WindowApp windowApp) {
         String sql = "UPDATE Window_App SET kadastrNumber = ?, personalAddress = ?, personalAccount = ?, personalNumber = ?, square = ?, emailCounter = ?, personalID = ?, createDate = ?, uploadDate = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, windowApp.getKadastrNumber());
@@ -515,7 +531,7 @@ public class DataProviderPostgres  {
             statement.setInt(7, windowApp.getPersonalID());
             statement.setTimestamp(8, Timestamp.valueOf(windowApp.getCreateDate()));
             statement.setTimestamp(9, new Timestamp(windowApp.getUploadDate().getTime()));
-            statement.setInt(10, id);
+            statement.setString(10, String.valueOf(id));
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
@@ -525,10 +541,10 @@ public class DataProviderPostgres  {
     }
 
     // Delete
-    public boolean deleteWindowApp(int id) {
+    public boolean deleteWindowApp(UUID id) {
         String sql = "DELETE FROM Window_App WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {
@@ -542,11 +558,12 @@ public class DataProviderPostgres  {
 
     // Create
     public boolean createWithKadastrList(WithKadastrList withKadastrList) {
-        String sql = "INSERT INTO WithKadastrList (source, destination, createdTime) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO WithKadastrList (source, destination, createdTime, id) VALUES (?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, withKadastrList.getSource());
             statement.setString(2, withKadastrList.getDestination());
             statement.setTimestamp(3, new Timestamp(withKadastrList.getCreatedTime().getTime()));
+            statement.setString(4, String.valueOf(withKadastrList.getId()));
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -556,10 +573,10 @@ public class DataProviderPostgres  {
     }
 
     // Read
-    public WithKadastrList getWithKadastrListById(int id) {
+    public WithKadastrList getWithKadastrListById(UUID id) {
         String sql = "SELECT * FROM WithKadastrList WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new WithKadastrList(
@@ -576,13 +593,13 @@ public class DataProviderPostgres  {
     }
 
     // Update
-    public boolean updateWithKadastrList(int id, WithKadastrList withKadastrList) {
+    public boolean updateWithKadastrList(UUID id, WithKadastrList withKadastrList) {
         String sql = "UPDATE WithKadastrList SET source = ?, destination = ?, createdTime = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, withKadastrList.getSource());
             statement.setString(2, withKadastrList.getDestination());
             statement.setTimestamp(3, new Timestamp(withKadastrList.getCreatedTime().getTime()));
-            statement.setInt(4, id);
+            statement.setString(4, String.valueOf(id));
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
@@ -592,10 +609,10 @@ public class DataProviderPostgres  {
     }
 
     // Delete
-    public boolean deleteWithKadastrList(int id) {
+    public boolean deleteWithKadastrList(UUID id) {
         String sql = "DELETE FROM WithKadastrList WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, id);
+            statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {

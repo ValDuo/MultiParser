@@ -126,16 +126,16 @@ class DataProviderPSQLTest {
         boolean createResult = dataProviderPSQL.createSeleniumParser(seleniumParser);
         assertTrue(createResult, "Ошибка при создании записи.");
 
-        SeleniumParser retrievedParser = dataProviderPSQL.getSeleniumParserById(Integer.parseInt(seleniumParser.getId()));
+        SeleniumParser retrievedParser = dataProviderPSQL.getSeleniumParserById(seleniumParser.getId());
         assertEquals(1, retrievedParser.getDriver(), "Неверное значение driver.");
         assertEquals("new/src/dst/file", retrievedParser.getSrcDstFiles(), "Неверное значение srcDstFiles.");
 
         retrievedParser.setDriver(2);
         retrievedParser.setSrcDstFiles("new/src/dst/filee");
-        boolean updateResult = dataProviderPSQL.updateSeleniumParser(Integer.parseInt(seleniumParser.getId()), retrievedParser);
+        boolean updateResult = dataProviderPSQL.updateSeleniumParser(seleniumParser.getId(), retrievedParser);
         assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        boolean deleteResult = dataProviderPSQL.deleteSeleniumParser(Integer.parseInt(seleniumParser.getId()));
+        boolean deleteResult = dataProviderPSQL.deleteSeleniumParser(seleniumParser.getId());
         assertTrue(deleteResult, "Ошибка при удалении записи.");
 
     }
@@ -147,7 +147,7 @@ class DataProviderPSQLTest {
         assertTrue(createResult, "Ошибка при создании записи.");
 
 
-        WindowApp retrievedWindowApp = dataProviderPSQL.getWindowAppById(Integer.parseInt(windowApp.getId()));
+        WindowApp retrievedWindowApp = dataProviderPSQL.getWindowAppById(windowApp.getId());
         assertNotNull(retrievedWindowApp, "Запись не найдена.");
         assertEquals("12345", retrievedWindowApp.getKadastrNumber(), "Неверное значение kadastrNumber.");
         assertEquals("Some Address", retrievedWindowApp.getPersonalAddress(), "Неверное значение personalAddress.");
@@ -160,7 +160,7 @@ class DataProviderPSQLTest {
         retrievedWindowApp.setKadastrNumber("543211234");
         retrievedWindowApp.setPersonalAddress("Updated Address");
         retrievedWindowApp.setSquare(60);
-        boolean updateResult = dataProviderPSQL.updateWindowApp(Integer.parseInt(windowApp.getId()), retrievedWindowApp);
+        boolean updateResult = dataProviderPSQL.updateWindowApp(windowApp.getId(), retrievedWindowApp);
         assertTrue(updateResult, "Ошибка при обновлении записи.");
 
     }
@@ -171,7 +171,7 @@ class DataProviderPSQLTest {
         boolean createResult = dataProviderPSQL.createWithKadastrList(withKadastrList);
         assertTrue(createResult, "Ошибка при создании записи.");
 
-        WithKadastrList retrievedWithKadastrList = dataProviderPSQL.getWithKadastrListById(Integer.parseInt(withKadastrList.getId()));
+        WithKadastrList retrievedWithKadastrList = dataProviderPSQL.getWithKadastrListById(withKadastrList.getId());
         assertNotNull(retrievedWithKadastrList, "Запись не найдена.");
         assertEquals("SourceAddress", retrievedWithKadastrList.getSource(), "Неверное значение source.");
         assertEquals("DestinationAddress", retrievedWithKadastrList.getDestination(), "Неверное значение destination.");
@@ -179,10 +179,10 @@ class DataProviderPSQLTest {
 
         retrievedWithKadastrList.setSource("UpdatedSource");
         retrievedWithKadastrList.setDestination("UpdatedDestination");
-        boolean updateResult = dataProviderPSQL.updateWithKadastrList(Integer.parseInt(withKadastrList.getId()), retrievedWithKadastrList);
+        boolean updateResult = dataProviderPSQL.updateWithKadastrList(withKadastrList.getId(), retrievedWithKadastrList);
         assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        boolean deleteResult = dataProviderPSQL.deleteWithKadastrList(Integer.parseInt(withKadastrList.getId()));
+        boolean deleteResult = dataProviderPSQL.deleteWithKadastrList(withKadastrList.getId());
         assertTrue(deleteResult, "Ошибка при удалении записи.");
     }
 }
