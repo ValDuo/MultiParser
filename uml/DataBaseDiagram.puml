@@ -12,7 +12,7 @@ IncomingEmails <|-- WithKadastrList
 class src.BigCSVCutter {
    # Integer countLine
    # Integer countFile
-   # Date date
+   # String date
    # String dateStr
    # File folder
    # Boolean created

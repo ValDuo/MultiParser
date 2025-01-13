@@ -35,6 +35,8 @@ public class WindowApp extends JFrame{
     JPanel panel = new JPanel(new FlowLayout());
     JLabel userGuide = new JLabel(UserGuideHTML.HTML_CONTENT);
     JLabel userGuideLink = new JLabel(UserGuideLinkHTML.HTML_CONTENT);
+    JPanel menuPanel = new JPanel();
+    JPanel contentPanel = new JPanel();
 
 
 
@@ -230,6 +232,7 @@ public class WindowApp extends JFrame{
         uploadFile.setArcHeight(20);
         uploadFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
+
         //Добавляем стилизацию на кнопку обработки файлов
         sendToProssesing.setPreferredSize(new Dimension(380, 50));
         sendToProssesing.setBgColor(dark_blue);
@@ -249,6 +252,7 @@ public class WindowApp extends JFrame{
         filterFile.setArcHeight(20);
         filterFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
+
         //Добавиола стилей на кнопку нарезки
 
         cutFile.setPreferredSize(new Dimension(350, 50));
@@ -260,7 +264,7 @@ public class WindowApp extends JFrame{
         cutFile.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
         //Размещение кнопок в интерфейсе
-        panel.setLayout(new FlowLayout());
+        contentPanel.setLayout(new FlowLayout());
 
         //создала нижнюю панель для последних двух блоков с инструкцией и ссылкой
         JPanel bottomPanel = new JPanel();
@@ -272,27 +276,97 @@ public class WindowApp extends JFrame{
         progressBar.setMaximum(100);
         progressBar.setValue(0);
         progressBar.setPreferredSize(new Dimension(650, 30));
+        progressBar.setVisible(false);
 
-        panel.add(l);
-        panel.add(uploadFile);
-        panel.add(cutFile);
-        panel.add(sendToProssesing);
-        panel.add(filterFile);
-        panel.add(progressBar);
+        contentPanel.add(l);
 
         bottomPanel.add(userGuide);
         bottomPanel.add(Box.createVerticalStrut(10)); // Отступ между блоками
         bottomPanel.add(userGuideLink);
-        panel.add(bottomPanel);
+        contentPanel.add(bottomPanel);
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(500, 150, 1150, 800);
-        add(panel);
+
+        
+        menuPanel.setLayout(new GridLayout(5, 1, 5, 5)); //меню
+        menuPanel.setBackground(dark_dark_green);
+        menuPanel.setPreferredSize(new Dimension(200, getHeight()));
+
+
+        addMenuItem("Главная", new JLabel("Главная страница"), () -> {
+            contentPanel.removeAll();
+            contentPanel.add(l);
+            contentPanel.add(bottomPanel);
+            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.repaint();
+        });
+        addMenuItem("Выбор файла", new JLabel("Выберите файл с компьютера для дальнейшей работы с ним:"), () -> {
+            contentPanel.removeAll();
+            contentPanel.add(uploadFile);
+            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.repaint();
+        });
+        addMenuItem("Нарезка по 50", new JLabel("Отправьте выбранный файл на разбиение по 50 строк"), () -> {
+            contentPanel.removeAll();
+            contentPanel.add(cutFile);
+            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.repaint();
+        });
+        addMenuItem("Получить кадастры", new JLabel("Отправьте выбранный файл на разбиение по 50 строк"), () -> {
+            contentPanel.removeAll();
+            contentPanel.add(sendToProssesing);
+            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.repaint();
+        });
+        addMenuItem("Сравнить кол-во", new JLabel("пустой"), () -> {
+            contentPanel.removeAll();
+            contentPanel.add(filterFile);
+            contentPanel.add(new JLabel("Отправьте выбранный файл на разбиение по 50 строк"));
+            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.repaint();
+        });
+
+        // Добавление панелей в главное окно
+        add(menuPanel, BorderLayout.WEST);
+        add(contentPanel, BorderLayout.CENTER);
         setVisible(true);
-
-
     }
 
+    private void addMenuItem(String name, JComponent content, Runnable action) {
+        JLabel menuItem = new JLabel(name, SwingConstants.CENTER);
+        menuItem.setOpaque(true);
+        menuItem.setBackground(dark_green);
+        menuItem.setForeground(Color.WHITE);
+        menuItem.setFont(new Font("Arial", Font.BOLD, 20));
+        menuItem.setPreferredSize(new Dimension(200, 50));
+
+        menuItem.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                menuItem.setBackground(dark_dark_green);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                menuItem.setBackground(dark_green);
+            }
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (action != null) {
+                    action.run();
+                }
+                contentPanel.show();
+            }
+        });
+
+        // Добавляем кнопку на панель меню
+        menuPanel.add(menuItem);
+
+        // Добавляем соответствующую панель контента
+        contentPanel.add(content, name);
+    }
 
     //для реализации паттерна синглтон
     private static void setInstance(){
