@@ -15,6 +15,7 @@ public class BigCSVCutter {
     private Boolean created;
 
     public BigCSVCutter(Integer countLine, Integer countFile, String date, String folder, boolean created) {
+        this.id = UUID.randomUUID();
         this.countLine = countLine;
         this.countFile = countFile;
         this.date = date;

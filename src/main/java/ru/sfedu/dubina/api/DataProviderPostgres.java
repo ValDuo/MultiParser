@@ -38,15 +38,15 @@ public class DataProviderPostgres  {
     // CRUD-операции для BigCSVCutter
 
     public boolean createBigCSVCutter(BigCSVCutter cutter) {
-        String sql = "INSERT INTO bigCSVCutter (id, countLine, countFile, date, folder, created) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO bigCSVCutter (countLine, countFile, date, folder, created, id) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(cutter.getId()));
-            statement.setInt(2, cutter.getCountLine());
-            statement.setInt(3, cutter.getCountFile());
-            statement.setString(4, cutter.getDate());
-            statement.setString(5, cutter.getFolder());
-            statement.setBoolean(6, cutter.getCreated());
 
+            statement.setInt(1, cutter.getCountLine());
+            statement.setInt(2, cutter.getCountFile());
+            statement.setString(3, cutter.getDate());
+            statement.setString(4, cutter.getFolder());
+            statement.setBoolean(5, cutter.getCreated());
+            statement.setObject(6, cutter.getId());
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -58,7 +58,7 @@ public class DataProviderPostgres  {
     public BigCSVCutter getBigCSVCutterById(UUID id) {
         String sql = "SELECT * FROM bigCSVCutter";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(id));
+            statement.setObject(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new BigCSVCutter(
@@ -96,7 +96,7 @@ public class DataProviderPostgres  {
     public boolean deleteBigCSVCutter(UUID id) {
         String sql = "DELETE FROM bigCSVCutter WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(id));
+            statement.setObject(6, id);
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {
@@ -108,7 +108,7 @@ public class DataProviderPostgres  {
     //операции с классом CSVReader
 
     public boolean createCSVReader(CSVReader reader) {
-        String sql = "INSERT INTO CSVReader (id, pathName, csvFile, words) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO CSV_Readers (id, pathName, csvFile, words) VALUES (?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(reader.getId()));
             statement.setString(2, reader.getPathName());
@@ -124,7 +124,7 @@ public class DataProviderPostgres  {
 
 
     public CSVReader getCSVReaderById(UUID id) {
-        String sql = "SELECT * FROM CSVReader WHERE id = ?";
+        String sql = "SELECT * FROM CSV_Readers WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -144,7 +144,7 @@ public class DataProviderPostgres  {
 
 
     public boolean updateCSVReader(UUID id, CSVReader reader) {
-        String sql = "UPDATE CSVReader SET pathName = ?, csvFile = ?, words = ? WHERE id = ?";
+        String sql = "UPDATE CSV_Readers SET pathName = ?, csvFile = ?, words = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, reader.getPathName());
             statement.setString(2, reader.getCsvFile().getAbsolutePath());
@@ -159,7 +159,7 @@ public class DataProviderPostgres  {
     }
 
     public boolean deleteCSVReader(UUID id) {
-        String sql = "DELETE FROM CSVReader WHERE id = ?";
+        String sql = "DELETE FROM CSV_Readers WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();
@@ -173,7 +173,7 @@ public class DataProviderPostgres  {
     //crud с классом debtorlist
 
     public boolean createDebtorList(DebtorList debtor) {
-        String sql = "INSERT INTO DebtorList (id, ownerName, payerName, accruedMoney, returnedMoney, createDateOfPayment, uploadDateOfPayment, kadastr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Debtor_List (id, ownerName, payerName, accruedMoney, returnedMoney, createDateOfPayment, uploadDateOfPayment, kadastr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(debtor.getId()));
             statement.setString(2, debtor.getOwnerName());
@@ -193,7 +193,7 @@ public class DataProviderPostgres  {
 
     // Read
     public DebtorList getDebtorListById(UUID id) {
-        String sql = "SELECT * FROM DebtorList WHERE id = ?";
+        String sql = "SELECT * FROM Debtor_List WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -217,7 +217,7 @@ public class DataProviderPostgres  {
 
     // Update
     public boolean updateDebtorList(UUID id, DebtorList debtor) {
-        String sql = "UPDATE DebtorList SET ownerName = ?, payerName = ?, accruedMoney = ?, returnedMoney = ?, createDateOfPayment = ?, uploadDateOfPayment = ?, kadastr = ? WHERE id = ?";
+        String sql = "UPDATE Debtor_List SET ownerName = ?, payerName = ?, accruedMoney = ?, returnedMoney = ?, createDateOfPayment = ?, uploadDateOfPayment = ?, kadastr = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, debtor.getOwnerName());
             statement.setString(2, debtor.getPayerName());
@@ -237,7 +237,7 @@ public class DataProviderPostgres  {
 
     // Delete
     public boolean deleteDebtorList(UUID id) {
-        String sql = "DELETE FROM DebtorList WHERE id = ?";
+        String sql = "DELETE FROM Debtor_List WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();
@@ -473,7 +473,7 @@ public class DataProviderPostgres  {
 
     // Create
     public boolean createWindowApp(WindowApp windowApp) {
-        String sql = "INSERT INTO Window_App (kadastrNumber, personalAddress, personalAccount, personalNumber, square, emailCounter, personalID, createDate, uploadDate, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO window_app (kadastrNumber, personalAddress, personalAccount, personalNumber, square, emailCounter, personalID, createDate, uploadDate, id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, windowApp.getKadastrNumber());
             statement.setString(2, windowApp.getPersonalAddress());
@@ -495,7 +495,7 @@ public class DataProviderPostgres  {
 
     // Read
     public WindowApp getWindowAppById(UUID id) {
-        String sql = "SELECT * FROM Window_App WHERE id = ?";
+        String sql = "SELECT * FROM window_app WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -520,7 +520,7 @@ public class DataProviderPostgres  {
 
     // Update
     public boolean updateWindowApp(UUID id, WindowApp windowApp) {
-        String sql = "UPDATE Window_App SET kadastrNumber = ?, personalAddress = ?, personalAccount = ?, personalNumber = ?, square = ?, emailCounter = ?, personalID = ?, createDate = ?, uploadDate = ? WHERE id = ?";
+        String sql = "UPDATE window_app SET kadastrNumber = ?, personalAddress = ?, personalAccount = ?, personalNumber = ?, square = ?, emailCounter = ?, personalID = ?, createDate = ?, uploadDate = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, windowApp.getKadastrNumber());
             statement.setString(2, windowApp.getPersonalAddress());
@@ -542,7 +542,7 @@ public class DataProviderPostgres  {
 
     // Delete
     public boolean deleteWindowApp(UUID id) {
-        String sql = "DELETE FROM Window_App WHERE id = ?";
+        String sql = "DELETE FROM window_app WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();
@@ -558,7 +558,7 @@ public class DataProviderPostgres  {
 
     // Create
     public boolean createWithKadastrList(WithKadastrList withKadastrList) {
-        String sql = "INSERT INTO WithKadastrList (source, destination, createdTime, id) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO with_kadastr_list (source, destination, createdTime, id) VALUES (?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, withKadastrList.getSource());
             statement.setString(2, withKadastrList.getDestination());
@@ -574,7 +574,7 @@ public class DataProviderPostgres  {
 
     // Read
     public WithKadastrList getWithKadastrListById(UUID id) {
-        String sql = "SELECT * FROM WithKadastrList WHERE id = ?";
+        String sql = "SELECT * FROM with_kadastr_list WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -594,7 +594,7 @@ public class DataProviderPostgres  {
 
     // Update
     public boolean updateWithKadastrList(UUID id, WithKadastrList withKadastrList) {
-        String sql = "UPDATE WithKadastrList SET source = ?, destination = ?, createdTime = ? WHERE id = ?";
+        String sql = "UPDATE with_kadastr_list SET source = ?, destination = ?, createdTime = ? WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, withKadastrList.getSource());
             statement.setString(2, withKadastrList.getDestination());
@@ -610,7 +610,7 @@ public class DataProviderPostgres  {
 
     // Delete
     public boolean deleteWithKadastrList(UUID id) {
-        String sql = "DELETE FROM WithKadastrList WHERE id = ?";
+        String sql = "DELETE FROM with_kadastr_list WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setString(1, String.valueOf(id));
             int rowsDeleted = statement.executeUpdate();

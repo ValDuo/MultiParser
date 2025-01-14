@@ -42,12 +42,11 @@ class DataProviderPSQLTest {
         retrievedUser.setDate("2020/10/01");
         dataProviderPSQL.updateBigCSVCutter(retrievedUser);
 
-
         BigCSVCutter updatedFile = dataProviderPSQL.getBigCSVCutterById(retrievedUser.getId());
         assertEquals("c:/users/lera/somefolder2", updatedFile.getFolder());
         assertEquals(new Date(2012, 13, 30), updatedFile.getDate());
 
-        dataProviderPSQL.deleteBigCSVCutter(bigCSVCutter.getId());
+        //dataProviderPSQL.deleteBigCSVCutter(bigCSVCutter.getId());
     }
 
     @Test
