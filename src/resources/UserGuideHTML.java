@@ -3,7 +3,7 @@ package resources;
 public class UserGuideHTML {
     public static final String HTML_CONTENT = "<html>" +
             "<div style='width:700px; margin: 0 auto; font-weight: normal;'>" +
-            "<i><h1 style='text-align: center; margin-top: 15px;'>Руководство пользователя</h1></i>" +
+            "<i><h1 style='text-align: center; margin-top: 50px;'>Руководство пользователя</h1></i>" +
             "<ol style='font-size: 16px;'>" +
             "<li style='margin-top: 5px;'>Для выбора файлов на подачу на обработку необходимо нажать зеленую кнопку «Выбрать файлы». <div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic;'>Внимание! Вы можете выбрать только файлы формата .csv</div></li>" +
             "<li style='margin-top: 10px;'>Для того, чтобы получить список кадастровых номеров в виде сsv файла и папку с полученными на почту письмами, нужно нажать на кнопку фиолетовую «Получить кадастровые номера и пришедшие выписки».</li>" +

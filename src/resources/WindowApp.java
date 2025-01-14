@@ -47,7 +47,7 @@ public class WindowApp extends JFrame{
 
     File[] files;
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
-            "csv", "csv");
+            "CSV и Excel файлы", "csv", "xlsx", "xls");
 
     WebDriver driver;
 
@@ -322,7 +322,6 @@ public class WindowApp extends JFrame{
         addMenuItem("Сравнить кол-во", new JLabel("пустой"), () -> {
             contentPanel.removeAll();
             contentPanel.add(filterFile);
-            contentPanel.add(new JLabel("Отправьте выбранный файл на разбиение по 50 строк"));
             contentPanel.revalidate(); // Обновляем интерфейс
             contentPanel.repaint();
         });
