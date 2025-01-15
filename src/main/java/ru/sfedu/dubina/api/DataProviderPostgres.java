@@ -110,10 +110,10 @@ public class DataProviderPostgres  {
     public boolean createCSVReader(CSVReader reader) {
         String sql = "INSERT INTO CSV_Readers (id, pathName, csvFile, words) VALUES (?, ?, ?, ?)";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(reader.getId()));
-            statement.setString(2, reader.getPathName());
-            statement.setString(3, reader.getCsvFile().getAbsolutePath());
-            statement.setObject(4, reader.getWords());
+            statement.setString(1, reader.getPathName());
+            statement.setString(2, reader.getCsvFile().getAbsolutePath());
+            statement.setObject(3, reader.getWords());
+            statement.setObject(4, reader.getId());
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
         } catch (SQLException | IOException e) {
@@ -126,7 +126,7 @@ public class DataProviderPostgres  {
     public CSVReader getCSVReaderById(UUID id) {
         String sql = "SELECT * FROM CSV_Readers WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(id));
+            statement.setObject(4, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new CSVReader(
@@ -149,7 +149,7 @@ public class DataProviderPostgres  {
             statement.setString(1, reader.getPathName());
             statement.setString(2, reader.getCsvFile().getAbsolutePath());
             statement.setObject(3, reader.getWords());
-            statement.setString(4, String.valueOf(id));
+            statement.setObject(4, id);
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException | IOException e) {
@@ -161,7 +161,7 @@ public class DataProviderPostgres  {
     public boolean deleteCSVReader(UUID id) {
         String sql = "DELETE FROM CSV_Readers WHERE id = ?";
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setString(1, String.valueOf(id));
+            statement.setObject(4, id);
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException | IOException e) {
