@@ -16,6 +16,8 @@ import java.io.*;
 import java.net.URI;
 import javax.swing.filechooser.*;
 
+import static java.awt.SystemColor.text;
+
 
 public class WindowApp extends JFrame{
 
@@ -32,11 +34,13 @@ public class WindowApp extends JFrame{
     JLabel l = new JLabel();
     JFileChooser fileChooser = new JFileChooser();
     JProgressBar progressBar = new JProgressBar();
-    JPanel panel = new JPanel(new FlowLayout());
     JLabel userGuide = new JLabel(UserGuideHTML.HTML_CONTENT);
     JLabel userGuideLink = new JLabel(UserGuideLinkHTML.HTML_CONTENT);
     JPanel menuPanel = new JPanel();
     JPanel contentPanel = new JPanel();
+    JPanel buttonMenuStyles = new JPanel();
+    JLabel buttonMenuLabel = new JLabel();
+
 
 
 
@@ -172,6 +176,11 @@ public class WindowApp extends JFrame{
         }
         return this.driver = new ChromeDriver(new ChromeOptions());
     }
+    private void updateButtonMenuText(String text) {
+        buttonMenuLabel.setText(text);
+        buttonMenuLabel.revalidate();
+        buttonMenuLabel.repaint();
+    }
 
 
 
@@ -180,6 +189,7 @@ public class WindowApp extends JFrame{
         super("Работа с выписками");
 
         setJFileChooserButtonText();
+        buttonMenuStyles.add(buttonMenuLabel);
 
         //функционал написания письма в техподдержку
         userGuideLink.addMouseListener(new MouseAdapter() {
@@ -224,7 +234,7 @@ public class WindowApp extends JFrame{
 
 
         //Добавляем стилизацию на кнопку добавления файлов
-        uploadFile.setPreferredSize(new Dimension(350, 50));
+        uploadFile.setPreferredSize(new Dimension(550, 65));
         uploadFile.setBgColor(dark_green);
         uploadFile.setBorderColor(dark_dark_green);
         uploadFile.setTextColor(Color.WHITE);
@@ -234,7 +244,7 @@ public class WindowApp extends JFrame{
 
 
         //Добавляем стилизацию на кнопку обработки файлов
-        sendToProssesing.setPreferredSize(new Dimension(380, 50));
+        sendToProssesing.setPreferredSize(new Dimension(550, 65));
         sendToProssesing.setBgColor(dark_blue);
         sendToProssesing.setBorderColor(dark_dark_blue);
         sendToProssesing.setTextColor(Color.WHITE);
@@ -255,7 +265,7 @@ public class WindowApp extends JFrame{
 
         //Добавиола стилей на кнопку нарезки
 
-        cutFile.setPreferredSize(new Dimension(350, 50));
+        cutFile.setPreferredSize(new Dimension(550, 55));
         cutFile.setBgColor(orange);
         cutFile.setBorderColor(dark_orange);
         cutFile.setTextColor(Color.WHITE);
@@ -294,6 +304,7 @@ public class WindowApp extends JFrame{
         menuPanel.setPreferredSize(new Dimension(200, getHeight()));
 
 
+
         addMenuItem("Главная", new JLabel("Главная страница"), () -> {
             contentPanel.removeAll();
             contentPanel.add(l);
@@ -303,30 +314,80 @@ public class WindowApp extends JFrame{
         });
         addMenuItem("Выбор файла", new JLabel("Выберите файл с компьютера для дальнейшей работы с ним:"), () -> {
             contentPanel.removeAll();
+            contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
+
+            updateButtonMenuText("<html>"
+                    + "<p style='color:blue; font-size:20px; text-align: center; margin:30px 0px 15px; '>Описание функционала</p>"
+                    + "<ul style='font-size:14px; font-weight: 400;'>"
+                    + "<li style='margin-bottom: 10px;'>Файл должен содержать адреса.</li>"
+                    + "<li style='margin-bottom: 10px;'>Файл может быть в формате .csv и .xls.</li>"
+                    + "<li style='margin-bottom: 25px;'>Выберите нужный файл, нажав на кнопку ниже.</li>"
+                    + "</ul>"
+                    + "</html>");
+
+            contentPanel.add(buttonMenuStyles);
             contentPanel.add(uploadFile);
-            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.add(Box.createVerticalGlue());
+            contentPanel.revalidate();
             contentPanel.repaint();
         });
         addMenuItem("Нарезка по 50", new JLabel("Отправьте выбранный файл на разбиение по 50 строк"), () -> {
             contentPanel.removeAll();
+            contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
+
+            updateButtonMenuText("<html>"
+                    + "<p style='color:blue; font-size:20px; text-align: center; margin:30px 0px 15px; '>Описание функционала</p>"
+                    + "<div style='color: rgb(118, 15, 15); font-weight: bold; font-style: italic; font-size:16px; text-align: center;'>Внимание! Вы можете выбрать только файлы формата .csv</div>"
+                    + "<ul style='font-size:14px; font-weight: 400;'>"
+                    + "<li style='margin-bottom: 10px;'>Работа будет произведена автоматически с файлом, который вы выбрали на предыдущем этапе.</li>"
+                    + "<li style='margin-bottom: 25px;'>Если файл еще не выбран, сделайте это сейчас на вкладке <b>Выбор файла</b></li>"
+                    + "</ul>"
+                    + "</html>");
+
+            contentPanel.add(buttonMenuStyles);
             contentPanel.add(cutFile);
-            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.add(Box.createVerticalGlue());
+            contentPanel.revalidate();
             contentPanel.repaint();
         });
         addMenuItem("Получить кадастры", new JLabel("Отправьте выбранный файл на разбиение по 50 строк"), () -> {
             contentPanel.removeAll();
+            contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
+
+            updateButtonMenuText("<html>"
+                    + "<p style='color:blue; font-size:20px; text-align: center; margin:30px 0px 15px; '>Описание функционала</p>"
+                    + "<ul style='font-size:14px; font-weight: 400;'>"
+                    + "<li style='margin-bottom: 10px;'>Для получения файла с кадастровыми номерами вам необходимо выбрать этот файл.</li>"
+                    + "<li style='margin-bottom: 25px;'>Если файл выбран, нажмите кнопку ниже и следуйте инструкциям.</li>"
+                    + "</ul>"
+                    + "</html>");
+
+            contentPanel.add(buttonMenuStyles);
             contentPanel.add(sendToProssesing);
-            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.add(Box.createVerticalGlue());
+            contentPanel.revalidate();
             contentPanel.repaint();
         });
         addMenuItem("Сравнить кол-во", new JLabel("пустой"), () -> {
             contentPanel.removeAll();
+            contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
+
+            updateButtonMenuText("<html>"
+                    + "<p style='color:blue; font-size:20px; text-align: center; margin:30px 0px 15px; '>Описание функционала</p>"
+                    + "<ul style='font-size:14px; font-weight: 400;'>"
+                    + "<li style='margin-bottom: 10px;'>Для сравнения количества выберите файл csv с вашего компьютера.</li>"
+                    + "<li style='margin-bottom: 10px;'>Если файл выбран, нажмите кнопку ниже и следуйте инструкциям (вам нужно будет выбрать zip-архив).</li>"
+                    + "<li style='margin-bottom: 25px;'>В результате вы получите файл csv с кадастровыми номерами неотправленных выписок.</li>"
+                    + "</ul>"
+                    + "</html>");
+
+            contentPanel.add(buttonMenuStyles);
             contentPanel.add(filterFile);
-            contentPanel.revalidate(); // Обновляем интерфейс
+            contentPanel.add(Box.createVerticalGlue());
+            contentPanel.revalidate();
             contentPanel.repaint();
         });
 
-        // Добавление панелей в главное окно
         add(menuPanel, BorderLayout.WEST);
         add(contentPanel, BorderLayout.CENTER);
         setVisible(true);
