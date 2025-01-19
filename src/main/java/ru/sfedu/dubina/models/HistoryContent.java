@@ -19,6 +19,7 @@ public class HistoryContent {
     private Status status;
 
     public HistoryContent(String className, LocalDateTime createdDate, String actor, String methodName, Map<String, Object> object, Status status) {
+        this.id = UUID.randomUUID();
         this.className = className;
         this.createdDate = createdDate;
         this.actor = actor;

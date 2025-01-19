@@ -13,6 +13,7 @@ public class IncomingEmails {
     private UUID id;
 
     public IncomingEmails(String emailAddress, String emailSender, String emailReceiver) {
+        this.id = UUID.randomUUID();
         this.emailAddress = emailAddress;
         this.emailSender = emailSender;
         this.emailReceiver = emailReceiver;

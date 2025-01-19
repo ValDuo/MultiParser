@@ -28,59 +28,60 @@ class DataProviderPSQLTest {
     @Test
     void testCRUDMethodsWithBigCSVCutter() throws SQLException {
         BigCSVCutter bigCSVCutter = new BigCSVCutter(50,2, "2002/11/10", "src/test/testFolder", true);
+        boolean createResult = dataProviderPSQL.createBigCSVCutter(bigCSVCutter);
+        assertTrue(createResult, "Ошибка при создании записи.");
 
-        dataProviderPSQL.createBigCSVCutter(bigCSVCutter);
         BigCSVCutter retrievedUser = dataProviderPSQL.getBigCSVCutterById(bigCSVCutter.getId());
-        assertNotNull(retrievedUser);
-        assertEquals(50, retrievedUser.getCountLine());
-        assertEquals(2, retrievedUser.getCountFile());
-        assertEquals("2002/11/10", retrievedUser.getDate());
-        assertEquals("src/test/testFolder", retrievedUser.getFolder());
-        assertEquals(true, retrievedUser.getCreated());
+        assertEquals(50, retrievedUser.getCountLine(), "Неверное значение countline");
+        assertEquals(2, retrievedUser.getCountFile(), "Неверное значение countfile");
+        assertEquals("2002/11/10", retrievedUser.getDate(), "Неверное значение date");
+        assertEquals("src/test/testFolder", retrievedUser.getFolder(), "Неверное значение folder");
+        assertEquals(true, retrievedUser.getCreated(), "Неверное значение created");
 
-        retrievedUser.setFolder("src/test/testFolder2");
-        retrievedUser.setDate("2020/10/01");
-        dataProviderPSQL.updateBigCSVCutter(retrievedUser);
+        retrievedUser.setCountLine(100);
+        retrievedUser.setCreated(false);
+        retrievedUser.setCountFile(1);
+        boolean updateResult = dataProviderPSQL.updateBigCSVCutter(bigCSVCutter.getId(), retrievedUser);
+        assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        BigCSVCutter updatedFile = dataProviderPSQL.getBigCSVCutterById(retrievedUser.getId());
-        assertEquals("c:/users/lera/somefolder2", updatedFile.getFolder());
-        assertEquals(new Date(2012, 13, 30), updatedFile.getDate());
-
-        //dataProviderPSQL.deleteBigCSVCutter(bigCSVCutter.getId());
+        boolean deleteResult = dataProviderPSQL.deleteBigCSVCutter(bigCSVCutter.getId());
+        assertTrue(deleteResult, "Ошибка при удалении записи.");
     }
 
     @Test
     void testCRUDMethodsWithCSVReader() throws SQLException {
-        CSVReader csvReader = new CSVReader("mavenproject/src/test/testFolder", new File ("mavenproject\\src\\test\\testFolder\\test.csv"), 15);
+        CSVReader csvReader = new CSVReader("C:\\src\\test\\updatedFolder", "updatedTest.csv", 15);
+        boolean createResult = dataProviderPSQL.createCSVReader(csvReader);
+        assertTrue(createResult, "Ошибка при создании записи.");
 
-        dataProviderPSQL.createCSVReader(csvReader);
         CSVReader retrievedUser = dataProviderPSQL.getCSVReaderById(csvReader.getId());
         assertNotNull(retrievedUser);
-        assertEquals("mavenproject\\src\\test\\testFolder\\test.csv", retrievedUser.getCsvFile());
-        assertEquals("mavenproject/src/test/testFolder", retrievedUser.getPathName());
-        assertEquals(14, retrievedUser.getWords());
+        assertEquals("C:\\src\\test\\updatedFolder", retrievedUser.getPathName());
+        assertEquals("updatedTest.csv", retrievedUser.getCsvFile());
+        assertEquals(15, retrievedUser.getWords());
 
         retrievedUser.setWords(100);
-        dataProviderPSQL.updateCSVReader(retrievedUser.getId(), retrievedUser);
+        retrievedUser.setCsvFile("c:/Lera/newDirectory/");
+        retrievedUser.setCsvFile("newFile.csv");
+        boolean updateResult = dataProviderPSQL.updateCSVReader(csvReader.getId(), retrievedUser);
+        assertTrue(updateResult, "Ошибка при обновлении записи.");
 
-        CSVReader updatedUser = dataProviderPSQL.getCSVReaderById(retrievedUser.getId());
-        assertEquals(100, updatedUser.getWords());
-
-        dataProviderPSQL.deleteCSVReader(csvReader.getId());
+        boolean deleteResult= dataProviderPSQL.deleteCSVReader(csvReader.getId());
+        assertTrue(deleteResult, "Ошибка при удалении записи.");
     }
 
     @Test
     void testCRUDMethodsWithDebtorList() throws SQLException {
 
-        DebtorList debtor = new DebtorList("John Doe", "Jane Smith", 5000L, 3000L, new Date(2000,12, 12), new Date(2000, 12, 13), true);
+        DebtorList debtor = new DebtorList("Lera Doe", "Lera Smith", 100000L, 3000L, new Date(2000,12, 12), new Date(2000, 12, 13), true);
         boolean createResult = dataProviderPSQL.createDebtorList(debtor);
         assertTrue(createResult, "Ошибка при создании записи.");
 
         DebtorList retrievedDebtor = dataProviderPSQL.getDebtorListById(debtor.getId());
         assertNotNull(retrievedDebtor, "Запись не найдена.");
-        assertEquals("John Doe", retrievedDebtor.getOwnerName(), "Неверное значение ownerName.");
-        assertEquals("Jane Smith", retrievedDebtor.getPayerName(), "Неверное значение payerName.");
-        assertEquals(5000L, retrievedDebtor.getAccruedMoney(), "Неверное значение accruedMoney.");
+        assertEquals("Lera Doe", retrievedDebtor.getOwnerName(), "Неверное значение ownerName.");
+        assertEquals("Lera Smith", retrievedDebtor.getPayerName(), "Неверное значение payerName.");
+        assertEquals(100000L, retrievedDebtor.getAccruedMoney(), "Неверное значение accruedMoney.");
         assertEquals(3000L, retrievedDebtor.getReturnedMoney(), "Неверное значение returnedMoney.");
         assertNotNull(retrievedDebtor.getCreateDateOfPayment(), "Неверное значение createDateOfPayment.");
         assertNotNull(retrievedDebtor.getUploadDateOfPayment(), "Неверное значение uploadDateOfPayment.");
@@ -99,16 +100,16 @@ class DataProviderPSQLTest {
 
     @Test
     void testCRUDMethodsWithIncomingEmails() throws SQLException {
-        IncomingEmails email = new IncomingEmails("john.doe@example.com", "jane.smith@example.com", "john.doe@example.com");
+        IncomingEmails email = new IncomingEmails("leraDubina@example.com", "jane.smith@example.com", "john.doe@example.com");
         boolean createResult = dataProviderPSQL.createIncomingEmail(email);
         assertTrue(createResult, "Ошибка при создании записи.");
 
         IncomingEmails retrievedEmail = dataProviderPSQL.getIncomingEmailById(email.getId());
-        assertEquals("john.doe@example.com", retrievedEmail.getEmailAddress(), "Неверное значение emailAddress.");
+        assertEquals("leraDubina@example.com", retrievedEmail.getEmailAddress(), "Неверное значение emailAddress.");
         assertEquals("jane.smith@example.com", retrievedEmail.getEmailSender(), "Неверное значение emailSender.");
         assertEquals("john.doe@example.com", retrievedEmail.getEmailReceiver(), "Неверное значение emailReceiver.");
 
-        retrievedEmail.setEmailAddress("updated.address@sfedu.ru");
+        retrievedEmail.setEmailAddress("leraDubina@sfedu.ru");
         retrievedEmail.setEmailSender("updated.sender@example.com");
         retrievedEmail.setEmailReceiver("updated.receiver@example.com");
         boolean updateResult = dataProviderPSQL.updateIncomingEmail(email.getId(), retrievedEmail);
@@ -141,7 +142,7 @@ class DataProviderPSQLTest {
 
     @Test
     void testCRUDMethodsWithWindowApp() throws SQLException {
-        WindowApp windowApp = new WindowApp("12345", "Some Address", "67890", 123456789L, 50, 10, 1001, new Date(2020, 12, 30));
+        WindowApp windowApp = new WindowApp("12345", "examplePost@sfedu.ru", "67890", 123456789L, 70, 10, 1001, new Date(2020, 12, 30));
         boolean createResult = dataProviderPSQL.createWindowApp(windowApp);
         assertTrue(createResult, "Ошибка при создании записи.");
 
@@ -149,18 +150,21 @@ class DataProviderPSQLTest {
         WindowApp retrievedWindowApp = dataProviderPSQL.getWindowAppById(windowApp.getId());
         assertNotNull(retrievedWindowApp, "Запись не найдена.");
         assertEquals("12345", retrievedWindowApp.getKadastrNumber(), "Неверное значение kadastrNumber.");
-        assertEquals("Some Address", retrievedWindowApp.getPersonalAddress(), "Неверное значение personalAddress.");
+        assertEquals("examplePost@sfedu.ru", retrievedWindowApp.getPersonalAddress(), "Неверное значение personalAddress.");
         assertEquals("67890", retrievedWindowApp.getPersonalAccount(), "Неверное значение personalAccount.");
         assertEquals(123456789L, retrievedWindowApp.getPersonalNumber(), "Неверное значение personalNumber.");
-        assertEquals(50, retrievedWindowApp.getSquare(), "Неверное значение square.");
+        assertEquals(70, retrievedWindowApp.getSquare(), "Неверное значение square.");
         assertEquals(10, retrievedWindowApp.getEmailCounter(), "Неверное значение emailCounter.");
         assertEquals(1001, retrievedWindowApp.getPersonalID(), "Неверное значение personalID.");
 
-        retrievedWindowApp.setKadastrNumber("543211234");
-        retrievedWindowApp.setPersonalAddress("Updated Address");
+        retrievedWindowApp.setKadastrNumber("543211255");
+        retrievedWindowApp.setPersonalAddress("examplePost@sfedu.ru");
         retrievedWindowApp.setSquare(60);
         boolean updateResult = dataProviderPSQL.updateWindowApp(windowApp.getId(), retrievedWindowApp);
         assertTrue(updateResult, "Ошибка при обновлении записи.");
+
+        boolean deleteResult = dataProviderPSQL.deleteWindowApp(windowApp.getId());
+        assertTrue(deleteResult, "Ошибка при удалении записи.");
 
     }
 

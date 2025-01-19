@@ -14,6 +14,7 @@ public class WithKadastrList {
     private UUID id;
 
     public WithKadastrList(String source, String destination, Date createdTime){
+        this.id = UUID.randomUUID();
         this.source = source;
         this.destination = destination;
         this.createdTime = createdTime;

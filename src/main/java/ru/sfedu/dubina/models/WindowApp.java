@@ -21,6 +21,7 @@ public class WindowApp {
     private UUID id;
 
     public WindowApp(String kadastrNumber, String personalAddress, String personalAccount, Long personalNumber, Integer square, Integer emailCounter, Integer personalID, Date uploadDate) {
+        this.id = UUID.randomUUID();
         this.kadastrNumber = kadastrNumber;
         this.personalAddress = personalAddress;
         this.personalAccount = personalAccount;

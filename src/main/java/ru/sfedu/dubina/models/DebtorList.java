@@ -19,6 +19,7 @@ public class DebtorList {
     private UUID id;
 
     public DebtorList(String ownerName, String payerName, Long accruedMoney, Long returnedMoney, Date createDateOfPayment, Date uploadDateOfPayment, Boolean kadastr) {
+        this.id = UUID.randomUUID();
         this.ownerName = ownerName;
         this.payerName = payerName;
         this.accruedMoney = accruedMoney;

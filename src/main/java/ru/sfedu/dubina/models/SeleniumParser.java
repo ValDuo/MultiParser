@@ -12,6 +12,7 @@ public class SeleniumParser {
     private UUID id;
 
     public SeleniumParser(Integer driver, String srcDstFiles) {
+        this.id = UUID.randomUUID();
         this.driver = driver;
         this.srcDstFiles = srcDstFiles;
     }
