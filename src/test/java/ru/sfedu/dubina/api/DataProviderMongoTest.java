@@ -1,18 +1,17 @@
-package ru.sfedu.dubina.api;
-
-import ru.sfedu.dubina.models.HistoryContent;
-import org.junit.jupiter.api.Test;
-
-
-import java.util.Map;
-
-public class DataProviderMongoTest {
-
-
+//package ru.sfedu.dubina.api;
+//
+//import ru.sfedu.dubina.models.CSVReader;
+//import org.junit.jupiter.api.Test;
+//
+//
+//import java.util.Map;
+//
+//public class DataProviderMongoTest {
+//
 //    public void testCRUDWithMongoDB(){
 //        DataProviderMongo dataProvider = new DataProviderMongo();
 //
-//        HistoryContent content = new HistoryContent();
+//        CSVReader content = new HistoryContent();
 //        content.setId("1");
 //        content.setClassName("ЛераДубина");
 //        content.setMethodName("exampleMethod");
@@ -29,4 +28,4 @@ public class DataProviderMongoTest {
 //
 //        dataProvider.deleteHistoryContent("1");
 //    }
-}
+//}
