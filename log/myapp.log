@@ -2838,3 +2838,43 @@ org.postgresql.util.PSQLException: ОШИБКА: столбец "createdtime" в
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.42.58ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.07ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.43.07ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.07ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.43.07ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.07ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:52 - Ошибка записи XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:50 - Ошибка при работе с JAXB: null
+01.20:17.43.08ERROR	ru.sfedu.dubina.api.DataProviderXML:35 - Ошибка чтения XML: null

@@ -1,65 +1,104 @@
-//package ru.sfedu.dubina.api;
-//
-//import org.apache.log4j.Logger;
-//import ru.sfedu.dubina.models.PersForApi;
-//import org.junit.jupiter.api.*;
-//import ru.sfedu.dubina.utils.Constants;
-//
-//
-//import java.io.*;
-//import java.nio.file.Files;
-//import java.nio.file.Paths;
-//import static org.junit.jupiter.api.Assertions.*;
-//
-//class DataProviderXMLTest {
-//    Logger logger = Logger.getLogger(DataProviderXMLTest.class);
-//    private DataProviderXML dataProvider;
-//    private File tempXmlFile;
-//
-//    @BeforeEach
-//    void setUp() {
-//        try {
-//            tempXmlFile = Files.createTempFile(Paths.get(Constants.xmlFilePath).getParent(), "test_", ".xml").toFile();
-//        } catch (IOException e) {
-//            logger.error(e.getMessage());
-//        }
-//        Constants.xmlFilePath = tempXmlFile.getAbsolutePath();
-//        dataProvider = new DataProviderXML() {
-//            @Override
-//            public void initDataSource() {
-//                super.initDataSource();
-//            }
-//        };
-//        dataProvider.initDataSource();
-//    }
-//
-//    @Test
-//    void saveRecord() {
-//        PersForApi person = new PersForApi(1L, "John Doe", "john.doe@example.com");
-//        dataProvider.saveRecord(person);
-//        PersForApi retrievedPerson = dataProvider.getRecordById(1L);
-//        assertNotNull(retrievedPerson);
-//        assertEquals(person.getId(), retrievedPerson.getId());
-//        assertEquals(person.getName(), retrievedPerson.getName());
-//        assertEquals(person.getEmail(), retrievedPerson.getEmail());
-//    }
-//
-//    @Test
-//    void getRecordById_notFound() {
-//        PersForApi retrievedPerson = dataProvider.getRecordById(999L);
-//        assertNull(retrievedPerson);
-//    }
-//
-//    @Test
-//    void deleteRecord() {
-//        PersForApi person = new PersForApi(2L, "Jane Doe", "jane.doe@example.com");
-//        dataProvider.saveRecord(person);
-//        PersForApi retrievedPerson = dataProvider.getRecordById(2L);
-//        assertNotNull(retrievedPerson);
-//        dataProvider.deleteRecord(2L);
-//        PersForApi deletedPerson = dataProvider.getRecordById(2L);
-//        assertNull(deletedPerson);
-//    }
-//
-//
-//}
+package ru.sfedu.dubina.api;
+
+import org.junit.jupiter.api.*;
+import ru.sfedu.dubina.models.BigCSVCutter;
+import ru.sfedu.dubina.models.CSVReader;
+import ru.sfedu.dubina.utils.Constants;
+
+import java.io.FileWriter;
+import java.util.UUID;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class DataProviderXMLTest {
+
+    private DataProviderXML dataProvider= new DataProviderXML();
+
+
+    // Тесты для BigCSVCutter
+
+    @Test
+    public void testCreateBigCSVCutter() {
+        BigCSVCutter cutter = new BigCSVCutter(100, 5, "2025-01-20", "folder1", true);
+        dataProvider.create(cutter);
+
+        BigCSVCutter result = dataProvider.read(cutter.getId());
+        assertNotNull(result);
+        assertEquals(cutter.getCountFile(), result.getCountFile());
+        assertEquals(cutter.getCountLine(), result.getCountLine());
+        assertEquals(cutter.getDate(), result.getDate());
+        assertEquals(cutter.getFolder(), result.getFolder());
+        assertEquals(cutter.getCreated(), result.getCreated());
+    }
+
+    @Test
+    public void testUpdateBigCSVCutter() {
+            BigCSVCutter cutter = new BigCSVCutter(100, 5, "2025-01-20", "folder1", true);
+            dataProvider.create(cutter);
+
+            BigCSVCutter updatedCutter = new BigCSVCutter(200, 10, "2025-01-21", "folder2", false);
+            dataProvider.update(cutter.getId(), updatedCutter);
+
+            BigCSVCutter result = dataProvider.read(cutter.getId());
+            assertNotNull(result);
+            assertEquals(updatedCutter.getCountLine(), result.getCountLine());
+            assertEquals(updatedCutter.getCountFile(), result.getCountFile());
+            assertEquals(updatedCutter.getDate(), result.getDate());
+            assertEquals(updatedCutter.getFolder(), result.getFolder());
+            assertEquals(updatedCutter.getCreated(), result.getCreated());
+    }
+
+    @Test
+    public void testDeleteBigCSVCutter() {
+        BigCSVCutter cutter = new BigCSVCutter(100, 5, "2025-01-20", "folder1", true);
+        dataProvider.create(cutter);
+
+        dataProvider.delete(cutter.getId());
+
+        BigCSVCutter result = dataProvider.read(cutter.getId());
+        assertNull(result);
+    }
+
+
+    // Тесты для CSVReader
+чь
+    @Test
+    public void testCreateCSVReader() {
+        CSVReader reader = new CSVReader("path111/to/file", "file.csv", 1000);
+        dataProvider.createCSVReader(reader);
+
+        CSVReader result = dataProvider.readCSVReader(reader.getId());
+        assertNotNull(result);
+        assertEquals(reader.getPathName(), result.getPathName());
+        assertEquals(reader.getCsvFile(), result.getCsvFile());
+        assertEquals(reader.getWords(), result.getWords());
+    }
+    @Test
+    public void testUpdateCSVReader() {
+        CSVReader reader = new CSVReader("path/to/file", "file.csv", 1000);
+        dataProvider.createCSVReader(reader);
+
+        CSVReader updatedReader = new CSVReader("path/updated/file", "updated_file.csv", 2000);
+        dataProvider.updateCSVReader(reader.getId(), updatedReader);
+
+        CSVReader result = dataProvider.readCSVReader(reader.getId());
+        assertNotNull(result);
+        assertEquals(updatedReader.getPathName(), result.getPathName());
+        assertEquals(updatedReader.getCsvFile(), result.getCsvFile());
+        assertEquals(updatedReader.getWords(), result.getWords());
+    }
+
+    @Test
+    public void testDeleteCSVReader() {
+        CSVReader reader = new CSVReader("path/to/file", "file.csv", 1000);
+        dataProvider.createCSVReader(reader);
+
+        dataProvider.deleteCSVReader(reader.getId());
+
+        CSVReader result = dataProvider.readCSVReader(reader.getId());
+        assertNull(result);
+    }
+}

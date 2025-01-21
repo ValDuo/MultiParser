@@ -11,10 +11,15 @@ public class Constants {
     public static final String CLIENT_ID = "mongodb://localhost:27017";
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     public static final String CUTTER_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\CSV\\bigcsvcutter.csv";
+    public static final String CUTTER_XML_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\XML\\bigcsvcutter.xml";
     public static final String READER_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\CSV\\csvreader.csv";
+    public static final String READER_XML_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\XML\\csvreader.xml";
     public static final String EMAILS_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\CSV\\emails.csv";
+    public static final String EMAILS_XML_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\XML\\emails.xml";
     public static final String PARCER_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\CSV\\parser.csv";
+    public static final String PARCER_XML_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\XML\\parser.xml";
     public static final String KADASTRS_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\CSV\\withkadastrs.csv";
+    public static final String KADASTR_XML_PATH = "C:\\Users\\dvdle\\OneDrive\\Рабочий стол\\mavenproject\\src\\main\\resources\\XML\\withkadastrs.xml";
 
 
 }
