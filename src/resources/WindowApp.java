@@ -17,6 +17,7 @@ import java.net.URI;
 import javax.swing.filechooser.*;
 
 import static java.awt.SystemColor.text;
+import static java.lang.Thread.sleep;
 
 
 public class WindowApp extends JFrame{
@@ -47,7 +48,7 @@ public class WindowApp extends JFrame{
     RoundedButton uploadFile = new RoundedButton("Выбрать файлы");
     RoundedButton sendToProssesing = new RoundedButton("Подать на обработку");
     RoundedButton filterFile = new RoundedButton("Получить кадастровые номера и пришедшие выписки");
-    RoundedButton cutFile = new RoundedButton("Нарезать файл по 50 строк");
+    RoundedButton cutFile = new RoundedButton("Нарезать файл по n строк");
 
     File[] files;
     FileNameExtensionFilter formatFilter = new FileNameExtensionFilter(
@@ -331,7 +332,7 @@ public class WindowApp extends JFrame{
             contentPanel.revalidate();
             contentPanel.repaint();
         });
-        addMenuItem("Нарезка по 50", new JLabel("Отправьте выбранный файл на разбиение по 50 строк"), () -> {
+        addMenuItem("Нарезать файл", new JLabel("Отправьте выбранный файл на разбиение по n строк"), () -> {
             contentPanel.removeAll();
             contentPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 0));
 

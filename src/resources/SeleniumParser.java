@@ -8,6 +8,8 @@ import org.openqa.selenium.Keys;
 import javax.swing.*;
 import java.util.ArrayList;
 
+import static java.lang.Thread.sleep;
+
 
 public class SeleniumParser {
     WebDriver driver;
@@ -27,8 +29,12 @@ public class SeleniumParser {
     public void startParse() {
         final String url = "https://egrpru.com/";
         driver.get(url);
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         sendKadastrs();
-//        Thread.sleep(100);
         driver.close();
     }
     private void sendKadastrs(){
@@ -39,7 +45,7 @@ public class SeleniumParser {
             form_input.sendKeys(addresses.get(i));
             button_input.click();
             try {
-                Thread.sleep(7500);
+                sleep(7500);
             }
             catch (InterruptedException exception){
 
