@@ -1,7 +1,6 @@
 package ru.sfedu.dubina.models;
 
 import lombok.*;
-import ru.sfedu.dubina.utils.Status;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -18,13 +17,12 @@ public class HistoryContent {
     private Map<String, Object> object;
     private Status status;
 
-    public HistoryContent(String className, LocalDateTime createdDate, String actor, String methodName, Map<String, Object> object, Status status) {
+    public HistoryContent(String className, LocalDateTime createdDate, String actor, String methodName, Status status) {
         this.id = UUID.randomUUID();
         this.className = className;
         this.createdDate = createdDate;
         this.actor = actor;
         this.methodName = methodName;
-        this.object = object;
         this.status = status;
     }
 

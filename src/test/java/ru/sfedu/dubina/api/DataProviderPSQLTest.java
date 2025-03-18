@@ -3,6 +3,7 @@ package ru.sfedu.dubina.api;
 
 import java.io.*;
 import java.sql.*;
+import java.util.UUID;
 
 import org.junit.jupiter.api.*;
 import ru.sfedu.dubina.models.*;
@@ -28,10 +29,10 @@ class DataProviderPSQLTest {
     @Test
     void testCRUDMethodsWithBigCSVCutter() throws SQLException {
         BigCSVCutter bigCSVCutter = new BigCSVCutter(50,2, "2002/11/10", "src/test/testFolder", true);
-        boolean createResult = dataProviderPSQL.createBigCSVCutter(bigCSVCutter);
+        boolean createResult = dataProviderPSQL.saveBigCSVCutter(bigCSVCutter);
         assertTrue(createResult, "Ошибка при создании записи.");
 
-        BigCSVCutter retrievedUser = dataProviderPSQL.getBigCSVCutterById(bigCSVCutter.getId());
+        BigCSVCutter retrievedUser = dataProviderPSQL.getBigCSVCutterById(UUID.randomUUID());
         assertEquals(50, retrievedUser.getCountLine(), "Неверное значение countline");
         assertEquals(2, retrievedUser.getCountFile(), "Неверное значение countfile");
         assertEquals("2002/11/10", retrievedUser.getDate(), "Неверное значение date");

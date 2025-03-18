@@ -1,4 +1,4 @@
-package ru.sfedu.dubina.utils;
+package ru.sfedu.dubina.models;
 
 public enum Status {
     SUCCESS,

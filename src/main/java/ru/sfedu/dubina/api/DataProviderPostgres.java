@@ -1,61 +1,72 @@
 package ru.sfedu.dubina.api;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.apache.log4j.Logger;
 
 import ru.sfedu.dubina.models.*;
-import ru.sfedu.dubina.utils.Status;
+import ru.sfedu.dubina.utils.Constants;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.core.type.TypeReference;
-
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
 
+
+
+
 public class DataProviderPostgres  {
+
     private Logger logger = Logger.getLogger(DataProviderPostgres.class);
     private static Connection connection;
 
     public static Connection getConnection() throws SQLException, IOException {
-        if (connection == null) {
+        try {
+            return DriverManager.getConnection(connection.getMetaData().getURL(),
+                    connection.getMetaData().getUserName(),
+                    "your_password_here");
+        } catch (NullPointerException | SQLException e) {
             Properties props = new Properties();
-            try(InputStream input = DataProviderPostgres.class.getClassLoader().
-                    getResourceAsStream("database.properties")) {
+            try (InputStream input = DataProviderPostgres.class.getClassLoader()
+                    .getResourceAsStream("database.properties")) {
                 props.load(input);
             }
+
             String url = props.getProperty("db.url");
             String user = props.getProperty("db.user");
             String password = props.getProperty("db.password");
+
             connection = DriverManager.getConnection(url, user, password);
         }
         return connection;
     }
 
+
     // CRUD-операции для BigCSVCutter
 
-    public boolean createBigCSVCutter(BigCSVCutter cutter) {
-        String sql = "INSERT INTO bigCSVCutter (countLine, countFile, date, folder, created, id) VALUES (?, ?, ?, ?, ?, ?)";
+    public boolean saveBigCSVCutter(BigCSVCutter cutter) {
+        String sql = String.format(Constants.INSERT, "bigCSVCutter",
+                "id, countLine, countFile, date, folder, created", "?, ?, ?, ?, ?, ?");
+
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
-            statement.setInt(1, cutter.getCountLine());
-            statement.setInt(2, cutter.getCountFile());
-            statement.setString(3, cutter.getDate());
-            statement.setString(4, cutter.getFolder());
-            statement.setBoolean(5, cutter.getCreated());
-            statement.setObject(6, cutter.getId());
-            int rowsInserted = statement.executeUpdate();
-            return rowsInserted > 0;
+            statement.setObject(1, cutter.getId());
+            statement.setInt(2, cutter.getCountLine());
+            statement.setInt(3, cutter.getCountFile());
+            statement.setString(4, cutter.getDate());
+            statement.setString(5, cutter.getFolder());
+            statement.setBoolean(6, cutter.getCreated());
+
+            statement.executeUpdate();
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при добавлении записи BigCSVCutter.", e);
+            logger.error("Ошибка при сохранении BigCSVCutter.", e);
+            throw new RuntimeException("Ошибка при доступе к базе данных", e);
         }
         return false;
     }
 
+
     public BigCSVCutter getBigCSVCutterById(UUID id) {
-        String sql = "SELECT * FROM bigCSVCutter WHERE id = ?";
+        String sql = String.format(Constants.SELECT_BY_ID, "bigCSVCutter");
+
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setObject(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -67,16 +78,22 @@ public class DataProviderPostgres  {
                             resultSet.getString("folder"),
                             resultSet.getBoolean("created")
                     );
+                } else {
+                    throw new NoSuchElementException("BigCSVCutter с id " + id + " не найден.");
                 }
             }
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при получении записи BigCSVCutter.", e);
+            logger.error("Ошибка при получении BigCSVCutter.", e);
+            throw new RuntimeException("Ошибка при доступе к базе данных", e);
         }
-        return null;
     }
 
+
+
     public boolean updateBigCSVCutter(UUID id, BigCSVCutter cutter) {
-        String sql = "UPDATE bigCSVCutter SET countLine = ?, countFile = ?, date = ?, folder = ?, created = ? WHERE id = ?";
+        String sql = String.format(Constants.UPDATE_BY_ID, "bigCSVCutter",
+                "countLine = ?, countFile = ?, date = ?, folder = ?, created = ?");
+
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setInt(1, cutter.getCountLine());
             statement.setInt(2, cutter.getCountFile());
@@ -84,26 +101,36 @@ public class DataProviderPostgres  {
             statement.setString(4, cutter.getFolder());
             statement.setBoolean(5, cutter.getCreated());
             statement.setObject(6, id);
+
             int rowsUpdated = statement.executeUpdate();
-            return rowsUpdated > 0;
+            if (rowsUpdated == 0) {
+                throw new NoSuchElementException("BigCSVCutter с id " + id + " не найден.");
+            }
+            return true;
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при обновлении записи BigCSVCutter.", e);
+            logger.error("Ошибка при обновлении BigCSVCutter.", e);
+            throw new RuntimeException("Ошибка при доступе к базе данных", e);
         }
-        return false;
     }
+
 
 
     public boolean deleteBigCSVCutter(UUID id) {
-        String sql = "DELETE FROM bigCSVCutter WHERE id = ?";
+        String sql = String.format(Constants.DELETE_BY_ID, "bigCSVCutter");
+
         try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
             statement.setObject(1, id);
             int rowsDeleted = statement.executeUpdate();
-            return rowsDeleted > 0;
+            if (rowsDeleted == 0) {
+                throw new NoSuchElementException("BigCSVCutter с id " + id + " не найден.");
+            }
+            return true;
         } catch (SQLException | IOException e) {
-            logger.error("Ошибка при удалении записи BigCSVCutter.", e);
+            logger.error("Ошибка при удалении BigCSVCutter.", e);
+            throw new RuntimeException("Ошибка при доступе к базе данных", e);
         }
-        return false;
     }
+
 
     //операции с классом CSVReader
 
@@ -134,13 +161,16 @@ public class DataProviderPostgres  {
                             resultSet.getString("csv_file"),
                             resultSet.getInt("words")
                     );
+                } else {
+                    throw new NoSuchElementException("CSVReader с id " + id + " не найден.");
                 }
             }
         } catch (SQLException | IOException e) {
             logger.error("Ошибка при получении записи CSVReader.", e);
+            throw new RuntimeException("Ошибка при получении CSVReader из базы данных.", e);
         }
-        return null;
     }
+
 
 
     public boolean updateCSVReader(UUID id, CSVReader reader) {
@@ -207,13 +237,16 @@ public class DataProviderPostgres  {
                             new Date(resultSet.getTimestamp("upload_date_of_payment").getTime()),
                             resultSet.getBoolean("kadastr")
                     );
+                } else {
+                    throw new NoSuchElementException("DebtorList с id " + id + " не найден.");
                 }
             }
         } catch (SQLException | IOException e) {
             logger.error("Ошибка при получении записи DebtorList.", e);
+            throw new RuntimeException("Ошибка при доступе к базе данных.", e);
         }
-        return null;
     }
+
 
     // Update
     public boolean updateDebtorList(UUID id, DebtorList debtor) {
@@ -277,13 +310,16 @@ public class DataProviderPostgres  {
                             resultSet.getString("email_sender"),
                             resultSet.getString("email_receiver")
                     );
+                } else {
+                    throw new NoSuchElementException("IncomingEmail с id " + id + " не найден.");
                 }
             }
         } catch (SQLException | IOException e) {
             logger.error("Ошибка при получении записи incoming_emails.", e);
+            throw new RuntimeException("Ошибка при доступе к базе данных.", e);
         }
-        return null;
     }
+
 
     // Update
     public boolean updateIncomingEmail(UUID id, IncomingEmails email) {

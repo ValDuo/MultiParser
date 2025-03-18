@@ -62,7 +62,7 @@ public class DataProviderCSV {
         } catch (IOException e) {
             logger.error("Ошибка при чтении записи: " + e.getMessage());
         }
-        return null;
+        throw new NoSuchElementException("BigCSVCutter с ID " + id + " не найден!");
     }
 
     // UPDATE
@@ -92,12 +92,12 @@ public class DataProviderCSV {
                         writer.write(line + "\n");
                     }
                 }
-                return true;
+
             }
         } catch (IOException e) {
             logger.error("Ошибка при обновлении записи: " + e.getMessage());
         }
-        return false;
+        throw new NoSuchElementException("BigCSVCutter с ID " + id + " не обновлен!");
     }
 
 
@@ -125,12 +125,12 @@ public class DataProviderCSV {
                         writer.write(line + "\n");
                     }
                 }
-                return true;
+
             }
         } catch (IOException e) {
             logger.error("Ошибка при удалении записи: " + e.getMessage());
         }
-        return false;
+        throw new NoSuchElementException("BigCSVCutter с ID " + id + " не удален!");
     }
 
     //круды с csv-reader
@@ -142,11 +142,11 @@ public class DataProviderCSV {
                     csvReader.getPathName(),
                     csvReader.getCsvFile(),
                     csvReader.getWords()));
-            return true;
+
         } catch (IOException e) {
             logger.error("Ошибка при добавлении записи CSVReader: " + e.getMessage());
         }
-        return false;
+        throw new NoSuchElementException("CSVReader с ID не найден!");
     }
 
     public CSVReader getCSVReaderById(UUID id) {
@@ -166,7 +166,7 @@ public class DataProviderCSV {
         } catch (IOException | NumberFormatException e) {
             logger.error("Ошибка при чтении записи CSVReader: " + e.getMessage());
         }
-        return null;
+        throw new NoSuchElementException("CSVReader с ID"+ id+" не найден!");
     }
 
     public boolean updateCSVReader(UUID id, CSVReader updatedCSVReader) {
@@ -193,12 +193,12 @@ public class DataProviderCSV {
                         writer.write(line + "\n");
                     }
                 }
-                return true;
+
             }
         } catch (IOException e) {
             logger.error("Ошибка при обновлении записи CSVReader: " + e.getMessage());
         }
-        return false;
+        throw new NoSuchElementException("CSVReader с ID не обновлен!");
     }
 
     public boolean deleteCSVReader(UUID id) {
@@ -237,11 +237,11 @@ public class DataProviderCSV {
                     email.getEmailAddress(),
                     email.getEmailSender(),
                     email.getEmailReceiver()));
-            return true;
+
         } catch (IOException e) {
             logger.error("Ошибка при добавлении записи IncomingEmails: {}" + e.getMessage());
         }
-        return false;
+        throw new NoSuchElementException("IncomingEmails не создан!");
     }
 
     public IncomingEmails getIncomingEmailById(UUID id) {
@@ -257,7 +257,7 @@ public class DataProviderCSV {
         } catch (IOException e) {
             logger.error("Ошибка при чтении записи IncomingEmails: {}"+ e.getMessage());
         }
-        return null;
+        throw new NoSuchElementException("IncomingEmails с ID"+id+" не создан!");
     }
 
     public boolean updateIncomingEmail(UUID id, IncomingEmails updatedEmail) {
@@ -351,7 +351,7 @@ public class DataProviderCSV {
         } catch (IOException e) {
             logger.error("Ошибка при чтении записи: " + e.getMessage());
         }
-        return null;
+        throw new NoSuchElementException("IncomingEmails с ID"+id+" не прочитан!");
     }
 
     public boolean updateSeleniumParser(UUID id, SeleniumParser updatedParser) {
@@ -443,7 +443,7 @@ public class DataProviderCSV {
         } catch (Exception e) {
             logger.error("Ошибка при чтении записи: {}"+ e.getMessage());
         }
-        return null;
+        throw new NoSuchElementException("WithKadastrList с ID"+id+" не прочитан!");
     }
 
     public boolean updateWithKadastrList(UUID id, WithKadastrList updatedRecord) {
