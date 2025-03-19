@@ -64,7 +64,7 @@ public class DataProviderXMLTest {
 
 
     // Тесты для CSVReader
-чь
+
     @Test
     public void testCreateCSVReader() {
         CSVReader reader = new CSVReader("path111/to/file", "file.csv", 1000);
