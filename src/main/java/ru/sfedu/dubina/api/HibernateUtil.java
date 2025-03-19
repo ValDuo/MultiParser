@@ -1,6 +1,7 @@
 package ru.sfedu.dubina.api;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -9,28 +10,25 @@ import java.io.File;
 
 
 public class HibernateUtil {
-    private static SessionFactory sessionFactory;
+    public static SessionFactory sessionFactory;
 
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
-            try {
-                String configFilePath = System.getProperty("hibernate.config.path", "src/main/resources/hibernate.cfg.xml");
+            // loads configuration and mappings
+            Configuration configuration = new Configuration().configure();
+            ServiceRegistry serviceRegistry
+                    = new StandardServiceRegistryBuilder()
+                    .applySettings(configuration.getProperties()).build();
 
-                File configFile = new File(configFilePath);
-                if (!configFile.exists()) {
-                    throw new RuntimeException("Конфигурационный файл не найден: " + configFilePath);
-                }
-                Configuration configuration = new Configuration();
-                configuration.configure(configFile);
-                ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-                        .applySettings(configuration.getProperties())
-                        .build();
-                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
-            } catch (Exception e) {
-                throw new ExceptionInInitializerError("Ошибка инициализации Hibernate: " + e.getMessage());
-            }
+            MetadataSources metadataSources =
+                    new MetadataSources(serviceRegistry);
+
+            metadataSources.addResource("named-queries.hbm.xml");// Именованные запросы
+            sessionFactory = metadataSources.buildMetadata().buildSessionFactory();
         }
+
         return sessionFactory;
     }
+
 }

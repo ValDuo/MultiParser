@@ -1,13 +1,14 @@
 package ru.sfedu.dubina.api;
 
-import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.NativeQuery;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.logging.LoggerFactory;
 
+import java.net.URL;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -74,26 +75,11 @@ public class DataProviderHibernateTest {
         assertEquals("text", result.get(1));
         assertEquals("boolean", result.get(2));
     }
-    @Test
-    public void testGetSessionFactory() {
-        System.setProperty("hibernate.config.path", "src/main/resources/hibernate.cfg.xml");
-        try {
-            SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-            assertNotNull(sessionFactory, "Фабрика сессий не должна быть null");
-        } catch (Exception e) {
-            fail("Возникло исключение при создании фабрики сессий: " + e.getMessage());
-        }
-    }
 
-    @Test
-    public void testGetSessionFactoryWithDefaultConfig() {
-        System.clearProperty("hibernate.config.path");
-        try{
-            SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-            assertTrue(sessionFactory != null, "Фабрика сессий не должна быть null");
-        }
-        catch (Exception e){
-            fail("Возникло исключение при создании фабрики сессий c дефолтными настройками: " + e.getMessage());
-        }
-    }
+
+
+
+
+
+
 }

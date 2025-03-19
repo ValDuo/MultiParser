@@ -1,12 +1,7 @@
 package ru.sfedu.dubina.api;
-
 import org.hibernate.Session;
 import org.hibernate.query.NativeQuery;
-
-
 import java.util.List;
-
-
 public class HibernateDataProvider {
 
     private final Session session;
