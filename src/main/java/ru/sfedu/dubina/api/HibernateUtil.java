@@ -1,34 +1,36 @@
 package ru.sfedu.dubina.api;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
+import ru.sfedu.dubina.lab2.TestEntity;
 
-import java.io.File;
-
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
 public class HibernateUtil {
-    public static SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory;
 
-    public static SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
-            // loads configuration and mappings
-            Configuration configuration = new Configuration().configure();
-            ServiceRegistry serviceRegistry
-                    = new StandardServiceRegistryBuilder()
-                    .applySettings(configuration.getProperties()).build();
+    static {
+        try {
+            StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
+                    .configure("hibernate.cfg.xml")
+                    .build();
 
+            Metadata metadata = new MetadataSources(standardRegistry)
+                    .getMetadataBuilder()
+                    .build();
 
-            MetadataSources metadataSources =
-                    new MetadataSources(serviceRegistry);
-
-            metadataSources.addResource("named-queries.hbm.xml");// Именованные запросы
-            sessionFactory = metadataSources.buildMetadata().buildSessionFactory();
+            sessionFactory = metadata.getSessionFactoryBuilder().build();
+        } catch (Exception ex) {
+            System.err.println("Initial SessionFactory creation failed." + ex);
+            throw new ExceptionInInitializerError(ex);
         }
-
-        return sessionFactory;
     }
 
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
 }

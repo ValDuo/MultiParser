@@ -3096,3 +3096,144 @@ org.postgresql.util.PSQLException: ОШИБКА: столбец "createdtime" в
 03.19:13.20.43DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
 03.19:13.20.43 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
 03.19:13.20.43DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.37.57DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.37.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.37.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.37.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.37.57 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.37.57DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.39.57DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.39.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.39.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.39.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.39.57 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.39.57DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.39.57DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.42.04DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.42.04DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.42.04DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.42.04DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.42.04 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.42.04DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.42.04DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.48.57DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.48.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.48.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.48.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.48.57 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.48.57DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.48.58DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:21.48.58DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:21.48.58DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.50.18DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.50.18DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.50.18DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.50.18DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.50.18 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.50.18DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.50.18DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:21.50.18DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:21.50.18DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.51.34DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.51.34DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.51.34DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.51.34DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.51.34 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.51.34DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.51.35DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:21.51.35DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:21.51.35DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.52.42DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.52.42DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.52.42DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.52.43DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.52.43 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.52.43DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.52.43DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:21.52.43DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:21.52.43DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.52.57DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.52.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.52.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.52.57DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.52.57 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.52.57DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.52.58DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:21.52.58DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:21.52.58DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.54.01DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.54.01DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.54.01DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.54.01DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.54.01 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.54.01DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.54.02DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:21.54.02DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:21.54.02DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:21.57.02DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:21.57.02DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:21.57.02DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:21.57.02DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:21.57.02 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:21.57.02DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:21.57.02DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:21.57.02DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:21.57.02DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:22.01.10DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:22.01.10DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:22.01.10DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:22.01.10DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:22.01.10 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:22.01.10DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:22.01.11DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:22.01.11DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:22.01.11DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:22.02.12DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:22.02.12DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:22.02.12DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:22.02.12DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:22.02.12 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:22.02.12DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:22.02.12DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:22.02.12DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:22.02.12DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:22.02.37DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:22.02.37DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:22.02.37DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:22.02.37DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:22.02.37 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:22.02.37DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:22.03.08DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:22.03.08DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:22.03.08DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:22.03.08DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:22.03.08 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:22.03.08DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:22.03.08DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:22.03.08DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:22.03.08DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:22.03.50DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:22.03.50DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:22.03.50DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:22.03.50DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:22.03.50 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:22.03.50DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:22.03.50DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:22.08.08DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:22.08.08DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:22.08.08DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:22.08.08DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:22.08.08 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:22.08.08DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:22.08.09DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:22.08.09DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:22.08.09DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information
+03.30:22.09.32DEBUG	org.jboss.logging:28 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+03.30:22.09.32DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cfg.beanvalidation.BeanValidationIntegrator].
+03.30:22.09.32DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.secure.spi.JaccIntegrator].
+03.30:22.09.32DEBUG	org.hibernate.integrator.internal.IntegratorServiceImpl:46 - Adding Integrator [org.hibernate.cache.internal.CollectionCacheInvalidator].
+03.30:22.09.32 INFO	org.hibernate.Version:44 - HHH000412: Hibernate ORM core version 5.6.10.Final
+03.30:22.09.32DEBUG	org.hibernate.cfg.Environment:199 - HHH000206: hibernate.properties not found
+03.30:22.09.32DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:63 - Interpreting public/system identifier : [-//Hibernate/Hibernate Configuration DTD 3.0//EN] - [http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd]
+03.30:22.09.32DEBUG	org.hibernate.boot.jaxb.internal.stax.LocalXmlResourceResolver:87 - Recognized hibernate-configuration identifier; attempting to resolve on classpath under org/hibernate/
+03.30:22.09.32DEBUG	org.hibernate.boot.cfgxml.internal.JaxbCfgProcessor:117 - cfg.xml document did not define namespaces; wrapping in custom event reader to introduce namespace information

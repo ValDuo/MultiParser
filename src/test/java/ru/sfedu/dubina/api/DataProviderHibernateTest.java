@@ -1,14 +1,10 @@
 package ru.sfedu.dubina.api;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.query.NativeQuery;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.net.URL;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,8 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 public class DataProviderHibernateTest {
-
-
     private HibernateDataProvider hibernateDataProvider;
     private Session session;
 
@@ -75,11 +69,4 @@ public class DataProviderHibernateTest {
         assertEquals("text", result.get(1));
         assertEquals("boolean", result.get(2));
     }
-
-
-
-
-
-
-
 }
