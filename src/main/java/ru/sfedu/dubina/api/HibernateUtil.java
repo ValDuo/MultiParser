@@ -5,10 +5,7 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import ru.sfedu.dubina.lab2.TestEntity;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
@@ -16,7 +13,7 @@ public class HibernateUtil {
     static {
         try {
             StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder()
-                    .configure("hibernate.cfg.xml")
+                    .configure("src/main/resources/hibernate.cfg.xml")
                     .build();
 
             Metadata metadata = new MetadataSources(standardRegistry)
