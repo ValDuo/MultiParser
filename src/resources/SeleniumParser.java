@@ -88,7 +88,7 @@ public class SeleniumParser {
         return null;
     }
     private ArrayList<String> addHome(ArrayList<String> addresses){
-        //TODO: optional: parse address to get addresses's parts
+        //TODO: optional: parse address to get addreses's parts
         //TODO: like street, house, flat, etc
 
         return addresses;
