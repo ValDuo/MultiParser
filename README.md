@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Parcing of kadastrs
 
 Third commit
